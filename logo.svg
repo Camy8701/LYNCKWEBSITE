@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .logo-text {
+      fill: #000000;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 60px;
+      font-weight: bold;
+    }
+  </style>
+  <text x="50" y="150" class="logo-text" transform="rotate(-5 200 150)">Lynck</text>
+  <path d="M 100 180 Q 200 160 350 200 Q 300 220 100 200 Z" fill="#000000"/>
+</svg>
