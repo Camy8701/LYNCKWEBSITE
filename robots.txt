@@ -1,0 +1,13 @@
+# robots.txt for LYNCK Studio
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://lynckstudio.com/sitemap.xml
+
+# Crawl-delay (optional - adjust as needed)
+Crawl-delay: 1
+
+# Disallow backup files if any
+Disallow: /*.backup$

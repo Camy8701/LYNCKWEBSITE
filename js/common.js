@@ -72,6 +72,18 @@ function selectCountry(code, country) {
   if (dropdown) dropdown.classList.remove('active');
 }
 
+// All Dropdown Functions
+function toggleAllDropdown() {
+  const menu = document.getElementById('allDropdownMenu');
+  const icon = document.getElementById('allDropdownIcon');
+  if (menu) {
+    menu.classList.toggle('hidden');
+    if (icon) {
+      icon.style.transform = menu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+    }
+  }
+}
+
 // Language Functions
 function toggleLanguageMenu() {
   const menu = document.getElementById('languageMenu');
@@ -96,6 +108,20 @@ function initializeDropdownListeners() {
       const languageMenu = document.getElementById('languageMenu');
       if (languageMenu) {
         languageMenu.classList.add('hidden');
+      }
+    }
+  });
+
+  // Close All dropdown when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!event.target.closest('#allDropdownBtn') && !event.target.closest('#allDropdownMenu')) {
+      const allDropdownMenu = document.getElementById('allDropdownMenu');
+      const allDropdownIcon = document.getElementById('allDropdownIcon');
+      if (allDropdownMenu && !allDropdownMenu.classList.contains('hidden')) {
+        allDropdownMenu.classList.add('hidden');
+        if (allDropdownIcon) {
+          allDropdownIcon.style.transform = 'rotate(0deg)';
+        }
       }
     }
   });
@@ -146,14 +172,6 @@ function clearError(elementId) {
   }
 }
 
-// Mobile menu toggle
-function toggleMobileMenu() {
-  const mobileMenu = document.getElementById('mobileMenu');
-  if (mobileMenu) {
-    mobileMenu.classList.toggle('hidden');
-  }
-}
-
 // Smooth scroll to section
 function scrollToSection(sectionId) {
   const element = document.getElementById(sectionId);
@@ -174,6 +192,12 @@ function initializeCommonFunctionality() {
   const languageBtn = document.getElementById('languageBtn');
   if (languageBtn) {
     languageBtn.addEventListener('click', toggleLanguageMenu);
+  }
+
+  // Initialize All dropdown button if it exists
+  const allDropdownBtn = document.getElementById('allDropdownBtn');
+  if (allDropdownBtn) {
+    allDropdownBtn.addEventListener('click', toggleAllDropdown);
   }
 
   // Initialize mobile menu button if it exists
@@ -211,6 +235,6 @@ if (typeof window !== 'undefined') {
   window.selectBudget = selectBudget;
   window.selectCountry = selectCountry;
   window.toggleLanguageMenu = toggleLanguageMenu;
-  window.toggleMobileMenu = toggleMobileMenu;
+  window.toggleAllDropdown = toggleAllDropdown;
   window.scrollToSection = scrollToSection;
 }

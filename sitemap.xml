@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage - English -->
+  <url>
+    <loc>https://lynckstudio.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lynckstudio.com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/" />
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Homepage - German -->
+  <url>
+    <loc>https://lynckstudio.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lynckstudio.com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/" />
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Custom Website - English -->
+  <url>
+    <loc>https://lynckstudio.com/custom-website.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lynckstudio.com/custom-website.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/custom-website.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/custom-website.html" />
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Custom Website - German -->
+  <url>
+    <loc>https://lynckstudio.com/de/custom-website.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lynckstudio.com/custom-website.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/custom-website.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/custom-website.html" />
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Google Ads - English -->
+  <url>
+    <loc>https://lynckstudio.com/google-ads.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lynckstudio.com/google-ads.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/google-ads.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/google-ads.html" />
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Google Ads - German -->
+  <url>
+    <loc>https://lynckstudio.com/de/google-ads.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lynckstudio.com/google-ads.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/google-ads.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/google-ads.html" />
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Learning Platform - English -->
+  <url>
+    <loc>https://lynckstudio.com/learning-platform.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lynckstudio.com/learning-platform.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/learning-platform.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/learning-platform.html" />
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Learning Platform - German -->
+  <url>
+    <loc>https://lynckstudio.com/de/learning-platform.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lynckstudio.com/learning-platform.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/learning-platform.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/learning-platform.html" />
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Digital Products - English -->
+  <url>
+    <loc>https://lynckstudio.com/digital-products.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lynckstudio.com/digital-products.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/digital-products.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/digital-products.html" />
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Digital Products - German -->
+  <url>
+    <loc>https://lynckstudio.com/de/digital-products.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lynckstudio.com/digital-products.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/digital-products.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/digital-products.html" />
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Why Choose Us - English -->
+  <url>
+    <loc>https://lynckstudio.com/why-choose-us.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lynckstudio.com/why-choose-us.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/why-choose-us.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/why-choose-us.html" />
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Why Choose Us - German -->
+  <url>
+    <loc>https://lynckstudio.com/de/why-choose-us.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lynckstudio.com/why-choose-us.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/why-choose-us.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/why-choose-us.html" />
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Portfolio - English -->
+  <url>
+    <loc>https://lynckstudio.com/portfolio.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lynckstudio.com/portfolio.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/portfolio.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/portfolio.html" />
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Portfolio - German -->
+  <url>
+    <loc>https://lynckstudio.com/de/portfolio.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lynckstudio.com/portfolio.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/portfolio.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/portfolio.html" />
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

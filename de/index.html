@@ -1,43 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full" style="--cursor-x: 0px; --cursor-y: 0px;">
+<html lang="de" class="h-full" style="--cursor-x: 0px; --cursor-y: 0px;">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Digital Marketing Agency & Academy | LYNCK Studio</title>
-<meta name="description" content="Award-winning digital marketing agency offering custom websites, Google Ads, SEO & online courses. Get proven results for your business. Free consultation.">
-<meta name="keywords" content="digital marketing agency, marketing academy, custom websites, Google Ads management, SEO services, digital marketing courses, LYNCK Studio, creative solutions">
+<title>Digitale Marketingagentur & Akademie | LYNCK Studio</title>
+<meta name="description" content="Preisgekrönte digitale Marketingagentur: Individuelle Websites, Google Ads, SEO & Online-Kurse. Nachweisbare Erfolge für Ihr Unternehmen. Kostenlose Beratung.">
+<meta name="keywords" content="digitale marketingagentur, marketing akademie, website erstellen lassen, google ads agentur, seo services, online marketing kurse, LYNCK Studio, kreative lösungen">
 <meta name="robots" content="index, follow">
 
-<!-- Open Graph Tags -->
-<meta property="og:title" content="Digital Marketing Agency & Academy | LYNCK Studio">
-<meta property="og:description" content="Award-winning digital marketing agency offering custom websites, Google Ads, SEO & online courses. Get proven results for your business.">
-<meta property="og:image" content="https://lynckstudio.com/og-image.jpg">
-<meta property="og:url" content="https://lynckstudio.com/">
-<meta property="og:type" content="website">
-
-<!-- Twitter Card Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Digital Marketing Agency & Academy | LYNCK Studio">
-<meta name="twitter:description" content="Award-winning digital marketing agency offering custom websites, Google Ads, SEO & online courses. Get proven results for your business.">
-<meta name="twitter:image" content="https://lynckstudio.com/twitter-image.jpg">
-
-<!-- Canonical URL -->
-<link rel="canonical" href="https://lynckstudio.com/">
-
 <!-- Hreflang Tags -->
-<link rel="alternate" hreflang="en" href="https://lynckstudio.com/" />
+<link rel="alternate" hreflang="de" href="https://lynckstudio.com/" />
 <link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/" />
 <link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/" />
 <link rel="alternate" hreflang="x-default" href="https://lynckstudio.com/" />
 
+<!-- Open Graph Tags -->
+<meta property="og:title" content="Digitale Marketingagentur & Akademie | LYNCK Studio">
+<meta property="og:description" content="Preisgekrönte digitale Marketingagentur: Individuelle Websites, Google Ads, SEO & Online-Kurse. Nachweisbare Erfolge für Ihr Unternehmen.">
+<meta property="og:image" content="https://lynckstudio.com/og-image.jpg">
+<meta property="og:url" content="https://lynckstudio.com/de/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+
+<!-- Twitter Card Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Digitale Marketingagentur & Akademie | LYNCK Studio">
+<meta name="twitter:description" content="Preisgekrönte digitale Marketingagentur: Individuelle Websites, Google Ads, SEO & Online-Kurse. Nachweisbare Erfolge für Ihr Unternehmen.">
+<meta name="twitter:image" content="https://lynckstudio.com/twitter-image.jpg">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://lynckstudio.com/de/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../css/components.css">
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="js/translations.js"></script>
-<script src="js/common.js"></script>
+<script src="../js/translations.js"></script>
+<script src="../js/common.js"></script>
 <script>
 tailwind.config = {
 theme: {
@@ -45,12 +45,16 @@ extend: {
 animation: {
 'fade-in': 'fadeIn 0.8s ease-out forwards',
 'slide-up': 'slideUp 0.8s ease-out forwards',
+'blur-in': 'blurIn 0.8s ease-out forwards',
 'scale-in': 'scaleIn 0.8s ease-out forwards',
 'float': 'float 6s ease-in-out infinite',
+'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
 'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
 'slide-out-left': 'slideOutLeft 0.8s ease-out forwards',
 'marquee': 'marquee 25s linear infinite',
-'marquee-reverse': 'marquee-reverse 25s linear infinite'
+'marquee-reverse': 'marquee-reverse 25s linear infinite',
+'typing': 'typing 4s steps(40, end) infinite',
+'blink': 'blink 1s infinite'
 },
 keyframes: {
 fadeIn: {
@@ -61,6 +65,10 @@ slideUp: {
 '0%': { opacity: '0', transform: 'translateY(24px)' },
 '100%': { opacity: '1', transform: 'translateY(0)' }
 },
+blurIn: {
+'0%': { opacity: '0', filter: 'blur(8px)' },
+'100%': { opacity: '1', filter: 'blur(0px)' }
+},
 scaleIn: {
 '0%': { opacity: '0', transform: 'scale(0.95)' },
 '100%': { opacity: '1', transform: 'scale(1)' }
@@ -68,6 +76,10 @@ scaleIn: {
 float: {
 '0%, 100%': { transform: 'translateY(0px)' },
 '50%': { transform: 'translateY(-8px)' }
+},
+pulseGlow: {
+'0%, 100%': { boxShadow: '0 0 20px rgba(34, 197, 94, 0.3)' },
+'50%': { boxShadow: '0 0 40px rgba(34, 197, 94, 0.6), 0 0 80px rgba(34, 197, 94, 0.2)' }
 },
 slideInLeft: {
 '0%': { opacity: '0', transform: 'translateX(-100%)' },
@@ -88,6 +100,14 @@ marquee: {
 'marquee-reverse': {
 '0%': { transform: 'translateX(-100%)' },
 '100%': { transform: 'translateX(0%)' }
+},
+typing: {
+'0%': { width: '0' },
+'100%': { width: '100%' }
+},
+blink: {
+'0%, 50%': { opacity: '1' },
+'51%, 100%': { opacity: '0' }
 }
 }
 }
@@ -603,34 +623,10 @@ top: var(--cursor-y, 0px);
 
     <!-- Navigation -->
     <header class="fixed top-0 left-0 right-0 z-40 opacity-0 animate-fade-in my-4 backdrop-blur-3xl" style="animation-delay: 0.2s">
-      <div class="mx-4 lg:mx-8">
-        <div class="relative ring-1 ring-white/10 bg-white/10 border-white/20 border rounded-2xl shadow-lg backdrop-blur-lg">
-          <div class="flex h-20 items-center justify-between px-6 max-w-7xl mx-auto">
+
+      <div class="relative max-w-7xl lg:px-8 ring-1 ring-white/10 bg-white/10 border-white/20 border rounded-2xl mr-auto ml-auto pr-6 pl-6 shadow-lg backdrop-blur-lg">
+  <div class="flex h-20 items-center justify-between">
     <div class="flex items-center gap-4">
-      <!-- Social Media Icons -->
-      <div class="flex items-center gap-3" style="margin-left: -30%;">
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/company/lynckstudio" target="_blank" rel="noopener noreferrer" class="group" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 hover:text-white transition-all duration-300 group-hover:scale-110">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </a>
-
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/lynckstudio" target="_blank" rel="noopener noreferrer" class="group" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 hover:text-white transition-all duration-300 group-hover:scale-110">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-        </a>
-      </div>
-
-      <!-- Separator -->
-      <div class="h-6 w-px bg-white/20"></div>
-
       <!-- Home Icon -->
       <a href="#heroSection" class="group">
         <div class="flex items-center">
@@ -676,7 +672,7 @@ top: var(--cursor-y, 0px);
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M6 9l6 6 6-6"></path></svg>
       </button>
       <div id="languageMenu" class="hidden absolute top-full right-0 mt-2 w-32 bg-black/90 border border-white/20 rounded-lg shadow-xl backdrop-blur-xl z-50">
-        <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2" data-lang="en">
+        <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2" data-lang="de">
           <span class="text-base">🇺🇸</span> English
         </button>
         <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2" data-lang="de">
@@ -711,9 +707,9 @@ top: var(--cursor-y, 0px);
           Let's connect
         </a>
       </div>
-          </div>
-        </div>
-      </div>
+    </div>
+  </div>
+</div>
     </header>
 
     <!-- Hero Section with Cursor Invert Effect -->
@@ -1017,323 +1013,73 @@ top: var(--cursor-y, 0px);
     <!-- Featured Work -->
     <section class="pt-24 pb-24">
   <div class="max-w-7xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
-    <div class="mb-10">
-      <h2 class="text-8xl lg:text-9xl text-white opacity-0 animate-slide-up font-geist tracking-tight font-bold" style="animation-delay: 3s;">LYNCK FEATURED</h2>
-    </div>
-
-    <!-- Featured Section 1: Full-width with two columns -->
-    <div class="mb-12 opacity-0 animate-scale-in" style="animation-delay: 3.4s">
-      <div class="grid lg:grid-cols-2 gap-8 items-center">
-
-        <!-- Left: Image/Video Card with Checkmarks -->
-        <article class="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] flex flex-col">
-          <div class="relative aspect-[16/10] overflow-hidden flex-shrink-0">
-            <!-- Use either img or video tag - comment out the one you don't need -->
-
-            <!-- For Image -->
-            <img class="h-full w-full object-cover transition duration-700 group-hover:scale-105" src="assets/images/google-ads-experts.png" alt="Google Ads Specialists" loading="lazy">
-
-            <!-- For Video (uncomment to use) -->
-            <!-- <video class="h-full w-full object-cover" autoplay loop muted playsinline>
-              <source src="your-video-file.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video> -->
-
-            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-          </div>
-
-          <!-- Checkmark List inside card -->
-          <div class="p-6 pb-20 space-y-3 flex-grow bg-black/20 backdrop-blur-sm">
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">Ex-Google specialists with proven track records</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">€millions in ad spend managed, millions in revenue generated</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">Flexible, transparent, and results-driven approach</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">No surprises, just performance that matters</span>
-            </div>
-          </div>
-
-          <!-- CTA at bottom -->
-          <div class="absolute left-2 right-2 bottom-2">
-            <div class="flex bg-white/10 border-white/10 border rounded-xl mx-2 my-2 pt-4 pr-4 pb-4 pl-4 backdrop-blur-xl items-center justify-center">
-              <span class="text-sm font-medium text-white font-geist text-center">Ready to work with specialists who've been there, done that? Let's talk.</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Right: Text Content (No Card) -->
-        <div class="space-y-6 flex flex-col justify-center">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white">
-            For Businesses & Agencies Who Need Results Now
-          </h2>
-          <p class="text-xl font-medium text-white">
-            Your campaigns. Our expertise. Real results.
-          </p>
-          <p class="text-lg text-gray-300 leading-relaxed">
-            If you're a business or agency looking for Google Ads specialists who can back up their promises with proof, you're in the right place. Our team brings years of hands-on experience from Google itself, managing €millions in ad spend and generating measurable revenue for clients worldwide. We don't just talk about performance. We deliver it.
-          </p>
-          <p class="text-lg text-gray-300 leading-relaxed">
-            What sets us apart? We're flexible, transparent, and obsessively professional. No jargon. No surprises. Just high-quality campaign management that moves the needle for your business. Whether you're scaling fast or optimizing for efficiency, we've got the receipts to prove we know what we're doing.
-          </p>
-        </div>
-
+    <div class="flex items-center justify-between mb-10">
+      <div>
+        <h2 class="text-3xl lg:text-4xl text-white opacity-0 animate-slide-up font-geist tracking-tight font-light" style="animation-delay: 3s;">Selected Work</h2>
       </div>
+      <a href="#" class="hidden lg:inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur text-white px-4 py-2 text-xs font-medium hover:bg-white/15 transition-all duration-300 opacity-0 animate-fade-in font-geist" style="animation-delay: 3.2s;">
+        See all
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right w-3.5 h-3.5"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+      </a>
     </div>
 
-    <!-- Featured Section 2: Text Left, Image Right -->
-    <div class="mb-12 opacity-0 animate-scale-in" style="animation-delay: 3.6s">
-      <div class="grid lg:grid-cols-2 gap-8 items-center">
-
-        <!-- Left: Text Content (No Card) -->
-        <div class="space-y-6 flex flex-col justify-center">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white">
-            For Businesses Ready to Build In-House Expertise
-          </h2>
-          <p class="text-xl font-medium text-white">
-            Stop paying agencies. Start building expertise in-house.
-          </p>
-          <p class="text-lg text-gray-300 leading-relaxed">
-            Tired of pouring money into marketers and agencies who don't truly understand your business? Here's a smarter approach: train someone on your own team to become a Google Ads expert.
-          </p>
-          <p class="text-lg text-gray-300 leading-relaxed">
-            Think about it. No more waiting on external agencies. No more explaining your product to someone who just doesn't get it. Instead, imagine having an in-house expert who knows your business inside and out, trained by former Google specialists in less than 12 weeks.
-          </p>
-          <p class="text-lg text-gray-300 leading-relaxed">
-            We offer tailored, one-on-one training designed specifically for your business and your goals. Whether it's you or a team member who can spare a few hours per week, we'll take them from beginner to expert level. It's a small investment now that saves you a fortune in the long run—in money, time, and headaches.
-          </p>
-        </div>
-
-        <!-- Right: Image/Video Card with Checkmarks -->
-        <article class="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] flex flex-col">
-          <div class="relative aspect-[16/10] overflow-hidden flex-shrink-0">
-            <!-- Use either img or video tag - comment out the one you don't need -->
-
-            <!-- For Image -->
-            <img class="h-full w-full object-cover transition duration-700 group-hover:scale-105" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/78877756-9e45-410e-b630-78c3dfb8e94c_1600w.jpg" alt="In-House Training" loading="lazy">
-
-            <!-- For Video (uncomment to use) -->
-            <!-- <video class="h-full w-full object-cover" autoplay loop muted playsinline>
-              <source src="your-video-file.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video> -->
-
-            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-          </div>
-
-          <!-- Checkmark List inside card -->
-          <div class="p-6 pb-20 space-y-3 flex-grow bg-black/20 backdrop-blur-sm">
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">Train your team in less than 12 weeks</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">Tailored one-on-one sessions for your specific business</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">Stop paying agencies, build permanent in-house expertise</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">Small investment now, massive savings forever</span>
-            </div>
-          </div>
-
-          <!-- CTA at bottom -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Project 1 -->
+      <article class="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] opacity-0 animate-scale-in" style="animation-delay: 3.4s">
+        <div class="relative aspect-[16/10] overflow-hidden">
+          <img class="h-full w-full object-cover transition duration-700 group-hover:scale-105" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/a6ea5042-fd78-4888-b5e1-47f268a0569b_800w.jpg" alt="Aurora Financial Campaign" loading="lazy">
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
           <div class="absolute left-2 right-2 bottom-2">
-            <div class="flex bg-white/10 border-white/10 border rounded-xl mx-2 my-2 pt-4 pr-4 pb-4 pl-4 backdrop-blur-xl items-center justify-center">
-              <span class="text-sm font-medium text-white font-geist text-center">Ready to bring Google Ads expertise in-house? Let's build your team's superpowers.</span>
+            <div class="flex bg-white/10 border-white/10 border rounded-xl mx-2 my-2 pt-4 pr-4 pb-4 pl-4 backdrop-blur-xl items-center justify-between">
+              <span class="text-sm font-medium text-white font-geist">Aurora Financial</span>
+              <span class="text-[10px] tracking-wider text-gray-300 uppercase font-geist">Brand Campaign</span>
             </div>
           </div>
-        </article>
-
-      </div>
-    </div>
-
-    <!-- Featured Section 3: Image Left, Text Right -->
-    <div class="mb-12 opacity-0 animate-scale-in" style="animation-delay: 3.8s">
-      <div class="grid lg:grid-cols-2 gap-8 items-center">
-
-        <!-- Left: Image/Video Card with Checkmarks -->
-        <article class="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] flex flex-col">
-          <div class="relative aspect-[16/10] overflow-hidden flex-shrink-0">
-            <!-- Use either img or video tag - comment out the one you don't need -->
-
-            <!-- For Image -->
-            <img class="h-full w-full object-cover transition duration-700 group-hover:scale-105" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/7ee361ca-4978-4130-bab8-b605105c04b4_1600w.jpg" alt="Learning Platform" loading="lazy">
-
-            <!-- For Video (uncomment to use) -->
-            <!-- <video class="h-full w-full object-cover" autoplay loop muted playsinline>
-              <source src="your-video-file.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video> -->
-
-            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-          </div>
-
-          <!-- Checkmark List inside card -->
-          <div class="p-6 pb-20 space-y-3 flex-grow bg-black/20 backdrop-blur-sm">
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">Three training tiers to match your experience level</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">Learn at your own pace or get personalized coaching</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">Beginner to advanced in one comprehensive platform</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">Google-tested strategies for real-world success</span>
-            </div>
-          </div>
-
-          <!-- CTA at bottom -->
-          <div class="absolute left-2 right-2 bottom-2">
-            <div class="flex bg-white/10 border-white/10 border rounded-xl mx-2 my-2 pt-4 pr-4 pb-4 pl-4 backdrop-blur-xl items-center justify-center">
-              <span class="text-sm font-medium text-white font-geist text-center">Ready to become a Google Ads expert? Your future starts here.</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Right: Text Content (No Card) -->
-        <div class="space-y-6 flex flex-col justify-center">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white">
-            For Freelancers, Graduates & Career Changers
-          </h2>
-          <p class="text-xl font-medium text-white">
-            From beginner to expert at your own pace.
-          </p>
-          <p class="text-lg text-gray-300 leading-relaxed">
-            Whether you're a freelancer exploring new skills, a recent graduate figuring out your path, or a professional ready for a career change, our learning platform has you covered. We've designed three training tiers to match your goals and experience level. Each one is packed with the insights and strategies we used at Google.
-          </p>
-          <p class="text-lg text-gray-300 leading-relaxed">
-            Learn at your own pace with our comprehensive courses, or accelerate your growth with personalized one-on-one sessions. We'll take you from the basics to advanced campaign strategies, giving you the confidence and skills to succeed in the fast-growing world of digital marketing.
-          </p>
-          <p class="text-lg text-gray-300 leading-relaxed">
-            No fluff. No outdated tactics. Just proven, Google-tested expertise that prepares you for real-world success.
-          </p>
         </div>
+      </article>
 
-      </div>
-    </div>
-
-    <!-- Featured Section 4: Text Left, Image Right -->
-    <div class="mb-12 opacity-0 animate-scale-in" style="animation-delay: 4s">
-      <div class="grid lg:grid-cols-2 gap-8 items-center">
-
-        <!-- Left: Text Content (No Card) -->
-        <div class="space-y-6 flex flex-col justify-center">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white">
-            For Businesses Who Want Website Independence
-          </h2>
-          <p class="text-xl font-medium text-white">
-            Beautiful design. Total control. Zero dependency.
-          </p>
-          <p class="text-lg text-gray-300 leading-relaxed">
-            Your website should work for you, not the other way around. That's why at Lynck, we build stunning, high-quality websites that give you complete freedom to manage your content. No developer required.
-          </p>
-          <p class="text-lg text-gray-300 leading-relaxed">
-            Need to update a promotion? Change an image for the holidays? Swap out text or video? With our integrated system, you can make changes yourself in minutes. No waiting. No extra costs. No chasing down a developer who may or may not be available.
-          </p>
-          <p class="text-lg text-gray-300 leading-relaxed">
-            We design websites that look incredible and perform flawlessly, but more importantly, we hand you the keys. Your website is 100% under your control, forever. That's not just convenience. That's freedom.
-          </p>
-        </div>
-
-        <!-- Right: Image/Video Card with Checkmarks -->
-        <article class="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] flex flex-col">
-          <div class="relative aspect-[16/10] overflow-hidden flex-shrink-0">
-            <!-- Use either img or video tag - comment out the one you don't need -->
-
-            <!-- For Image -->
-            <img class="h-full w-full object-cover transition duration-700 group-hover:scale-105" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/5162c07d-8a65-4a42-9a8c-c48dbea36297_1600w.jpg" alt="Website Independence" loading="lazy">
-
-            <!-- For Video (uncomment to use) -->
-            <!-- <video class="h-full w-full object-cover" autoplay loop muted playsinline>
-              <source src="your-video-file.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video> -->
-
-            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-          </div>
-
-          <!-- Checkmark List inside card -->
-          <div class="p-6 pb-20 space-y-3 flex-grow bg-black/20 backdrop-blur-sm">
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">Edit your own content without calling a developer</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">Update text, images, videos in minutes</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">Beautiful design that performs flawlessly</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300 leading-relaxed">100% control of your website, forever</span>
-            </div>
-          </div>
-
-          <!-- CTA at bottom -->
+      <!-- Project 2 -->
+      <article class="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] opacity-0 animate-scale-in" style="animation-delay: 3.6s">
+        <div class="relative aspect-[16/10] overflow-hidden">
+          <img class="h-full w-full object-cover transition duration-700 group-hover:scale-105" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/78877756-9e45-410e-b630-78c3dfb8e94c_1600w.jpg" alt="Nexus Growth Campaign" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div class="absolute left-2 right-2 bottom-2">
-            <div class="flex bg-white/10 border-white/10 border rounded-xl mx-2 my-2 pt-4 pr-4 pb-4 pl-4 backdrop-blur-xl items-center justify-center">
-              <span class="text-sm font-medium text-white font-geist text-center">Ready for a website that saves you time, money, and stress? Let's build it.</span>
+            <div class="flex bg-white/10 border-white/10 border rounded-xl mx-2 my-2 pt-4 pr-4 pb-4 pl-4 backdrop-blur-xl items-center justify-between">
+              <span class="text-sm font-medium text-white font-geist">Nexus Growth</span>
+              <span class="text-[10px] tracking-wider text-gray-300 uppercase font-geist">Social Media</span>
             </div>
           </div>
-        </article>
+        </div>
+      </article>
 
-      </div>
+      <!-- Project 3 -->
+      <article class="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] opacity-0 animate-scale-in" style="animation-delay: 3.8s">
+        <div class="relative aspect-[16/10] overflow-hidden">
+          <img class="h-full w-full object-cover transition duration-700 group-hover:scale-105" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/7ee361ca-4978-4130-bab8-b605105c04b4_1600w.jpg" alt="Zenith E-commerce Campaign" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute left-2 right-2 bottom-2">
+            <div class="flex bg-white/10 border-white/10 border rounded-xl mx-2 my-2 pt-4 pr-4 pb-4 pl-4 backdrop-blur-xl items-center justify-between">
+              <span class="text-sm font-medium text-white font-geist">Zenith Store</span>
+              <span class="text-[10px] tracking-wider text-gray-300 uppercase font-geist">E‑commerce</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] opacity-0 animate-scale-in" style="animation-delay: 4s">
+        <div class="relative aspect-[16/10] overflow-hidden">
+          <img class="h-full w-full object-cover transition duration-700 group-hover:scale-105" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/5162c07d-8a65-4a42-9a8c-c48dbea36297_1600w.jpg" alt="Orbit Workspace Campaign" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute left-2 right-2 bottom-2">
+            <div class="flex bg-white/10 border-white/10 border rounded-xl mx-2 my-2 pt-4 pr-4 pb-4 pl-4 backdrop-blur-xl items-center justify-between">
+              <span class="text-sm font-medium text-white font-geist">Orbit Workspace</span>
+              <span class="text-[10px] tracking-wider text-gray-300 uppercase font-geist">Growth Marketing</span>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
-
   </div>
 </section>
 
@@ -1370,7 +1116,7 @@ top: var(--cursor-y, 0px);
              "></div>
 
         <!-- Left window -->
-        <div class="absolute left-3 bottom-4 h-24 w-36 z-10 shadow-[0_2px_12px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out group-hover:-translate-y-0.5 border-white/15 border rounded-md backdrop-blur-md">
+        <div class="absolute left-3 bottom-4 h-24 w-36 backdrop-blur-[1px] z-10 shadow-[0_2px_12px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out group-hover:-translate-y-0.5 border-white/15 border rounded-md backdrop-blur-md">
           <!-- top bar -->
           <div class="h-5 border-b border-white/10 bg-white/[0.03]">
             <div class="h-full px-2 flex items-center gap-1.5">
@@ -1386,7 +1132,7 @@ top: var(--cursor-y, 0px);
         </div>
 
         <!-- Right window -->
-        <div class="absolute right-4 top-5 h-28 w-44 z-10 shadow-[0_2px_12px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out group-hover:-translate-y-0.5 border-white/15 border rounded-md backdrop-blur-md">
+        <div class="absolute right-4 top-5 h-28 w-44 backdrop-blur-[1px] z-10 shadow-[0_2px_12px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out group-hover:-translate-y-0.5 border-white/15 border rounded-md backdrop-blur-md">
           <!-- top bar -->
           <div class="h-5 border-b border-white/10 bg-white/[0.03]">
             <div class="h-full px-2 flex items-center gap-1.5">
@@ -1698,6 +1444,7 @@ top: var(--cursor-y, 0px);
     </footer>
 
     <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script>
 // Testimonials Data
 const testimonials = [
@@ -1868,6 +1615,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
       <!-- Main JavaScript -->
       <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+
       // Mobile menu toggle
       const menuBtn = document.getElementById('menuBtn');
       const mobileNav = document.getElementById('mobileNav');
@@ -2730,4 +2480,110 @@ document.addEventListener('DOMContentLoaded', function() {
     </script>
 
     <!-- Translation System now loaded from js/translations.js -->
+
+    <!-- Schema.org Organization Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "LYNCK Studio",
+      "alternateName": "LYNCK Digital Marketing Academy",
+      "url": "https://lynckstudio.com",
+      "logo": "https://lynckstudio.com/logo.png",
+      "description": "Award-winning digital marketing and creative solutions for tomorrow's most innovative companies.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Your City",
+        "addressCountry": "Your Country"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "availableLanguage": ["English", "Greek"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/lynckstudio",
+        "https://www.linkedin.com/company/lynckstudio",
+        "https://twitter.com/lynckstudio",
+        "https://www.instagram.com/lynckstudio"
+      ],
+      "areaServed": "Worldwide",
+      "founder": {
+        "@type": "Person",
+        "name": "Your Name"
+      }
+    }
+    </script>
+
+    <!-- Schema.org LocalBusiness Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "LYNCK Studio",
+      "image": "https://lynckstudio.com/logo.png",
+      "description": "Award-winning digital marketing and creative solutions for tomorrow's most innovative companies.",
+      "url": "https://lynckstudio.com",
+      "telephone": "+1-XXX-XXX-XXXX",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Your Street Address",
+        "addressLocality": "Your City",
+        "addressRegion": "Your Region",
+        "postalCode": "Your Postal Code",
+        "addressCountry": "Your Country"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 0.0,
+        "longitude": 0.0
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/lynckstudio",
+        "https://www.linkedin.com/company/lynckstudio",
+        "https://twitter.com/lynckstudio",
+        "https://www.instagram.com/lynckstudio"
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://lynckstudio.com/de/"
+      }]
+    }
+    </script>
+
+    <!-- Set German as default language for this page -->
+    <script>
+      // Force German language for German pages
+      if (typeof setLanguage === 'function') {
+        setLanguage('de');
+      } else {
+        localStorage.setItem('language', 'de');
+        if (typeof currentLanguage !== 'undefined') {
+          currentLanguage = 'de';
+        }
+      }
+    </script>
 </body></html>
