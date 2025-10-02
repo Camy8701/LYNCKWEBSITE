@@ -1,57 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="de" class="h-full">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Custom Website Design & Development | LYNCK Studio</title>
-<meta name="description" content="Professional custom website design you can edit yourself—no coding needed. Responsive, scalable, SEO-optimized. Get a free quote today!">
-<meta name="keywords" content="custom website design, responsive web development, no-code website builder, professional website design, custom web development services, LYNCK Studio">
+<title>Online Marketing Kurse | LYNCK Akademie</title>
+<meta name="description" content="Meistern Sie digitales Marketing mit Expertenkursen. Zertifiziert, in eigenem Tempo lernen. SEO, PPC, Social Media & mehr. Kostenlose Testversion!">
+<meta name="keywords" content="online marketing kurse, digital marketing kurs, marketing weiterbildung, online marketing schulung, marketing zertifikat, LYNCK Akademie">
 <meta name="robots" content="index, follow">
 
+<!-- Hreflang Tags -->
+<link rel="alternate" hreflang="en" href="https://lynckstudio.com/learning-platform.html" />
+<link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/learning-platform.html" />
+<link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/learning-platform.html" />
+<link rel="alternate" hreflang="x-default" href="https://lynckstudio.com/learning-platform.html" />
+
 <!-- Open Graph Tags -->
-<meta property="og:title" content="Custom Website Design & Development | LYNCK Studio">
-<meta property="og:description" content="Professional custom website design you can edit yourself—no coding needed. Responsive, scalable, SEO-optimized. Get a free quote today!">
+<meta property="og:title" content="Online Marketing Kurse | LYNCK Akademie">
+<meta property="og:description" content="Meistern Sie digitales Marketing mit Expertenkursen. Zertifiziert, in eigenem Tempo lernen. SEO, PPC, Social Media & mehr. Kostenlose Testversion!">
 <meta property="og:image" content="https://lynckstudio.com/og-image.jpg">
-<meta property="og:url" content="https://lynckstudio.com/custom-website.html">
+<meta property="og:url" content="https://lynckstudio.com/de/learning-platform.html">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
 
 <!-- Twitter Card Tags -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Custom Website Design & Development | LYNCK Studio">
-<meta name="twitter:description" content="Professional custom website design you can edit yourself—no coding needed. Responsive, scalable, SEO-optimized. Get a free quote today!">
+<meta name="twitter:title" content="Online Marketing Kurse | LYNCK Akademie">
+<meta name="twitter:description" content="Meistern Sie digitales Marketing mit Expertenkursen. Zertifiziert, in eigenem Tempo lernen. SEO, PPC, Social Media & mehr. Kostenlose Testversion!">
 <meta name="twitter:image" content="https://lynckstudio.com/twitter-image.jpg">
 
 <!-- Canonical URL -->
-<link rel="canonical" href="https://lynckstudio.com/custom-website.html">
-
-<!-- Hreflang Tags -->
-<link rel="alternate" hreflang="en" href="https://lynckstudio.com/custom-website.html" />
-<link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/custom-website.html" />
-<link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/custom-website.html" />
-<link rel="alternate" hreflang="x-default" href="https://lynckstudio.com/custom-website.html" />
-
-<!-- Resource Hints for Performance -->
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://fonts.gstatic.com">
-<link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-<link rel="dns-prefetch" href="https://images.unsplash.com">
-<link rel="dns-prefetch" href="https://hoirqrkdgbmvpwutwuwj-all.supabase.co">
-
+<link rel="canonical" href="https://lynckstudio.com/de/learning-platform.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-
-<!-- Preload Critical Resources -->
-<link rel="preload" href="styles.css" as="style">
-<link rel="preload" href="css/components.css" as="style">
-<link rel="preload" href="js/translations.js" as="script">
-<link rel="preload" href="js/common.js" as="script">
-
-<!-- Optimized Fonts - Reduced to 6 weights from 15 -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="css/components.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../css/components.css">
 
 <!-- Critical CSS - Prevents FOUC -->
 <style>
@@ -69,10 +52,9 @@ html, body {
 .font-inter { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif; }
 </style>
 
-<!-- Load Tailwind synchronously to prevent FOUC -->
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="js/translations.js" defer onerror="console.warn('Translation script failed to load. Some language features may be unavailable.')"></script>
-<script src="js/common.js" defer onerror="console.warn('Common functions script failed to load. Contact modal and dropdowns may not work properly.')"></script>
+<script src="../js/translations.js" onerror="console.warn('Translation script failed to load. Some language features may be unavailable.')"></script>
+<script src="../js/common.js" onerror="console.warn('Common functions script failed to load. Contact modal and dropdowns may not work properly.')"></script>
 <style>
 /* Professional Orb-Text Synchronization Styles */
 #orbTextContainer {
@@ -207,9 +189,8 @@ blink: {
 
   <!-- Navigation -->
   <header class="fixed top-0 left-0 right-0 z-40 opacity-0 animate-fade-in my-4 backdrop-blur-3xl" style="animation-delay: 0.2s">
-    <div class="mx-4 lg:mx-8">
-      <div class="relative ring-1 ring-white/10 bg-white/10 border-white/20 border rounded-2xl shadow-lg backdrop-blur-lg">
-        <div class="flex h-20 items-center justify-between px-6 max-w-7xl mx-auto">
+    <div class="relative max-w-7xl lg:px-8 ring-1 ring-white/10 bg-white/10 border-white/20 border rounded-2xl mr-auto ml-auto pr-6 pl-6 shadow-lg backdrop-blur-lg">
+      <div class="flex h-20 items-center justify-between">
         <div class="flex items-center gap-4">
           <!-- Home Icon -->
           <a href="index.html#heroSection" class="group">
@@ -233,9 +214,9 @@ blink: {
             <div id="allDropdownMenu" class="hidden absolute top-full left-0 mt-2 w-56 bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl ring-1 ring-white/10" style="z-index: 9999;">
               <div class="px-2 py-2 space-y-1">
                 <a href="google-ads.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist">Google Ads</a>
-                <a href="custom-website.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-white bg-white/10 transition-colors font-geist">Custom Website</a>
+                <a href="custom-website.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist">Custom Website</a>
                 <a href="digital-products.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist">Digital Products</a>
-                <a href="learning-platform.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist">Learning Platform</a>
+                <a href="learning-platform.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-white bg-white/10 transition-colors font-geist">Learning Platform</a>
               </div>
             </div>
           </div>
@@ -256,7 +237,7 @@ blink: {
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M6 9l6 6 6-6"></path></svg>
           </button>
           <div id="languageMenu" class="hidden absolute top-full right-0 mt-2 w-32 bg-black/90 border border-white/20 rounded-lg shadow-xl backdrop-blur-xl z-50">
-            <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2" data-lang="en">
+            <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2" data-lang="de">
               <span class="text-base">🇺🇸</span> English
             </button>
           </div>
@@ -290,337 +271,189 @@ blink: {
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             Let's connect
           </a>
-          </div>
         </div>
       </div>
+    </div>
   </header>
 
   <!-- Main Content -->
   <main class="pt-32">
-    <!-- Hero Section - Following Reference Layout Exactly -->
+    <!-- Hero Section -->
     <section class="py-20 relative">
       <div class="max-w-7xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
         <div class="relative z-10">
           <!-- Large title for service page with orb synchronization -->
           <div class="relative">
             <h1 id="orbText" class="text-9xl lg:text-[12rem] xl:text-[15rem] font-black text-white tracking-tighter mb-16 leading-none transition-all duration-300 ease-out" style="opacity: 0.1;">
-              CUSTOM WEBSITE
+              LEARNING PLATFORM
             </h1>
             <!-- Orb-synced text overlay -->
             <div id="orbTextContainer" class="absolute inset-0 pointer-events-none z-10" style="display: none;">
               <div id="orbSyncText" class="absolute font-black text-white text-center leading-tight tracking-tighter transform -translate-x-1/2 -translate-y-1/2 transition-all duration-100 ease-out">
-                CUSTOM<br>WEBSITE
+                LEARNING<br>PLATFORM
               </div>
             </div>
           </div>
 
           <!-- Service subtitle -->
-          <div class="mb-12 text-center">
-            <p class="text-2xl text-gray-200 mx-auto" style="font-size: 1.8rem;">
-              At LYNCK, we just don't design websites, we design Freedom!
+          <div class="mb-12">
+            <p class="text-xl text-gray-400 max-w-3xl">
+              Master digital marketing with courses taught by proven professionals who deliver real results
             </p>
           </div>
         </div>
       </div>
     </section>
 
-
-    <!-- Content Sections with Alternating Text/Card Layout -->
-
-    <!-- Section 1: Understanding Needs (Text Left, Card Right) -->
+    <!-- Features Section -->
     <section class="py-20 relative">
       <div class="max-w-7xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
-        <div class="grid lg:grid-cols-2 gap-12 items-center relative z-10">
+        <div class="grid lg:grid-cols-3 gap-8 relative z-10">
 
-          <!-- Left: Text Content -->
-          <div class="space-y-6">
-            <h2 class="text-3xl lg:text-4xl font-bold text-white">
-              UNDERSTANDING YOUR NEEDS
-            </h2>
-            <p class="text-xl font-medium text-white">
-              Every business is unique, and your website should reflect that.
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed">
-              Some clients need the flexibility to update content every week, others prefer a long-lasting, low-maintenance setup. We'll understand exactly how your business works, your goals, and what you need your website to achieve — whether it's collecting leads, showcasing services, or selling products. Then, we build the right solution around you, not the other way around.
-            </p>
+          <!-- Feature 1 -->
+          <div class="group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl pt-6 pr-6 pb-6 pl-6 backdrop-blur-lg">
+            <div class="mb-4">
+              <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-white mb-2 font-geist">Expert-Led Courses</h3>
+              <p class="text-gray-400 font-geist">Learn from professionals with proven track records and real-world experience in digital marketing</p>
+            </div>
           </div>
 
-          <!-- Right: Project Card -->
-          <article class="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02]">
-            <div class="relative aspect-[16/10] overflow-hidden">
-              <img class="h-full w-full object-cover transition duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop" alt="Understanding Needs" loading="lazy">
-              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-              <div class="absolute left-2 right-2 bottom-2">
-                <div class="flex bg-white/10 border-white/10 border rounded-xl mx-2 my-2 pt-4 pr-4 pb-4 pl-4 backdrop-blur-xl items-center justify-between">
-                  <span class="text-sm font-medium text-white font-geist">Custom Solutions</span>
-                  <span class="text-[10px] tracking-wider text-gray-300 uppercase font-geist">Your Needs</span>
-                </div>
+          <!-- Feature 2 -->
+          <div class="group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl pt-6 pr-6 pb-6 pl-6 backdrop-blur-lg">
+            <div class="mb-4">
+              <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polygon points="10,8 16,12 10,16 10,8"/>
+                </svg>
               </div>
+              <h3 class="text-xl font-semibold text-white mb-2 font-geist">Practical Projects</h3>
+              <p class="text-gray-400 font-geist">Hands-on projects and real case studies to apply what you learn immediately</p>
             </div>
-          </article>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl pt-6 pr-6 pb-6 pl-6 backdrop-blur-lg">
+            <div class="mb-4">
+              <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="m19 14 2 2 4-4"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-white mb-2 font-geist">Certification</h3>
+              <p class="text-gray-400 font-geist">Earn recognized certificates to validate your skills and advance your career</p>
+            </div>
+          </div>
 
         </div>
       </div>
     </section>
 
-    <!-- Section 2: Making Work Easier (Card Left, Text Right) -->
+    <!-- Course Topics Section -->
     <section class="py-20 relative">
       <div class="max-w-7xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
-        <div class="grid lg:grid-cols-2 gap-12 items-center relative z-10">
-
-          <!-- Left: Project Card -->
-          <article class="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02]">
-            <div class="relative aspect-[16/10] overflow-hidden">
-              <img class="h-full w-full object-cover transition duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop" alt="Making Work Easier" loading="lazy">
-              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-              <div class="absolute left-2 right-2 bottom-2">
-                <div class="flex bg-white/10 border-white/10 border rounded-xl mx-2 my-2 pt-4 pr-4 pb-4 pl-4 backdrop-blur-xl items-center justify-between">
-                  <span class="text-sm font-medium text-white font-geist">Efficient Process</span>
-                  <span class="text-[10px] tracking-wider text-gray-300 uppercase font-geist">Fast Launch</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Right: Text Content -->
-          <div class="space-y-6">
-            <h2 class="text-3xl lg:text-4xl font-bold text-white">
-              MAKING YOUR WORK EASIER
-            </h2>
-            <p class="text-xl font-medium text-white">
-              Building a website doesn't need to be a headache.
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed">
-              Our process is simple and efficient — so you stay focused on running your business. You'll delegate the heavy lifting to us, while still staying in control of the results. With Lynck, your website project won't drag on for months. Instead, it's clear, structured, and designed to launch fast.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 3: Business Tool (Text Left, Card Right) -->
-    <section class="py-20 relative">
-      <div class="max-w-7xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
-        <div class="grid lg:grid-cols-2 gap-12 items-center relative z-10">
-
-          <!-- Left: Text Content -->
-          <div class="space-y-6">
-            <h2 class="text-3xl lg:text-4xl font-bold text-white">
-              YOUR WEBSITE AS A BUSINESS TOOL
-            </h2>
-            <p class="text-xl font-medium text-white">
-              Your website is more than an online presence — it's your business engine.
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed">
-              We design sites that look stunning, perform flawlessly, and help you gather real customer insights. Whether it's collecting leads, running promotions, or tracking sales, your website becomes a tool that actively grows your business — not just a digital brochure.
-            </p>
-          </div>
-
-          <!-- Right: Project Card -->
-          <article class="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02]">
-            <div class="relative aspect-[16/10] overflow-hidden">
-              <img class="h-full w-full object-cover transition duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop" alt="Business Tool" loading="lazy">
-              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-              <div class="absolute left-2 right-2 bottom-2">
-                <div class="flex bg-white/10 border-white/10 border rounded-xl mx-2 my-2 pt-4 pr-4 pb-4 pl-4 backdrop-blur-xl items-center justify-between">
-                  <span class="text-sm font-medium text-white font-geist">Business Growth</span>
-                  <span class="text-[10px] tracking-wider text-gray-300 uppercase font-geist">Data Insights</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 4: Partnership (Card Left, Text Right) -->
-    <section class="py-20 relative">
-      <div class="max-w-7xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
-        <div class="grid lg:grid-cols-2 gap-12 items-center relative z-10">
-
-          <!-- Left: Project Card -->
-          <article class="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02]">
-            <div class="relative aspect-[16/10] overflow-hidden">
-              <img class="h-full w-full object-cover transition duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=500&fit=crop" alt="Partnership" loading="lazy">
-              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-              <div class="absolute left-2 right-2 bottom-2">
-                <div class="flex bg-white/10 border-white/10 border rounded-xl mx-2 my-2 pt-4 pr-4 pb-4 pl-4 backdrop-blur-xl items-center justify-between">
-                  <span class="text-sm font-medium text-white font-geist">True Partnership</span>
-                  <span class="text-[10px] tracking-wider text-gray-300 uppercase font-geist">Long-term Support</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Right: Text Content -->
-          <div class="space-y-6">
-            <h2 class="text-3xl lg:text-4xl font-bold text-white">
-              MORE THAN A SERVICE, A PARTNER
-            </h2>
-            <p class="text-lg text-gray-300 leading-relaxed">
-              When you work with Lynck, you don't just hire designers. You gain a partner who understands your challenges, your market, and your goals. Think of us as an extension of your team — building solutions that actually work, long after launch.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Process Section -->
-    <section class="py-20 relative">
-      <div class="max-w-6xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
-        <div class="relative z-10">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-8">
-            HOW WE WORK (Our 4-Step Process)
+        <div class="text-center mb-12 relative z-10">
+          <h2 class="text-3xl lg:text-5xl text-white font-geist tracking-tight font-light mb-4">
+            Course Topics
           </h2>
-
-          <div class="grid lg:grid-cols-2 gap-8 mt-12">
-            <!-- Step 1 -->
-            <div class="bg-black/40 border border-white/10 rounded-2xl p-6 backdrop-blur-lg">
-              <div class="flex items-center gap-4 mb-4">
-                <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center">
-                  <span class="text-2xl font-bold text-green-400">1</span>
-                </div>
-                <h3 class="text-xl font-bold text-white">Consultancy</h3>
-              </div>
-              <p class="text-gray-300">
-                We start by understanding what you have, what's worked, what hasn't, and what your website needs to achieve — from lead collection to analytics to sales. This first step is a collaborative strategy session tailored to your business.
-              </p>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="bg-black/40 border border-white/10 rounded-2xl p-6 backdrop-blur-lg">
-              <div class="flex items-center gap-4 mb-4">
-                <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                  <span class="text-2xl font-bold text-blue-400">2</span>
-                </div>
-                <h3 class="text-xl font-bold text-white">Design Proposal</h3>
-              </div>
-              <p class="text-gray-300">
-                We craft a clear, focused design plan based on your needs. No endless back-and-forth, no overwhelming options — just the right solution, fast.
-              </p>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="bg-black/40 border border-white/10 rounded-2xl p-6 backdrop-blur-lg">
-              <div class="flex items-center gap-4 mb-4">
-                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
-                  <span class="text-2xl font-bold text-purple-400">3</span>
-                </div>
-                <h3 class="text-xl font-bold text-white">Creating the Sections</h3>
-              </div>
-              <p class="text-gray-300">
-                We bring your website to life section by section. You give feedback as we build, so every detail matches your vision.
-              </p>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="bg-black/40 border border-white/10 rounded-2xl p-6 backdrop-blur-lg">
-              <div class="flex items-center gap-4 mb-4">
-                <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center">
-                  <span class="text-2xl font-bold text-orange-400">4</span>
-                </div>
-                <h3 class="text-xl font-bold text-white">Testing & Launch</h3>
-              </div>
-              <p class="text-gray-300">
-                Before going live, we test every function to make sure your website is smooth, fast, and ready to work for you. Then, it's launch time.
-              </p>
-            </div>
-          </div>
+          <p class="text-lg text-gray-300 font-geist max-w-2xl mx-auto">
+            Comprehensive curriculum covering all aspects of digital marketing
+          </p>
         </div>
-      </div>
-    </section>
 
-    <!-- What's Included from Image 2 -->
-    <section class="py-20 relative">
-      <div class="max-w-6xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
-        <div class="relative z-10">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-12 text-center">
-            What's Included
-          </h2>
+        <div class="grid lg:grid-cols-2 gap-8 relative z-10">
 
-          <div class="grid lg:grid-cols-2 gap-8">
-            <!-- Left Column -->
-            <div class="space-y-6">
-              <div class="flex items-start gap-4 bg-black/40 border border-white/10 rounded-2xl p-6 backdrop-blur-lg">
-                <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400">
-                    <polyline points="20,6 9,17 4,12"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold text-white mb-2">Custom Design</h3>
-                  <p class="text-gray-300">Unique design tailored to your brand and business needs</p>
-                </div>
+          <!-- Left Column -->
+          <div class="space-y-6">
+            <div class="flex items-start gap-4 group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl pt-4 pr-4 pb-4 pl-4 backdrop-blur-lg">
+              <div class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polygon points="10,8 16,12 10,16 10,8"/>
+                </svg>
               </div>
-
-              <div class="flex items-start gap-4 bg-black/40 border border-white/10 rounded-2xl p-6 backdrop-blur-lg">
-                <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400">
-                    <polyline points="20,6 9,17 4,12"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold text-white mb-2">Content Management</h3>
-                  <p class="text-gray-300">Easy-to-use CMS for updating content, images, and pages</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4 bg-black/40 border border-white/10 rounded-2xl p-6 backdrop-blur-lg">
-                <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400">
-                    <polyline points="20,6 9,17 4,12"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold text-white mb-2">Mobile Responsive</h3>
-                  <p class="text-gray-300">Perfect display on all devices and screen sizes</p>
-                </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-1 font-geist">Google Ads Mastery</h3>
+                <p class="text-gray-400 font-geist">Complete Google Ads training from setup to optimization and scaling</p>
               </div>
             </div>
 
-            <!-- Right Column -->
-            <div class="space-y-6">
-              <div class="flex items-start gap-4 bg-black/40 border border-white/10 rounded-2xl p-6 backdrop-blur-lg">
-                <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400">
-                    <polyline points="20,6 9,17 4,12"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold text-white mb-2">SEO Setup</h3>
-                  <p class="text-gray-300">Search engine optimization and Google Analytics integration</p>
-                </div>
+            <div class="flex items-start gap-4 group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl pt-4 pr-4 pb-4 pl-4 backdrop-blur-lg">
+              <div class="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400">
+                  <path d="M3 3v18h18"/>
+                  <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+                </svg>
               </div>
-
-              <div class="flex items-start gap-4 bg-black/40 border border-white/10 rounded-2xl p-6 backdrop-blur-lg">
-                <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400">
-                    <polyline points="20,6 9,17 4,12"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold text-white mb-2">Training & Support</h3>
-                  <p class="text-gray-300">Complete training on how to manage your website content</p>
-                </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-1 font-geist">Analytics & Data</h3>
+                <p class="text-gray-400 font-geist">Learn to analyze data, create reports, and make data-driven decisions</p>
               </div>
+            </div>
 
-              <div class="flex items-start gap-4 bg-black/40 border border-white/10 rounded-2xl p-6 backdrop-blur-lg">
-                <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400">
-                    <polyline points="20,6 9,17 4,12"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold text-white mb-2">Hosting & Security</h3>
-                  <p class="text-gray-300">Reliable hosting and SSL certificate for security</p>
-                </div>
+            <div class="flex items-start gap-4 group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl pt-4 pr-4 pb-4 pl-4 backdrop-blur-lg">
+              <div class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400">
+                  <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+                  <polyline points="11,1 13,6 16,6 13,11 11,6 8,6"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-1 font-geist">Website Development</h3>
+                <p class="text-gray-400 font-geist">Build professional websites and landing pages that convert</p>
               </div>
             </div>
           </div>
+
+          <!-- Right Column -->
+          <div class="space-y-6">
+            <div class="flex items-start gap-4 group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl pt-4 pr-4 pb-4 pl-4 backdrop-blur-lg">
+              <div class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-400">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                  <path d="m13.73 21a2 2 0 0 1-3.46 0"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-1 font-geist">Social Media Marketing</h3>
+                <p class="text-gray-400 font-geist">Master Facebook, Instagram, and LinkedIn advertising strategies</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl pt-4 pr-4 pb-4 pl-4 backdrop-blur-lg">
+              <div class="w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-orange-400">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-1 font-geist">Content Strategy</h3>
+                <p class="text-gray-400 font-geist">Create compelling content that engages audiences and drives conversions</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl pt-4 pr-4 pb-4 pl-4 backdrop-blur-lg">
+              <div class="w-8 h-8 bg-pink-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-400">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-1 font-geist">Business Strategy</h3>
+                <p class="text-gray-400 font-geist">Develop comprehensive digital marketing strategies for business growth</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -630,21 +463,24 @@ blink: {
       <div class="max-w-4xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
         <div class="text-center relative z-10">
           <h2 class="text-4xl lg:text-6xl text-white font-geist tracking-tight font-light mb-6">
-            Ready for Your <span class="bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">Custom Website?</span>
+            Start Your <span class="bg-gradient-to-r from-emerald-400 via-cyan-500 to-blue-500 bg-clip-text text-transparent">Learning Journey</span>
           </h2>
           <p class="text-xl text-gray-300 font-geist mb-12 max-w-2xl mx-auto">
-            Get a professional website that you can easily manage and update yourself
+            Join thousands of students who have transformed their careers with our expert-led courses
           </p>
 
           <!-- CTA Button -->
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button onclick="openContactModal()" class="shiny-cta font-geist cursor-pointer border-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-              <span>Order Custom Website</span>
+            <button onclick="openContactModal()" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl shadow-2xl hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-green-500/25 cursor-pointer border-0">
+              <span class="relative z-10 flex items-center gap-2 font-geist">
+                Access Learning Platform
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform">
+                  <path d="M7 7h10v10"/>
+                  <path d="M7 17 17 7"/>
+                </svg>
+              </span>
             </button>
+            <p class="text-sm text-gray-400 font-geist">Free preview available • Premium courses from $97/month</p>
           </div>
         </div>
       </div>
@@ -1136,7 +972,7 @@ blink: {
           // Using vw units for responsive scaling with viewport
           this.orbSyncText.style.left = '50%';
           this.orbSyncText.style.top = '55%';
-          this.orbSyncText.style.fontSize = '8.58vw';
+          this.orbSyncText.style.fontSize = '8.151vw';
           this.orbSyncText.style.fontWeight = 'bold';
           this.orbSyncText.style.transform = 'translate(-50%, -50%)';
           this.orbSyncText.style.textShadow = 'none';
@@ -1174,7 +1010,7 @@ blink: {
         window.orbTextSync = new OrbTextSync();
       } catch (error) {
         console.warn('OrbTextSync initialization failed:', error);
-        // Graceful fallback - ensure original text remains visible
+        // Graceful fallback - ensure original text remains visible at gray opacity
         const originalText = document.getElementById('orbText');
         if (originalText) {
           originalText.style.opacity = '0.1';
@@ -1196,31 +1032,31 @@ blink: {
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
-        "name": "Can I edit my website myself?",
+        "name": "Are the courses suitable for beginners?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! Our custom websites are built with user-friendly content management systems that allow you to edit text, images, and content without any coding knowledge required."
+          "text": "Yes! Our learning platform offers courses for all skill levels, from complete beginners to advanced marketers. Each course clearly indicates the difficulty level and prerequisites."
         }
       }, {
         "@type": "Question",
-        "name": "How long does it take to build a custom website?",
+        "name": "Do I get a certificate upon completion?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Typical custom website projects take 4-8 weeks depending on complexity and features. We'll provide you with a detailed timeline during the consultation phase."
+          "text": "Yes, you'll receive a professional certificate of completion for each course you finish, which you can add to your LinkedIn profile and resume to showcase your expertise."
         }
       }, {
         "@type": "Question",
-        "name": "Will my website be mobile-responsive?",
+        "name": "How long do I have access to the courses?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely! All our custom websites are fully responsive and optimized for mobile, tablet, and desktop devices to ensure the best user experience across all platforms."
+          "text": "You get lifetime access to all purchased courses, including any future updates and additional materials we add. Learn at your own pace without time pressure."
         }
       }, {
         "@type": "Question",
-        "name": "Do you provide website hosting and maintenance?",
+        "name": "Are the instructors industry professionals?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we offer hosting and maintenance packages to keep your website secure, updated, and running smoothly. We can also help you migrate to your preferred hosting provider if needed."
+          "text": "Absolutely! All our courses are taught by proven professionals with real-world experience and documented success in digital marketing. They bring practical, actionable strategies from actual campaigns."
         }
       }]
     }
@@ -1239,8 +1075,8 @@ blink: {
       }, {
         "@type": "ListItem",
         "position": 2,
-        "name": "Custom Website",
-        "item": "https://lynckstudio.com/custom-website.html"
+        "name": "Learning Platform",
+        "item": "https://lynckstudio.com/learning-platform.html"
       }]
     }
     </script>

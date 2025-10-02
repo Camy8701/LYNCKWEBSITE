@@ -1,28 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="de" class="h-full">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Why Choose LYNCK Studio | Digital Marketing Experts</title>
-<meta name="description" content="3+ years of proven results. 200+ campaigns. 50+ happy clients. Expert team, transparent pricing, innovative solutions. See why businesses trust LYNCK Studio.">
-<meta name="keywords" content="why choose LYNCK Studio, best digital marketing agency, proven marketing results, experienced marketing team, LYNCK Studio reviews, innovative marketing solutions">
+<title>Warum LYNCK Studio | Digital Marketing Experten</title>
+<meta name="description" content="3+ Jahre nachweisbare Erfolge. 200+ Kampagnen. 50+ zufriedene Kunden. Expertenteam, transparente Preise. Erfahren Sie, warum Unternehmen LYNCK vertrauen.">
+<meta name="keywords" content="warum LYNCK Studio, beste marketing agentur, nachweisbare erfolge, erfahrenes marketing team, LYNCK Studio bewertungen, innovative lösungen">
 <meta name="robots" content="index, follow">
-
-<!-- Open Graph Tags -->
-<meta property="og:title" content="Why Choose LYNCK Studio | Digital Marketing Experts">
-<meta property="og:description" content="3+ years of proven results. 200+ campaigns. 50+ happy clients. Expert team, transparent pricing, innovative solutions. See why businesses trust LYNCK Studio.">
-<meta property="og:image" content="https://lynckstudio.com/og-image.jpg">
-<meta property="og:url" content="https://lynckstudio.com/why-choose-us.html">
-<meta property="og:type" content="website">
-
-<!-- Twitter Card Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Why Choose LYNCK Studio | Digital Marketing Experts">
-<meta name="twitter:description" content="3+ years of proven results. 200+ campaigns. 50+ happy clients. Expert team, transparent pricing, innovative solutions. See why businesses trust LYNCK Studio.">
-<meta name="twitter:image" content="https://lynckstudio.com/twitter-image.jpg">
-
-<!-- Canonical URL -->
-<link rel="canonical" href="https://lynckstudio.com/why-choose-us.html">
 
 <!-- Hreflang Tags -->
 <link rel="alternate" hreflang="en" href="https://lynckstudio.com/why-choose-us.html" />
@@ -30,26 +14,25 @@
 <link rel="alternate" hreflang="fr" href="https://lynckstudio.com/fr/why-choose-us.html" />
 <link rel="alternate" hreflang="x-default" href="https://lynckstudio.com/why-choose-us.html" />
 
-<!-- Resource Hints for Performance -->
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://fonts.gstatic.com">
-<link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-<link rel="dns-prefetch" href="https://images.unsplash.com">
-<link rel="dns-prefetch" href="https://hoirqrkdgbmvpwutwuwj-all.supabase.co">
+<!-- Open Graph Tags -->
+<meta property="og:title" content="Warum LYNCK Studio | Digital Marketing Experten">
+<meta property="og:description" content="3+ Jahre nachweisbare Erfolge. 200+ Kampagnen. 50+ zufriedene Kunden. Expertenteam, transparente Preise. Erfahren Sie, warum Unternehmen LYNCK vertrauen.">
+<meta property="og:image" content="https://lynckstudio.com/og-image.jpg">
+<meta property="og:url" content="https://lynckstudio.com/de/why-choose-us.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<!-- Twitter Card Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Warum LYNCK Studio | Digital Marketing Experten">
+<meta name="twitter:description" content="3+ Jahre nachweisbare Erfolge. 200+ Kampagnen. 50+ zufriedene Kunden. Expertenteam, transparente Preise. Erfahren Sie, warum Unternehmen LYNCK vertrauen.">
+<meta name="twitter:image" content="https://lynckstudio.com/twitter-image.jpg">
 
-<!-- Preload Critical Resources -->
-<link rel="preload" href="styles.css" as="style">
-<link rel="preload" href="css/components.css" as="style">
-
-<!-- Optimized Fonts - Reduced to 6 weights from 15 -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="css/components.css">
+<!-- Canonical URL -->
+<link rel="canonical" href="https://lynckstudio.com/de/why-choose-us.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../css/components.css">
 
 <!-- Critical CSS - Prevents FOUC -->
 <style>
@@ -318,9 +301,9 @@ body {
 
   <!-- Navigation -->
   <header class="fixed top-0 left-0 right-0 z-40 opacity-0 animate-fade-in my-4 backdrop-blur-3xl" style="animation-delay: 0.2s">
-    <div class="mx-4 lg:mx-8">
-      <div class="relative ring-1 ring-white/10 bg-white/10 border-white/20 border rounded-2xl shadow-lg backdrop-blur-lg">
-        <div class="flex h-20 items-center justify-between px-6 max-w-7xl mx-auto">
+
+    <div class="relative max-w-7xl lg:px-8 ring-1 ring-white/10 bg-white/10 border-white/20 border rounded-2xl mr-auto ml-auto pr-6 pl-6 shadow-lg backdrop-blur-lg">
+      <div class="flex h-20 items-center justify-between">
         <div class="flex items-center gap-4">
           <!-- Home Icon -->
           <a href="index.html#heroSection" class="group">
@@ -367,7 +350,7 @@ body {
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M6 9l6 6 6-6"></path></svg>
           </button>
           <div id="languageMenu" class="hidden absolute top-full right-0 mt-2 w-32 bg-black/90 border border-white/20 rounded-lg shadow-xl backdrop-blur-xl z-50">
-            <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2" data-lang="en">
+            <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2" data-lang="de">
               <span class="text-base">🇺🇸</span> English
             </button>
             <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2" data-lang="de">
@@ -403,9 +386,9 @@ body {
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             <span data-translate="Let's connect">Let's connect</span>
           </a>
-          </div>
         </div>
       </div>
+    </div>
   </header>
 
   <!-- Main Content -->
@@ -419,40 +402,35 @@ body {
     </section>
 
     <!-- About LYNCK Section (moved from index.html) -->
-    <section id="about-lynck" class="pb-24 relative" style="padding-top: 8rem;">
+    <section id="about-lynck" class="pt-24 pb-24 relative">
       <div class="max-w-7xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
 
           <!-- Card Title -->
-          <div class="text-center relative z-10" style="margin-bottom: 3rem;">
-            <h1 class="text-5xl lg:text-8xl text-white font-geist tracking-tight font-bold">
+          <div class="text-center mb-8 relative z-10">
+            <h1 class="text-4xl lg:text-6xl text-white font-geist tracking-tight font-light">
               What Makes Us Different
             </h1>
           </div>
 
           <!-- Top Row: Main Video + Text Content -->
           <div class="grid lg:grid-cols-2 gap-8 mb-8 relative z-10">
-            <!-- Left Column: Video and Info Cards -->
-            <div class="space-y-4">
-              <!-- Video Card -->
-              <div class="group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl p-4 backdrop-blur-lg">
-                <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10">
-                  <video
-                    src="mid-video.mp4"
-                    class="w-full h-full object-cover"
-                    controls
-                    preload="metadata"
-                    poster=""
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+            <!-- Left: Main Video Frame -->
+            <div class="group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl pt-4 pr-4 pb-4 pl-4 backdrop-blur-lg">
+              <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10">
+                <video
+                  src="mid-video.mp4"
+                  class="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster=""
+                >
+                  Your browser does not support the video tag.
+                </video>
               </div>
-
-              <!-- Info Card -->
-              <div class="group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl p-4 backdrop-blur-lg">
+              <div class="mt-4">
                 <p class="text-lg italic" style="font-weight: 500">LYNCK Studio</p>
-                <p class="mt-1 text-sm text-gray-300">"Transforming complex marketing challenges into simple, effective solutions."</p>
-                <p class="mt-2 text-xs text-gray-300">Marketing Academy • Digital Solutions</p>
+                <p class="mt-2 text-sm text-gray-300">"Transforming complex marketing challenges into simple, effective solutions."</p>
+                <p class="mt-4 text-xs text-gray-300">Marketing Academy • Digital Solutions</p>
               </div>
             </div>
 
@@ -461,37 +439,26 @@ body {
 
               <!-- Curious about us heading -->
               <h3 class="text-2xl lg:text-3xl text-white font-geist tracking-tight font-light">
-                What if you could work with the specialists directly?
+                Curious about us?
               </h3>
+
+              <!-- Description text moved from hero section -->
+              <p class="text-lg text-gray-200 font-geist mb-4">
+                Discover the unique advantages that set LYNCK apart in the digital marketing landscape
+              </p>
 
               <!-- Content paragraphs -->
               <div class="space-y-4">
                 <p class="text-gray-300 font-geist leading-relaxed">
-                  Here's something most businesses don't know: when agencies need Google Ads expertise, they often call specialists like us to do the technical work. For three years at Google, that's exactly what we did. We managed €millions in ad spend, generated millions in client revenue worldwide, and earned multiple awards for our work.
+                  We're LYNCK, a digital marketing academy passionate about building campaigns that are not only visually striking but also drive real business results.
                 </p>
 
                 <p class="text-gray-300 font-geist leading-relaxed">
-                  Lynck was founded on one belief: businesses deserve direct access to that level of expertise, without the middleman.
+                  Our approach combines creative strategy, data-driven insights, and a sharp eye for what works. From concept to execution, we ensure every campaign feels authentic and delivers measurable impact.
                 </p>
 
                 <p class="text-gray-300 font-geist leading-relaxed">
-                  That's what makes us different. You're working directly with Google-trained specialists who've proven themselves at the highest level. No outsourcing, no handoffs, just dedicated experts who care about your results. Whether it's high-performance Google Ads management or custom websites built for independence (easy-to-edit platforms that don't require a developer, saving you time and money), we deliver marketing that creates real growth, not wasted spend.
-                </p>
-
-                <p class="text-gray-300 font-geist leading-relaxed">
-                  We've also built a learning platform that teaches you to become a Google Ads expert yourself, with comprehensive courses and personalized one-on-one training tailored to your business. Because while we love managing campaigns, we believe empowering businesses to save massive marketing budgets long-term is just as valuable.
-                </p>
-
-                <p class="text-gray-300 font-geist leading-relaxed">
-                  Here's the truth: at Lynck, we don't just design websites or build campaigns. We design and build Freedom.
-                </p>
-
-                <p class="text-gray-300 font-geist leading-relaxed">
-                  Freedom from dependency. Freedom from inflated costs. Freedom to grow on your terms.
-                </p>
-
-                <p class="text-gray-300 font-geist leading-relaxed">
-                  Google-trained expertise. Direct partnerships. Real transparency.
+                  Beyond creating campaigns, we focus on education - building knowledge, establishing best practices, and refining strategies that make teams more effective.
                 </p>
               </div>
             </div>
@@ -1047,8 +1014,8 @@ body {
   </script>
 
   <!-- Shared JavaScript files -->
-  <script src="js/translations.js"></script>
-  <script src="js/common.js"></script>
+  <script src="../js/translations.js"></script>
+  <script src="../js/common.js"></script>
 
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
