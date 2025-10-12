@@ -155,17 +155,20 @@
     contactButtons.forEach(button => {
       button.addEventListener('click', function(e) {
         e.preventDefault();
-        // Wait for common.js to load if needed
-        if (typeof openContactModal === 'function') {
-          openContactModal();
-        } else {
-          // Fallback: wait a bit and try again
-          setTimeout(() => {
-            if (typeof openContactModal === 'function') {
-              openContactModal();
-            }
-          }, 100);
-        }
+
+        // Try to open modal with retry mechanism
+        const tryOpenModal = (attempts = 0) => {
+          if (typeof openContactModal === 'function') {
+            openContactModal();
+          } else if (attempts < 20) {
+            // Retry up to 20 times (2 seconds total)
+            setTimeout(() => tryOpenModal(attempts + 1), 100);
+          } else {
+            console.error('openContactModal function not available after 2 seconds');
+          }
+        };
+
+        tryOpenModal();
       });
     });
   }
