@@ -1,108 +1,8 @@
 // LYNCK Studio - Shared JavaScript Functionality
 // Common functions used across multiple pages
 
-// Contact Form Modal Functions
-function openContactModal() {
-  const modal = document.getElementById('contactModal');
-  if (modal) {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-}
-
-function closeContactModal() {
-  const modal = document.getElementById('contactModal');
-  if (modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-  }
-}
-
-// Schedule Modal Functions
-function openScheduleModal() {
-  const modal = document.getElementById('scheduleModal');
-  if (modal) {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-}
-
-function closeScheduleModal() {
-  const modal = document.getElementById('scheduleModal');
-  if (modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-  }
-}
-
-// Dropdown Functions
-function toggleDropdown(type) {
-  const dropdown = document.getElementById(type + 'Dropdown');
-  if (dropdown) {
-    dropdown.classList.toggle('active');
-
-    // Close other dropdowns
-    const allDropdowns = document.querySelectorAll('.dropdown-menu');
-    allDropdowns.forEach(d => {
-      if (d.id !== type + 'Dropdown') {
-        d.classList.remove('active');
-      }
-    });
-  }
-}
-
-function selectService(service) {
-  const selectedElement = document.getElementById('selectedService');
-  const dropdown = document.getElementById('servicesDropdown');
-  if (selectedElement) selectedElement.textContent = service;
-  if (dropdown) dropdown.classList.remove('active');
-}
-
-function selectBudget(budget) {
-  const selectedElement = document.getElementById('selectedBudget');
-  const dropdown = document.getElementById('budgetDropdown');
-  if (selectedElement) selectedElement.textContent = budget;
-  if (dropdown) dropdown.classList.remove('active');
-}
-
-function selectCountry(code, country) {
-  const selectedElement = document.getElementById('selectedCountry');
-  const dropdown = document.getElementById('countryDropdown');
-  if (selectedElement) selectedElement.textContent = code;
-  if (dropdown) dropdown.classList.remove('active');
-}
-
-// Close dropdowns when clicking outside
-function initializeDropdownListeners() {
-  document.addEventListener('click', function(event) {
-    if (!event.target.closest('.form-dropdown')) {
-      document.querySelectorAll('.dropdown-menu').forEach(dropdown => {
-        dropdown.classList.remove('active');
-      });
-    }
-  });
-}
-
-// Close modal when clicking outside
-function initializeModalListeners() {
-  const contactModal = document.getElementById('contactModal');
-  if (contactModal) {
-    contactModal.addEventListener('click', function(event) {
-      if (event.target === this) {
-        closeContactModal();
-      }
-    });
-  }
-
-  const scheduleModal = document.getElementById('scheduleModal');
-  if (scheduleModal) {
-    scheduleModal.addEventListener('click', function(event) {
-      if (event.target === this) {
-        closeScheduleModal();
-      }
-    });
-  }
-}
+// NOTE: Contact modal functions and dropdown handlers are now managed by
+// contact-modal-loader.js to avoid duplication and ensure consistency
 
 // Form validation helpers
 function validateEmail(email) {
@@ -139,24 +39,19 @@ function scrollToSection(sectionId) {
   }
 }
 
-// Initialize all common functionality
+// Initialize common functionality
 function initializeCommonFunctionality() {
-  initializeDropdownListeners();
-  initializeModalListeners();
+  // All modal and dropdown functionality is now handled by contact-modal-loader.js
+  // This function is kept for backward compatibility and future common features
+  console.log('Common functionality initialized');
 }
 
 // Run initialization when DOM is ready
 document.addEventListener('DOMContentLoaded', initializeCommonFunctionality);
 
-// Export functions for global access
+// Export utility functions for global access
 if (typeof window !== 'undefined') {
-  window.openContactModal = openContactModal;
-  window.closeContactModal = closeContactModal;
-  window.openScheduleModal = openScheduleModal;
-  window.closeScheduleModal = closeScheduleModal;
-  window.toggleDropdown = toggleDropdown;
-  window.selectService = selectService;
-  window.selectBudget = selectBudget;
-  window.selectCountry = selectCountry;
   window.scrollToSection = scrollToSection;
+  window.validateEmail = validateEmail;
+  window.validateRequired = validateRequired;
 }
