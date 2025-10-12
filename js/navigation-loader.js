@@ -149,6 +149,25 @@
         }
       });
     });
+
+    // Contact modal button handling
+    const contactButtons = document.querySelectorAll('[data-contact-btn]');
+    contactButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Wait for common.js to load if needed
+        if (typeof openContactModal === 'function') {
+          openContactModal();
+        } else {
+          // Fallback: wait a bit and try again
+          setTimeout(() => {
+            if (typeof openContactModal === 'function') {
+              openContactModal();
+            }
+          }, 100);
+        }
+      });
+    });
   }
 
   // Load navigation when DOM is ready
