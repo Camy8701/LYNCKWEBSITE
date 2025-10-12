@@ -211,6 +211,30 @@ blink: {
       <div class="relative ring-1 ring-white/10 bg-white/10 border-white/20 border rounded-2xl shadow-lg backdrop-blur-lg">
         <div class="flex h-20 items-center justify-between px-6 max-w-7xl mx-auto">
         <div class="flex items-center gap-4">
+          <!-- Social Media Icons -->
+          <div class="flex items-center gap-3" style="margin-left: -30%;">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/company/lynckstudio" target="_blank" rel="noopener noreferrer" class="group" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 hover:text-white transition-all duration-300 group-hover:scale-110">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/lynckstudio" target="_blank" rel="noopener noreferrer" class="group" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 hover:text-white transition-all duration-300 group-hover:scale-110">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Separator -->
+          <div class="h-6 w-px bg-white/20"></div>
+
           <!-- Home Icon -->
           <a href="index.html#heroSection" class="group">
             <div class="flex items-center">
@@ -236,6 +260,7 @@ blink: {
                 <a href="custom-website.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-white bg-white/10 transition-colors font-geist">Custom Website</a>
                 <a href="digital-products.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist">Digital Products</a>
                 <a href="learning-platform.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist">Learning Platform</a>
+                <a href="pricing.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist">Pricing</a>
               </div>
             </div>
           </div>
@@ -247,6 +272,7 @@ blink: {
           <a href="index.html#testimonials" class="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 font-geist" data-translate="Testimonials">Testimonials</a>
           <a href="portfolio.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 font-geist" data-translate="Portfolio">Portfolio</a>
           <a href="https://lynckweb.vercel.app/" target="_blank" class="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 font-geist" data-translate="Learning Platform">Learning Platform</a>
+          <a href="pricing.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 font-geist" data-translate="Pricing">Pricing</a>
         </nav>
 
         <!-- Language Selector -->
@@ -258,6 +284,12 @@ blink: {
           <div id="languageMenu" class="hidden absolute top-full right-0 mt-2 w-32 bg-black/90 border border-white/20 rounded-lg shadow-xl backdrop-blur-xl z-50">
             <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2" data-lang="en">
               <span class="text-base">🇺🇸</span> English
+            </button>
+            <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2" data-lang="de">
+              <span class="text-base">🇩🇪</span> Deutsch
+            </button>
+            <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2 rounded-b-lg" data-lang="fr">
+              <span class="text-base">🇫🇷</span> Français
             </button>
           </div>
         </div>
@@ -324,6 +356,29 @@ blink: {
       </div>
     </section>
 
+    <!-- Video Section -->
+    <section class="py-12 relative">
+      <div class="max-w-7xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
+        <div class="relative z-10">
+          <!-- Video Card -->
+          <div class="relative overflow-hidden rounded-2xl bg-black/60 border border-white/20 backdrop-blur-lg shadow-2xl">
+            <div class="aspect-video w-full">
+              <!-- Video placeholder - will be replaced with actual video -->
+              <video
+                id="customWebsiteVideo"
+                class="w-full h-full object-cover"
+                controls
+                poster="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=1200&h=675&fit=crop"
+              >
+                <!-- Video source will be added here -->
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Content Sections with Alternating Text/Card Layout -->
 
