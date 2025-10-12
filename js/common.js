@@ -72,26 +72,6 @@ function selectCountry(code, country) {
   if (dropdown) dropdown.classList.remove('active');
 }
 
-// All Dropdown Functions
-function toggleAllDropdown() {
-  const menu = document.getElementById('allDropdownMenu');
-  const icon = document.getElementById('allDropdownIcon');
-  if (menu) {
-    menu.classList.toggle('hidden');
-    if (icon) {
-      icon.style.transform = menu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
-    }
-  }
-}
-
-// Language Functions
-function toggleLanguageMenu() {
-  const menu = document.getElementById('languageMenu');
-  if (menu) {
-    menu.classList.toggle('hidden');
-  }
-}
-
 // Close dropdowns when clicking outside
 function initializeDropdownListeners() {
   document.addEventListener('click', function(event) {
@@ -99,30 +79,6 @@ function initializeDropdownListeners() {
       document.querySelectorAll('.dropdown-menu').forEach(dropdown => {
         dropdown.classList.remove('active');
       });
-    }
-  });
-
-  // Close language menu when clicking outside
-  document.addEventListener('click', function(event) {
-    if (!event.target.closest('#languageBtn') && !event.target.closest('#languageMenu')) {
-      const languageMenu = document.getElementById('languageMenu');
-      if (languageMenu) {
-        languageMenu.classList.add('hidden');
-      }
-    }
-  });
-
-  // Close All dropdown when clicking outside
-  document.addEventListener('click', function(event) {
-    if (!event.target.closest('#allDropdownBtn') && !event.target.closest('#allDropdownMenu')) {
-      const allDropdownMenu = document.getElementById('allDropdownMenu');
-      const allDropdownIcon = document.getElementById('allDropdownIcon');
-      if (allDropdownMenu && !allDropdownMenu.classList.contains('hidden')) {
-        allDropdownMenu.classList.add('hidden');
-        if (allDropdownIcon) {
-          allDropdownIcon.style.transform = 'rotate(0deg)';
-        }
-      }
     }
   });
 }
@@ -187,38 +143,6 @@ function scrollToSection(sectionId) {
 function initializeCommonFunctionality() {
   initializeDropdownListeners();
   initializeModalListeners();
-
-  // Initialize language button if it exists
-  const languageBtn = document.getElementById('languageBtn');
-  if (languageBtn) {
-    languageBtn.addEventListener('click', toggleLanguageMenu);
-  }
-
-  // Initialize All dropdown button if it exists
-  const allDropdownBtn = document.getElementById('allDropdownBtn');
-  if (allDropdownBtn) {
-    allDropdownBtn.addEventListener('click', toggleAllDropdown);
-  }
-
-  // Initialize mobile menu button if it exists
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileNav = document.getElementById('mobileNav');
-  if (menuBtn && mobileNav) {
-    menuBtn.addEventListener('click', () => {
-      mobileNav.classList.toggle('hidden');
-    });
-  }
-
-  // Initialize language option clicks
-  document.querySelectorAll('.lang-option').forEach(option => {
-    option.addEventListener('click', function() {
-      const lang = this.getAttribute('data-lang');
-      if (lang && typeof setLanguage === 'function') {
-        setLanguage(lang);
-      }
-      toggleLanguageMenu();
-    });
-  });
 }
 
 // Run initialization when DOM is ready
@@ -234,7 +158,5 @@ if (typeof window !== 'undefined') {
   window.selectService = selectService;
   window.selectBudget = selectBudget;
   window.selectCountry = selectCountry;
-  window.toggleLanguageMenu = toggleLanguageMenu;
-  window.toggleAllDropdown = toggleAllDropdown;
   window.scrollToSection = scrollToSection;
 }
