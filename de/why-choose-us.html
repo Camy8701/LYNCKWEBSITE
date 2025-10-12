@@ -70,6 +70,7 @@ html, body {
 
 <!-- Load Tailwind synchronously to prevent FOUC -->
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="../js/navigation-loader.js"></script>
 <style>
 /* Geist Font - now loaded via Google Fonts above */
 
@@ -318,97 +319,8 @@ body {
   <canvas id="starfield-canvas" class="w-full h-full fixed top-0 left-0" style="z-index: -20;"></canvas>
 
 
-  <!-- Navigation -->
-  <header class="fixed top-0 left-0 right-0 z-40 opacity-0 animate-fade-in my-4 backdrop-blur-3xl" style="animation-delay: 0.2s">
-
-    <div class="relative max-w-7xl lg:px-8 ring-1 ring-white/10 bg-white/10 border-white/20 border rounded-2xl mr-auto ml-auto pr-6 pl-6 shadow-lg backdrop-blur-lg">
-      <div class="flex h-20 items-center justify-between">
-        <div class="flex items-center gap-4">
-          <!-- Home Icon -->
-          <a href="index.html#heroSection" class="group">
-            <div class="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white transition-all duration-300 group-hover:scale-105 cursor-pointer">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9,22 9,12 15,12 15,22"></polyline>
-              </svg>
-            </div>
-          </a>
-
-          <!-- All Dropdown -->
-          <div class="relative">
-            <button id="allDropdownBtn" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md text-sm font-medium font-geist">
-              All
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200" id="allDropdownIcon">
-                <polyline points="6,9 12,15 18,9"></polyline>
-              </svg>
-            </button>
-
-            <div id="allDropdownMenu" class="hidden absolute top-full left-0 mt-2 w-56 bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl ring-1 ring-white/10" style="z-index: 9999;">
-              <div class="px-2 py-2 space-y-1">
-                <a href="google-ads.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist">Google Ads</a>
-                <a href="custom-website.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist">Custom Website</a>
-                <a href="digital-products.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist">Digital Products</a>
-                <a href="learning-platform.html" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist">Learning Platform</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <nav class="hidden md:flex items-center gap-8">
-          <a href="#about-lynck" class="shiny-cta-white" data-translate="About LYNCK"><span>About LYNCK</span></a>
-          <a href="index.html#work" class="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 font-geist" data-translate="Our Services">Our Services</a>
-          <a href="index.html#testimonials" class="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 font-geist" data-translate="Testimonials">Testimonials</a>
-          <a href="portfolio.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 font-geist" data-translate="Portfolio">Portfolio</a>
-          <a href="https://lynckweb.vercel.app/" target="_blank" class="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 font-geist" data-translate="Learning Platform">Learning Platform</a>
-        </nav>
-
-        <!-- Language Selector -->
-        <div class="relative">
-          <button id="languageBtn" class="hidden md:flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md">
-            <span id="currentLang" class="text-sm font-medium">EN</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M6 9l6 6 6-6"></path></svg>
-          </button>
-          <div id="languageMenu" class="hidden absolute top-full right-0 mt-2 w-32 bg-black/90 border border-white/20 rounded-lg shadow-xl backdrop-blur-xl z-50">
-            <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2" data-lang="de">
-              <span class="text-base">🇺🇸</span> English
-            </button>
-            <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2" data-lang="de">
-              <span class="text-base">🇩🇪</span> Deutsch
-            </button>
-            <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2 rounded-b-lg" data-lang="fr">
-              <span class="text-base">🇫🇷</span> Français
-            </button>
-          </div>
-        </div>
-
-        <a href="index.html#contact" class="hidden md:inline-flex items-center gap-2 shiny-cta font-geist">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-          <span data-translate="Let's connect" style="white-space: nowrap;">Let's connect</span>
-        </a>
-
-        <button id="menuBtn" class="md:hidden rounded-xl bg-white/15 border border-white/30 p-2.5 text-white hover:bg-white/20 backdrop-blur-md" aria-label="Open mobile menu" aria-expanded="false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" stroke-line="round" class="lucide lucide-menu w-5 h-5"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="mobileNav" class="hidden md:hidden absolute top-full left-0 right-0 bg-black/80 backdrop-blur-xl border-b border-white/20 rounded-b-2xl shadow-lg ring-1 ring-white/10">
-      <div class="px-6 py-6 space-y-4">
-        <a href="#about-lynck" class="block rounded-xl px-4 py-3 text-base font-medium text-white bg-white/10 hover:bg-white/15 transition-colors font-geist" data-translate="About LYNCK">About LYNCK</a>
-        <a href="index.html#work" class="block rounded-xl px-4 py-3 text-base font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Our Services">Our Services</a>
-        <a href="index.html#testimonials" class="block rounded-xl px-4 py-3 text-base font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Testimonials">Testimonials</a>
-        <a href="portfolio.html" class="block rounded-xl px-4 py-3 text-base font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Portfolio">Portfolio</a>
-        <a href="https://lynckweb.vercel.app/" target="_blank" class="block rounded-xl px-4 py-3 text-base font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Learning Platform">Learning Platform</a>
-        <div class="pt-4 border-t border-white/20">
-          <a href="index.html#contact" class="flex items-center justify-center gap-2 shiny-cta font-geist">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            <span data-translate="Let's connect">Let's connect</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
+  <!-- Navigation loaded dynamically via navigation-loader.js -->
+  <div id="navigation-placeholder"></div>
 
   <!-- Main Content -->
   <main class="pt-24">
