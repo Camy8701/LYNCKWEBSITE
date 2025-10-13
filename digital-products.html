@@ -40,66 +40,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
 <!-- Preload Critical Resources -->
-<link rel="preload" href="styles.css" as="style">
-<link rel="preload" href="css/components.css" as="style">
 <link rel="preload" href="js/translations.js" as="script">
 <!-- Optimized Fonts - Reduced to 6 weights from 15 -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/critical.css">
-<link rel="stylesheet" href="css/animations.css">
-<link rel="stylesheet" href="css/orb-text.css">
-
 <!-- Load Tailwind CSS - Local Build -->
 <link rel="stylesheet" href="css/tailwind.min.css">
+<link rel="stylesheet" href="css/main.css">
 <script src="js/navigation-loader.js"></script>
     <script src="js/contact-modal-loader.js"></script>
 <script src="js/translations.js" defer onerror="console.warn('Translation script failed to load. Some language features may be unavailable.')"></script>
 <script src="js/webgl-background.js" defer></script>
-<style>
-/* Professional Orb-Text Synchronization Styles */
-#orbTextContainer {
-  z-index: 15;
-  will-change: transform;
-}
-
-#orbSyncText {
-  opacity: 0;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  position: fixed;
-  z-index: 10;
-  pointer-events: none;
-  transition: opacity 0.3s ease-out;
-}
-
-/* Responsive text adjustments */
-@media (max-width: 768px) {
-  #orbSyncText {
-    white-space: normal;
-    line-height: 0.8;
-  }
-}
-
-/* High DPI display optimization */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  #orbSyncText {
-    text-rendering: geometricPrecision;
-  }
-}
-
-/* Reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  #orbSyncText {
-    transition: none;
-  }
-}
-</style>
-
 </head>
 
 <body class="h-full bg-black text-white antialiased overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif;">
