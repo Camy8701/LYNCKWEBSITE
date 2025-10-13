@@ -33,7 +33,6 @@
 <!-- Resource Hints for Performance -->
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-<link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
 <link rel="dns-prefetch" href="https://images.unsplash.com">
 <link rel="dns-prefetch" href="https://hoirqrkdgbmvpwutwuwj-all.supabase.co">
 
@@ -55,69 +54,13 @@
 <link rel="stylesheet" href="css/critical.css">
 <link rel="stylesheet" href="css/animations.css">
 
-<!-- Load Tailwind synchronously to prevent FOUC -->
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- Load Tailwind CSS - Local Build -->
+<link rel="stylesheet" href="css/tailwind.min.css">
 <script src="js/navigation-loader.js"></script>
     <script src="js/contact-modal-loader.js"></script>
 <script src="js/translations.js" defer></script>
 <script src="js/common.js" defer></script>
 <script src="js/webgl-background.js" defer></script>
-<script>
-tailwind.config = {
-theme: {
-extend: {
-animation: {
-'fade-in': 'fadeIn 0.8s ease-out forwards',
-'slide-up': 'slideUp 0.8s ease-out forwards',
-'scale-in': 'scaleIn 0.8s ease-out forwards',
-'float': 'float 6s ease-in-out infinite',
-'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
-'slide-out-left': 'slideOutLeft 0.8s ease-out forwards',
-'marquee': 'marquee 25s linear infinite',
-'marquee-reverse': 'marquee-reverse 25s linear infinite'
-},
-keyframes: {
-fadeIn: {
-'0%': { opacity: '0' },
-'100%': { opacity: '1' }
-},
-slideUp: {
-'0%': { opacity: '0', transform: 'translateY(24px)' },
-'100%': { opacity: '1', transform: 'translateY(0)' }
-},
-scaleIn: {
-'0%': { opacity: '0', transform: 'scale(0.95)' },
-'100%': { opacity: '1', transform: 'scale(1)' }
-},
-float: {
-'0%, 100%': { transform: 'translateY(0px)' },
-'50%': { transform: 'translateY(-8px)' }
-},
-slideInLeft: {
-'0%': { opacity: '0', transform: 'translateX(-100%)' },
-'100%': { opacity: '1', transform: 'translateX(0)' }
-},
-slideOutLeft: {
-'0%': { opacity: '1', transform: 'translateX(0)' },
-'100%': { opacity: '0', transform: 'translateX(-100%)' }
-},
-letterReveal: {
-'0%': { opacity: '0', transform: 'translateY(24px)' },
-'100%': { opacity: '1', transform: 'translateY(0)' }
-},
-marquee: {
-'0%': { transform: 'translateX(0%)' },
-'100%': { transform: 'translateX(-100%)' }
-},
-'marquee-reverse': {
-'0%': { transform: 'translateX(-100%)' },
-'100%': { transform: 'translateX(0%)' }
-}
-}
-}
-}
-}
-</script>
 <style>
 .cursor-invert-mask {
 position: relative;
@@ -371,7 +314,7 @@ transform: translateY(0) rotate(-2deg);
 
 /* Studio text with animated underline */
 .studio-text {
-  position: relative;
+  /* position: relative removed - causes conflict with Tailwind's .absolute class */
 }
 
 .studio-text::after {

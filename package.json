@@ -1,0 +1,19 @@
+{
+  "name": "lynck-studio-website",
+  "version": "1.0.0",
+  "description": "LYNCK Studio - Digital Marketing Agency & Academy",
+  "scripts": {
+    "build:css": "./node_modules/.bin/tailwindcss -i ./src/input.css -o ./css/tailwind.min.css --minify",
+    "watch:css": "./node_modules/.bin/tailwindcss -i ./src/input.css -o ./css/tailwind.min.css --watch"
+  },
+  "keywords": [
+    "digital-marketing",
+    "agency",
+    "academy"
+  ],
+  "author": "LYNCK Studio",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
