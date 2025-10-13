@@ -1,0 +1,44 @@
+/* LYNCK Studio - Professional Orb-Text Synchronization Styles */
+/* Used on pages with Spline 3D orb integration */
+
+#orbTextContainer {
+  z-index: 15;
+  will-change: transform;
+}
+
+#orbSyncText {
+  opacity: 0;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  position: fixed;
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+}
+
+/* Responsive text adjustments */
+@media (max-width: 768px) {
+  #orbSyncText {
+    white-space: normal;
+    line-height: 0.8;
+  }
+}
+
+/* High DPI display optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  #orbSyncText {
+    text-rendering: geometricPrecision;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  #orbSyncText {
+    transition: none;
+  }
+
+  #orbTextContainer {
+    will-change: auto;
+  }
+}

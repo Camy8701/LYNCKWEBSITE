@@ -52,6 +52,8 @@
 
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/critical.css">
+<link rel="stylesheet" href="css/animations.css">
 
 <!-- Load Tailwind synchronously to prevent FOUC -->
 <script src="https://cdn.tailwindcss.com"></script>
@@ -116,34 +118,6 @@ marquee: {
 }
 }
 </script>
-<!-- Critical CSS - Prevents FOUC -->
-<style>
-/* Base styles loaded immediately - TRANSPARENT background to allow starfield */
-html, body {
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  color: #ffffff;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  min-height: 100%;
-}
-
-/* Font families */
-.font-geist { font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif; }
-.font-inter { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif; }
-.font-geist-mono { font-family: 'Geist Mono', 'Monaco', 'Cascadia Code', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', monospace; }
-
-/* Animation fallback */
-.opacity-0 {
-  opacity: 0;
-}
-
-/* Performance: Content visibility for off-screen sections */
-section {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 500px;
-}
-</style>
 <style>
 .cursor-invert-mask {
 position: relative;
