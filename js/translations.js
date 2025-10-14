@@ -209,40 +209,93 @@ const translations = {
 };
 
 // Shared translation functionality
-let currentLanguage = localStorage.getItem('language') || 'en';
+const supportedLanguages = ['en', 'de', 'fr'];
+
+function detectLanguageFromPath() {
+  const path = window.location.pathname;
+  if (path.startsWith('/de/')) return 'de';
+  if (path.startsWith('/fr/')) return 'fr';
+  return 'en';
+}
+
+let currentLanguage = localStorage.getItem('language') || detectLanguageFromPath();
 
 const localizedRoutes = {
-  'google-ads.html': {
-    de: 'de/google-ads.html',
-    fr: 'fr/google-ads.html'
+  index: {
+    en: '/',
+    de: '/de/index.html',
+    fr: '/fr/index.html'
   },
-  'de/google-ads.html': {
-    en: 'google-ads.html',
-    fr: 'fr/google-ads.html'
+  'google-ads': {
+    en: '/google-ads.html',
+    de: '/de/google-ads.html',
+    fr: '/fr/google-ads.html'
   },
-  'fr/google-ads.html': {
-    en: 'google-ads.html',
-    de: 'de/google-ads.html'
+  pricing: {
+    en: '/pricing.html',
+    de: '/pricing.html',
+    fr: '/pricing.html'
+  },
+  'custom-website': {
+    en: '/custom-website.html',
+    de: '/de/custom-website.html',
+    fr: '/custom-website.html'
+  },
+  'digital-products': {
+    en: '/digital-products.html',
+    de: '/de/digital-products.html',
+    fr: '/digital-products.html'
+  },
+  'learning-platform': {
+    en: '/learning-platform.html',
+    de: '/de/learning-platform.html',
+    fr: '/learning-platform.html'
+  },
+  portfolio: {
+    en: '/portfolio.html',
+    de: '/de/portfolio.html',
+    fr: '/portfolio.html'
+  },
+  'why-choose-us': {
+    en: '/why-choose-us.html',
+    de: '/de/why-choose-us.html',
+    fr: '/why-choose-us.html'
   }
 };
+
+const pathLanguage = detectLanguageFromPath();
+if (currentLanguage !== pathLanguage) {
+  currentLanguage = pathLanguage;
+  localStorage.setItem('language', currentLanguage);
+}
+
+function getSlugFromPath(pathname) {
+  const cleanPath = pathname.replace(/\/+$/, '');
+  if (!cleanPath || cleanPath === '') return 'index';
+
+  const segments = cleanPath.split('/').filter(Boolean);
+  const filtered = segments.filter(seg => !supportedLanguages.includes(seg));
+  if (!filtered.length) return 'index';
+  const lastSegment = filtered[filtered.length - 1];
+  return lastSegment.replace(/\.html$/i, '') || 'index';
+}
 
 function resolveLocalizedPath(lang) {
   try {
     const currentPath = window.location.pathname;
-    const segments = currentPath.split('/').filter(Boolean);
-    const localeIndex = segments.findIndex(seg => seg === 'de' || seg === 'fr');
-    const routeKey = localeIndex !== -1 ? segments.slice(localeIndex).join('/') : segments.slice(-1)[0] || 'index.html';
-    const route = localizedRoutes[routeKey];
-    if (route && route[lang]) {
-      const target = route[lang];
-      const baseSegments = segments.filter(seg => seg !== 'de' && seg !== 'fr');
-      // remove last segment if it looks like a file (contains a dot)
-      if (baseSegments.length && baseSegments[baseSegments.length - 1].includes('.')) {
-        baseSegments.pop();
-      }
-      const basePath = baseSegments.length ? '/' + baseSegments.join('/') + '/' : '/';
-      return target.startsWith('/') ? target : basePath + target;
+    const slug = getSlugFromPath(currentPath);
+    const route = localizedRoutes[slug];
+    if (route) {
+      const target = route[lang] || route.en;
+      if (target) return target;
     }
+
+    if (lang === 'en') {
+      return currentPath.replace(/^\/(de|fr)\//, '/');
+    }
+
+    const pathWithoutLocale = currentPath.replace(/^\/(de|fr)\//, '/');
+    return `/${lang}${pathWithoutLocale}`.replace('//', '/');
   } catch (error) {
     console.warn('resolveLocalizedPath error:', error);
   }
