@@ -211,6 +211,44 @@ const translations = {
 // Shared translation functionality
 let currentLanguage = localStorage.getItem('language') || 'en';
 
+const localizedRoutes = {
+  'google-ads.html': {
+    de: 'de/google-ads.html',
+    fr: 'fr/google-ads.html'
+  },
+  'de/google-ads.html': {
+    en: 'google-ads.html',
+    fr: 'fr/google-ads.html'
+  },
+  'fr/google-ads.html': {
+    en: 'google-ads.html',
+    de: 'de/google-ads.html'
+  }
+};
+
+function resolveLocalizedPath(lang) {
+  try {
+    const currentPath = window.location.pathname;
+    const segments = currentPath.split('/').filter(Boolean);
+    const localeIndex = segments.findIndex(seg => seg === 'de' || seg === 'fr');
+    const routeKey = localeIndex !== -1 ? segments.slice(localeIndex).join('/') : segments.slice(-1)[0] || 'index.html';
+    const route = localizedRoutes[routeKey];
+    if (route && route[lang]) {
+      const target = route[lang];
+      const baseSegments = segments.filter(seg => seg !== 'de' && seg !== 'fr');
+      // remove last segment if it looks like a file (contains a dot)
+      if (baseSegments.length && baseSegments[baseSegments.length - 1].includes('.')) {
+        baseSegments.pop();
+      }
+      const basePath = baseSegments.length ? '/' + baseSegments.join('/') + '/' : '/';
+      return target.startsWith('/') ? target : basePath + target;
+    }
+  } catch (error) {
+    console.warn('resolveLocalizedPath error:', error);
+  }
+  return null;
+}
+
 function translateElement(element) {
   const key = element.getAttribute('data-translate');
   if (key && translations[currentLanguage] && translations[currentLanguage][key]) {
@@ -226,6 +264,13 @@ function translatePage() {
 function setLanguage(lang) {
   currentLanguage = lang;
   localStorage.setItem('language', lang);
+
+  const redirectedPath = resolveLocalizedPath(lang);
+  if (redirectedPath && redirectedPath !== window.location.pathname) {
+    window.location.href = redirectedPath;
+    return;
+  }
+
   translatePage();
 
   // Update language button text
