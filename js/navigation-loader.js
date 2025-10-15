@@ -1,79 +1,236 @@
 // Navigation Loader - Dynamically loads and injects navigation component
-// This eliminates the need to duplicate navigation code across all HTML files
+// Ensures language-aware routing across the site
 
-(function() {
+(function () {
   'use strict';
 
-  // Function to load navigation HTML
+  const STORAGE_KEY = 'language';
+  const SUPPORTED_LANGS = ['en', 'de', 'fr'];
+
+  const ROUTE_MAP = {
+    index: {
+      en: '/',
+      de: '/de/index.html',
+      fr: '/fr/index.html'
+    },
+    'google-ads': {
+      en: '/google-ads.html',
+      de: '/de/google-ads.html',
+      fr: '/fr/google-ads.html'
+    },
+    'custom-website': {
+      en: '/custom-website.html',
+      de: '/de/custom-website.html',
+      fr: '/custom-website.html'
+    },
+    'digital-products': {
+      en: '/digital-products.html',
+      de: '/de/digital-products.html',
+      fr: '/digital-products.html'
+    },
+    'learning-platform': {
+      en: '/learning-platform.html',
+      de: '/de/learning-platform.html',
+      fr: '/learning-platform.html'
+    },
+    pricing: {
+      en: '/pricing.html',
+      de: '/pricing.html',
+      fr: '/pricing.html'
+    },
+    portfolio: {
+      en: '/portfolio.html',
+      de: '/de/portfolio.html',
+      fr: '/portfolio.html'
+    },
+    'why-choose-us': {
+      en: '/why-choose-us.html',
+      de: '/de/why-choose-us.html',
+      fr: '/why-choose-us.html'
+    }
+  };
+
+  function detectLanguageFromPath() {
+    const path = window.location.pathname;
+    if (path.startsWith('/de/')) return 'de';
+    if (path.startsWith('/fr/')) return 'fr';
+    return 'en';
+  }
+
+  function getStoredLanguage() {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (SUPPORTED_LANGS.includes(stored)) {
+        return stored;
+      }
+    } catch (err) {
+      console.warn('Unable to access localStorage for language preference:', err);
+    }
+    return null;
+  }
+
+  function setStoredLanguage(lang) {
+    try {
+      localStorage.setItem(STORAGE_KEY, lang);
+    } catch (err) {
+      console.warn('Unable to persist language preference:', err);
+    }
+  }
+
+  function getSlugFromPath(pathname) {
+    const cleanPath = pathname.replace(/\/+$/, '');
+    if (!cleanPath || cleanPath === '/') {
+      return 'index';
+    }
+
+    const segments = cleanPath.split('/').filter(Boolean);
+    const filtered = segments.filter(seg => !SUPPORTED_LANGS.includes(seg));
+
+    if (!filtered.length) {
+      return 'index';
+    }
+
+    const last = filtered[filtered.length - 1];
+    if (!last) return 'index';
+
+    if (!last.includes('.')) {
+      return last;
+    }
+
+    return last.replace(/\.html$/i, '') || 'index';
+  }
+
+  function resolveLocalizedPath(lang) {
+    const slug = getSlugFromPath(window.location.pathname);
+    const route = ROUTE_MAP[slug];
+    if (!route) {
+      return null;
+    }
+
+    let target = route[lang] || route.en;
+    if (!target) {
+      return null;
+    }
+
+    if (!target.startsWith('/')) {
+      target = `/${target}`;
+    }
+
+    if (target === '/index.html') {
+      return '/';
+    }
+
+    return target;
+  }
+
+  function applyLocalizedLinks(container, lang) {
+    const links = container.querySelectorAll('[data-route]');
+
+    links.forEach(link => {
+      const routeKey = link.getAttribute('data-route');
+      const anchor = link.getAttribute('data-anchor') || '';
+      const route = ROUTE_MAP[routeKey];
+
+      if (!route) {
+        return;
+      }
+
+      let href = route[lang] || route.en;
+      if (!href) {
+        return;
+      }
+
+      if (!href.startsWith('/')) {
+        href = `/${href}`;
+      }
+
+      if (href === '/index.html') {
+        href = '/';
+      }
+
+      link.setAttribute('href', `${href}${anchor}`);
+    });
+  }
+
+  function updateLanguageIndicator(lang) {
+    const langMap = { en: 'EN', de: 'DE', fr: 'FR' };
+    const langButton = document.getElementById('currentLang');
+    if (langButton) {
+      langButton.textContent = langMap[lang] || 'EN';
+    }
+  }
+
+  function highlightSelectedLanguage(lang) {
+    const langOptions = document.querySelectorAll('.lang-option');
+    langOptions.forEach(option => {
+      const isActive = option.getAttribute('data-lang') === lang;
+      option.classList.toggle('bg-white/10', isActive);
+      option.setAttribute('aria-pressed', String(isActive));
+      if (isActive) {
+        option.classList.add('text-white');
+        option.classList.remove('text-gray-300');
+      } else {
+        option.classList.remove('text-white');
+        option.classList.add('text-gray-300');
+      }
+    });
+  }
+
+  function redirectToLanguage(lang) {
+    const target = resolveLocalizedPath(lang);
+    if (target && target !== window.location.pathname) {
+      window.location.href = target;
+    } else if (target && window.location.hash) {
+      // Ensure anchors still align if only hash differs
+      window.location.href = target + window.location.hash;
+    }
+  }
+
   async function loadNavigation() {
     try {
-      // Determine the correct path based on current page location
       const currentPath = window.location.pathname;
-      const isInSubfolder = currentPath.includes('/de/');
-      const navPath = isInSubfolder ? '../components/navigation.html' : 'components/navigation.html';
+      const isInLocalizedFolder = currentPath.includes('/de/') || currentPath.includes('/fr/');
+      const navPath = isInLocalizedFolder ? '../components/navigation.html' : 'components/navigation.html';
 
-      // Fetch the navigation HTML
+      const storedLang = getStoredLanguage();
+      const pathLang = detectLanguageFromPath();
+      if (storedLang && storedLang !== pathLang) {
+        const targetPath = resolveLocalizedPath(storedLang);
+        if (targetPath && targetPath !== window.location.pathname) {
+          const hash = window.location.hash || '';
+          window.location.replace(`${targetPath}${hash}`);
+          return;
+        }
+      }
+
       const response = await fetch(navPath);
       if (!response.ok) {
         throw new Error(`Failed to load navigation: ${response.status}`);
       }
 
       const navHTML = await response.text();
-
-      // Find the navigation placeholder or inject at the beginning of body
       let navContainer = document.getElementById('navigation-placeholder');
 
       if (!navContainer) {
-        // Create placeholder if it doesn't exist
         navContainer = document.createElement('div');
         navContainer.id = 'navigation-placeholder';
         document.body.insertBefore(navContainer, document.body.firstChild);
       }
 
-      // Inject the navigation HTML
       navContainer.innerHTML = navHTML;
 
-      // Fix relative links for pages in subfolders
-      if (isInSubfolder) {
-        fixNavigationLinks(navContainer);
-      }
-
-      // Initialize navigation functionality after injection
-      initializeNavigationFunctionality();
-
+      const activeLang = storedLang || pathLang;
+      setStoredLanguage(activeLang);
+      applyLocalizedLinks(navContainer, activeLang);
+      updateLanguageIndicator(activeLang);
+      highlightSelectedLanguage(activeLang);
+      initializeNavigationFunctionality(navContainer, activeLang);
     } catch (error) {
       console.error('Error loading navigation:', error);
-      // Fail silently in production, but log for debugging
     }
   }
 
-  // Fix navigation links for pages in subfolders (e.g., /de/)
-  function fixNavigationLinks(container) {
-    const links = container.querySelectorAll('a[href]');
-    links.forEach(link => {
-      const href = link.getAttribute('href');
-
-      // Skip external links and anchor links
-      if (href.startsWith('http') || href.startsWith('#')) {
-        return;
-      }
-
-      // Add ../ prefix for relative links
-      if (!href.startsWith('../') && !href.startsWith('/')) {
-        link.setAttribute('href', '../' + href);
-      }
-    });
-
-    // Fix home link
-    const homeLink = container.querySelector('[data-nav-home]');
-    if (homeLink) {
-      homeLink.setAttribute('href', '../index.html#heroSection');
-    }
-  }
-
-  // Initialize navigation functionality (dropdowns, mobile menu, etc.)
-  function initializeNavigationFunctionality() {
-    // Mobile menu toggle
+  function initializeNavigationFunctionality(navContainer, activeLang) {
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
 
@@ -81,11 +238,10 @@
       menuBtn.addEventListener('click', () => {
         mobileNav.classList.toggle('hidden');
         const isExpanded = !mobileNav.classList.contains('hidden');
-        menuBtn.setAttribute('aria-expanded', isExpanded);
+        menuBtn.setAttribute('aria-expanded', String(isExpanded));
       });
     }
 
-    // All dropdown toggle
     const allDropdownBtn = document.getElementById('allDropdownBtn');
     const allDropdownMenu = document.getElementById('allDropdownMenu');
     const allDropdownIcon = document.getElementById('allDropdownIcon');
@@ -95,7 +251,7 @@
         e.stopPropagation();
         allDropdownMenu.classList.toggle('hidden');
         const isExpanded = !allDropdownMenu.classList.contains('hidden');
-        allDropdownBtn.setAttribute('aria-expanded', isExpanded);
+        allDropdownBtn.setAttribute('aria-expanded', String(isExpanded));
 
         if (allDropdownIcon) {
           allDropdownIcon.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
@@ -103,7 +259,6 @@
       });
     }
 
-    // Language menu toggle
     const languageBtn = document.getElementById('languageBtn');
     const languageMenu = document.getElementById('languageMenu');
 
@@ -112,13 +267,11 @@
         e.stopPropagation();
         languageMenu.classList.toggle('hidden');
         const isExpanded = !languageMenu.classList.contains('hidden');
-        languageBtn.setAttribute('aria-expanded', isExpanded);
+        languageBtn.setAttribute('aria-expanded', String(isExpanded));
       });
     }
 
-    // Close dropdowns when clicking outside
     document.addEventListener('click', (e) => {
-      // Close All dropdown
       if (allDropdownMenu && !allDropdownMenu.classList.contains('hidden')) {
         if (!e.target.closest('#allDropdownBtn') && !e.target.closest('#allDropdownMenu')) {
           allDropdownMenu.classList.add('hidden');
@@ -127,7 +280,6 @@
         }
       }
 
-      // Close language menu
       if (languageMenu && !languageMenu.classList.contains('hidden')) {
         if (!e.target.closest('#languageBtn') && !e.target.closest('#languageMenu')) {
           languageMenu.classList.add('hidden');
@@ -136,32 +288,42 @@
       }
     });
 
-    // Language selection handling
     const langOptions = document.querySelectorAll('.lang-option');
     langOptions.forEach(option => {
-      option.addEventListener('click', function() {
-        const lang = this.getAttribute('data-lang');
-        if (lang && typeof setLanguage === 'function') {
-          setLanguage(lang);
+      option.addEventListener('click', (event) => {
+        event.preventDefault();
+        const lang = option.getAttribute('data-lang');
+        if (!SUPPORTED_LANGS.includes(lang)) {
+          return;
         }
+
+        updateLanguageIndicator(lang);
+        highlightSelectedLanguage(lang);
+
+        if (typeof setLanguage === 'function') {
+          setLanguage(lang);
+        } else {
+          setStoredLanguage(lang);
+          redirectToLanguage(lang);
+        }
+
         if (languageMenu) {
           languageMenu.classList.add('hidden');
         }
       });
     });
 
-    // Contact modal button handling
+    highlightSelectedLanguage(activeLang);
+
     const contactButtons = document.querySelectorAll('[data-contact-btn]');
     contactButtons.forEach(button => {
-      button.addEventListener('click', function(e) {
+      button.addEventListener('click', function (e) {
         e.preventDefault();
 
-        // Try to open modal with retry mechanism
         const tryOpenModal = (attempts = 0) => {
           if (typeof openContactModal === 'function') {
             openContactModal();
           } else if (attempts < 20) {
-            // Retry up to 20 times (2 seconds total)
             setTimeout(() => tryOpenModal(attempts + 1), 100);
           } else {
             console.error('openContactModal function not available after 2 seconds');
@@ -173,11 +335,24 @@
     });
   }
 
-  // Load navigation when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadNavigation);
   } else {
-    // DOM already loaded
     loadNavigation();
+  }
+
+  if (typeof window !== 'undefined') {
+    window.__lynckApplyLocalizedLinks = function (lang) {
+      if (!SUPPORTED_LANGS.includes(lang)) {
+        return;
+      }
+      const navContainer = document.getElementById('navigation-placeholder');
+      if (!navContainer) {
+        return;
+      }
+      applyLocalizedLinks(navContainer, lang);
+      updateLanguageIndicator(lang);
+      highlightSelectedLanguage(lang);
+    };
   }
 })();

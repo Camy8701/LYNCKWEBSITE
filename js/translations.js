@@ -263,10 +263,17 @@ const localizedRoutes = {
   }
 };
 
+function syncNavigationLanguage(lang) {
+  if (typeof window !== 'undefined' && typeof window.__lynckApplyLocalizedLinks === 'function') {
+    window.__lynckApplyLocalizedLinks(lang);
+  }
+}
+
 const pathLanguage = detectLanguageFromPath();
 if (currentLanguage !== pathLanguage) {
   currentLanguage = pathLanguage;
   localStorage.setItem('language', currentLanguage);
+  syncNavigationLanguage(currentLanguage);
 }
 
 function getSlugFromPath(pathname) {
@@ -318,6 +325,8 @@ function setLanguage(lang) {
   currentLanguage = lang;
   localStorage.setItem('language', lang);
 
+  syncNavigationLanguage(lang);
+
   const redirectedPath = resolveLocalizedPath(lang);
   if (redirectedPath && redirectedPath !== window.location.pathname) {
     window.location.href = redirectedPath;
@@ -344,6 +353,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const langMap = { en: 'EN', de: 'DE', fr: 'FR' };
     langButton.textContent = langMap[currentLanguage] || 'EN';
   }
+
+  syncNavigationLanguage(currentLanguage);
 });
 
 // Export for global access
