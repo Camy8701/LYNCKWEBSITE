@@ -138,171 +138,240 @@ const translations = {
     "$15,000 - $50,000": "$15.000 - $50.000",
     "$50,000+": "$50.000+"
   },
-  fr: {
-    // Navigation
-    "Our Services": "Nos Services",
-    "About LYNCK": "À Propos de LYNCK",
-    "Testimonials": "Témoignages",
-    "Portfolio": "Portfolio",
-    "Learning Platform": "Plateforme d'Apprentissage",
-    "Let's connect": "Contactez-nous",
-
-    // Hero Section
-    "Crafting digital marketing experiences that feel intuitive, look beautiful, and drive real results for companies like Apple, Tesla, and Stripe.": "Création d'expériences de marketing numérique intuitives, belles et qui génèrent de vrais résultats pour des entreprises comme Apple, Tesla et Stripe.",
-    "View our work": "Voir notre travail",
-    "About us": "À propos de nous",
-
-    // Services
-    "OUR SERVICES": "NOS SERVICES",
-    "1. Easy-Edit Websites": "1. Sites Web Faciles à Modifier",
-    "2. Google Ads Specialists": "2. Spécialistes Google Ads",
-    "3. Learning Platform": "3. Plateforme d'Apprentissage",
-    "Easy-Edit Websites": "Sites Web Faciles à Modifier",
-    "We consolidated three tools and shaved minutes off every task. Setup took under 10 minutes. Websites you can edit yourself - instantly. Change any text, image, or background in seconds. No technical knowledge required.": "Nous avons consolidé trois outils et économisé des minutes sur chaque tâche. La configuration a pris moins de 10 minutes. Des sites web que vous pouvez modifier vous-même - instantanément. Changez n'importe quel texte, image ou arrière-plan en quelques secondes. Aucune connaissance technique requise.",
-    "Google Ads Specialists": "Spécialistes Google Ads",
-    "Learning Platform Access": "Accès à la Plateforme d'Apprentissage",
-    "Learn More": "En Savoir Plus",
-    "We focus on Google Ads with insider access to Google's latest features, beta programs, and insider knowledge. Managing campaigns for companies generating millions with 8-figure revenue experience.": "Nous nous concentrons sur Google Ads avec un accès privilégié aux dernières fonctionnalités de Google, aux programmes bêta et aux connaissances privilégiées. Gestion de campagnes pour des entreprises générant des millions avec une expérience de revenus à 8 chiffres.",
-    "Google Ads Management": "Gestion Google Ads",
-    "Beta feature access": "Accès aux fonctionnalités bêta",
-    "Million-dollar campaign experience": "Expérience de campagnes d'un million de dollars",
-    "Direct Google support line": "Ligne de support Google directe",
-    "SEO That Actually Works with Your Ads": "SEO Qui Fonctionne Vraiment Avec Vos Annonces",
-    "Google Analytics 4 setup and optimization. SEO strategy that complements your ad campaigns with data-driven insights.": "Configuration et optimisation de Google Analytics 4. Stratégie SEO qui complète vos campagnes publicitaires avec des insights basés sur les données.",
-    "Google Analytics 4 setup": "Configuration Google Analytics 4",
-    "SEO strategy integration": "Intégration de stratégie SEO",
-    "Data-driven insights": "Insights basés sur les données",
-    "Performance tracking": "Suivi des performances",
-
-    // Testimonials
-    "What Our Clients Say": "Ce Que Disent Nos Clients",
-    "Real results from real partnerships": "De vrais résultats de vrais partenariats",
-
-    // Footer
-    "Let's create something amazing together": "Créons quelque chose d'incroyable ensemble",
-    "Ready to scale your marketing? We'd love to hear about your goals and explore how we can work together to achieve them.": "Prêt à faire évoluer votre marketing? Nous aimerions connaître vos objectifs et explorer comment nous pouvons travailler ensemble pour les atteindre.",
-    "Quick Links": "Liens Rapides",
-    "Connect With Us": "Connectez-Vous Avec Nous",
-    "Services": "Services",
-    "Contact Info": "Informations de Contact",
-
-    // Contact Form
-    "Get in touch with us": "Contactez-nous",
-    "Ready to transform your digital presence? Let's discuss your project and see how we can help you achieve your goals.": "Prêt à transformer votre présence numérique? Discutons de votre projet et voyons comment nous pouvons vous aider à atteindre vos objectifs.",
-    "First Name": "Prénom",
-    "Last Name": "Nom de Famille",
-    "Email Address": "Adresse E-mail",
-    "Service Interested In": "Service qui Vous Intéresse",
-    "Budget Range": "Gamme de Budget",
-    "How can LYNCK help you?": "Comment LYNCK peut-il vous aider?",
-    "Send Message": "Envoyer le Message",
-    "Select a service": "Sélectionner un service",
-    "Select budget range": "Sélectionner une gamme de budget",
-    "Digital Marketing": "Marketing Numérique",
-    "Build a Website": "Créer un Site Web",
-    "Something Else": "Autre Chose",
-    "Under $5,000": "Moins de $5.000",
-    "$5,000 - $15,000": "$5.000 - $15.000",
-    "$15,000 - $50,000": "$15.000 - $50.000",
-    "$50,000+": "$50.000+"
-  }
 };
 
 // Shared translation functionality
-const supportedLanguages = ['en', 'de', 'fr'];
+const routing = typeof window !== 'undefined' ? (window.__lynckRouting || null) : null;
 
-function detectLanguageFromPath() {
-  const path = window.location.pathname;
-  if (path.startsWith('/de/')) return 'de';
-  if (path.startsWith('/fr/')) return 'fr';
-  return 'en';
-}
+const supportedLanguages = (routing?.SUPPORTED_LANGS || ['en', 'de']).map(lang => String(lang).toLowerCase());
 
-let currentLanguage = localStorage.getItem('language') || detectLanguageFromPath();
-
-const localizedRoutes = {
+const fallbackLocalizedRoutes = {
   index: {
-    en: '/',
-    de: '/de/index.html',
-    fr: '/fr/index.html'
+    en: '',
+    de: 'de/index.html'
   },
   'google-ads': {
-    en: '/google-ads.html',
-    de: '/de/google-ads.html',
-    fr: '/fr/google-ads.html'
+    en: 'google-ads.html',
+    de: 'de/google-ads.html'
   },
   pricing: {
-    en: '/pricing.html',
-    de: '/pricing.html',
-    fr: '/pricing.html'
+    en: 'pricing.html',
+    de: 'pricing.html'
   },
   'custom-website': {
-    en: '/custom-website.html',
-    de: '/de/custom-website.html',
-    fr: '/custom-website.html'
+    en: 'custom-website.html',
+    de: 'de/custom-website.html'
   },
   'digital-products': {
-    en: '/digital-products.html',
-    de: '/de/digital-products.html',
-    fr: '/digital-products.html'
+    en: 'digital-products.html',
+    de: 'de/digital-products.html'
   },
   'learning-platform': {
-    en: '/learning-platform.html',
-    de: '/de/learning-platform.html',
-    fr: '/learning-platform.html'
+    en: 'learning-platform.html',
+    de: 'de/learning-platform.html'
   },
   portfolio: {
-    en: '/portfolio.html',
-    de: '/de/portfolio.html',
-    fr: '/portfolio.html'
+    en: 'portfolio.html',
+    de: 'de/portfolio.html'
   },
   'why-choose-us': {
-    en: '/why-choose-us.html',
-    de: '/de/why-choose-us.html',
-    fr: '/why-choose-us.html'
+    en: 'why-choose-us.html',
+    de: 'de/why-choose-us.html'
   }
 };
 
-function syncNavigationLanguage(lang) {
-  if (typeof window !== 'undefined' && typeof window.__lynckApplyLocalizedLinks === 'function') {
-    window.__lynckApplyLocalizedLinks(lang);
+const localizedRoutes = routing?.ROUTE_MAP || fallbackLocalizedRoutes;
+
+function fallbackNormalizeLang(lang) {
+  if (typeof lang !== 'string') return 'en';
+  const normalized = lang.toLowerCase();
+  return supportedLanguages.includes(normalized) ? normalized : 'en';
+}
+
+const normalizeLang = routing?.normalizeLang || fallbackNormalizeLang;
+
+function fallbackGetPathSegments(pathname) {
+  if (typeof pathname !== 'string') return [];
+  return pathname.split('/').filter(Boolean);
+}
+
+function fallbackSplitWithoutLocale(segments) {
+  if (!segments.length) {
+    return { baseSegments: [], pageSegments: [] };
+  }
+
+  const last = segments[segments.length - 1];
+  if (last && last.includes('.')) {
+    return {
+      baseSegments: segments.slice(0, -1),
+      pageSegments: segments.slice(-1)
+    };
+  }
+
+  return { baseSegments: segments, pageSegments: [] };
+}
+
+function fallbackDeriveSlug(pageSegments) {
+  if (!pageSegments.length) {
+    return 'index';
+  }
+
+  const last = pageSegments[pageSegments.length - 1];
+  if (!last || last === '' || /index\.html?$/i.test(last)) {
+    return 'index';
+  }
+
+  if (last.includes('.')) {
+    return last.replace(/\.html?$/i, '') || 'index';
+  }
+
+  return last;
+}
+
+function fallbackGetPathInfo(pathname) {
+  const segments = fallbackGetPathSegments(pathname);
+  const localeIndex = segments.findIndex(seg => supportedLanguages.includes(seg.toLowerCase()));
+
+  let baseSegments = [];
+  let pageSegments = [];
+  let locale = null;
+
+  if (localeIndex !== -1) {
+    locale = segments[localeIndex].toLowerCase();
+    baseSegments = segments.slice(0, localeIndex);
+    pageSegments = segments.slice(localeIndex + 1);
+  } else {
+    const split = fallbackSplitWithoutLocale(segments);
+    baseSegments = split.baseSegments;
+    pageSegments = split.pageSegments;
+  }
+
+  const slug = fallbackDeriveSlug(pageSegments);
+  const basePath = baseSegments.length ? `/${baseSegments.join('/')}` : '';
+
+  return {
+    basePath,
+    locale,
+    pageSegments,
+    slug
+  };
+}
+
+function getPathInfo(pathname) {
+  if (routing && typeof routing.getPathInfo === 'function') {
+    return routing.getPathInfo(pathname);
+  }
+  return fallbackGetPathInfo(pathname);
+}
+
+function fallbackJoinPath(basePath, target) {
+  const normalizedBase = basePath ? basePath.replace(/\/+$/, '') : '';
+  const normalizedTarget = target ? String(target).replace(/^\/+/, '') : '';
+
+  if (!normalizedTarget) {
+    return normalizedBase ? `${normalizedBase}/` : '/';
+  }
+
+  if (!normalizedBase) {
+    return `/${normalizedTarget}`;
+  }
+
+  return `${normalizedBase}/${normalizedTarget}`;
+}
+
+function fallbackBuildRelativeFallback(info, lang) {
+  const normalizedLang = normalizeLang(lang);
+  const lastSegment = info.pageSegments.length ? info.pageSegments[info.pageSegments.length - 1] : '';
+  const fileName = lastSegment && lastSegment.includes('.') ? lastSegment : (info.slug === 'index' ? 'index.html' : `${info.slug}.html`);
+
+  if (normalizedLang === 'en') {
+    if (info.slug === 'index') {
+      return '';
+    }
+    return fileName;
+  }
+
+  if (info.slug === 'index') {
+    return `${normalizedLang}/`;
+  }
+
+  return `${normalizedLang}/${fileName}`;
+}
+
+function normalizePathForCompare(path) {
+  if (typeof path !== 'string' || path === '') {
+    return '/';
+  }
+  return path === '/' ? '/' : path.replace(/\/+$/, '');
+}
+
+function detectLanguageFromPath() {
+  if (routing && typeof routing.detectLanguageFromPath === 'function') {
+    return routing.detectLanguageFromPath();
+  }
+  const info = getPathInfo(window.location.pathname);
+  return info.locale && supportedLanguages.includes(info.locale) ? info.locale : 'en';
+}
+
+function getStoredLanguage() {
+  try {
+    const stored = localStorage.getItem('language');
+    if (stored) {
+      return normalizeLang(stored);
+    }
+  } catch (error) {
+    console.warn('Unable to access localStorage for language preference:', error);
+  }
+  return null;
+}
+
+function setStoredLanguage(lang) {
+  try {
+    localStorage.setItem('language', normalizeLang(lang));
+  } catch (error) {
+    console.warn('Unable to persist language preference:', error);
   }
 }
 
-const pathLanguage = detectLanguageFromPath();
-if (currentLanguage !== pathLanguage) {
-  currentLanguage = pathLanguage;
-  localStorage.setItem('language', currentLanguage);
-  syncNavigationLanguage(currentLanguage);
+function syncNavigationLanguage(lang) {
+  const normalizedLang = normalizeLang(lang);
+  if (typeof window !== 'undefined' && typeof window.__lynckApplyLocalizedLinks === 'function') {
+    window.__lynckApplyLocalizedLinks(normalizedLang);
+  }
 }
 
-function getSlugFromPath(pathname) {
-  const cleanPath = pathname.replace(/\/+$/, '');
-  if (!cleanPath || cleanPath === '') return 'index';
+const storedLanguage = getStoredLanguage();
+const pathLanguage = normalizeLang(detectLanguageFromPath());
+let currentLanguage = storedLanguage || pathLanguage;
 
-  const segments = cleanPath.split('/').filter(Boolean);
-  const filtered = segments.filter(seg => !supportedLanguages.includes(seg));
-  if (!filtered.length) return 'index';
-  const lastSegment = filtered[filtered.length - 1];
-  return lastSegment.replace(/\.html$/i, '') || 'index';
+if (currentLanguage !== pathLanguage) {
+  currentLanguage = pathLanguage;
+  setStoredLanguage(currentLanguage);
+  syncNavigationLanguage(currentLanguage);
+} else if (!storedLanguage) {
+  setStoredLanguage(currentLanguage);
 }
 
 function resolveLocalizedPath(lang) {
+  if (routing && typeof routing.resolveLocalizedPath === 'function') {
+    return routing.resolveLocalizedPath(lang);
+  }
+
   try {
-    const currentPath = window.location.pathname;
-    const slug = getSlugFromPath(currentPath);
-    const route = localizedRoutes[slug];
-    if (route) {
-      const target = route[lang] || route.en;
-      if (target) return target;
+    const info = getPathInfo(window.location.pathname);
+    const normalizedLang = normalizeLang(lang);
+    const route = localizedRoutes[info.slug];
+    let relativeTarget = route ? (route[normalizedLang] || route.en) : null;
+
+    if (!relativeTarget) {
+      relativeTarget = fallbackBuildRelativeFallback(info, normalizedLang);
     }
 
-    if (lang === 'en') {
-      return currentPath.replace(/^\/(de|fr)\//, '/');
+    if (!relativeTarget) {
+      return null;
     }
 
-    const pathWithoutLocale = currentPath.replace(/^\/(de|fr)\//, '/');
-    return `/${lang}${pathWithoutLocale}`.replace('//', '/');
+    return fallbackJoinPath(info.basePath, relativeTarget);
   } catch (error) {
     console.warn('resolveLocalizedPath error:', error);
   }
@@ -322,15 +391,25 @@ function translatePage() {
 }
 
 function setLanguage(lang) {
-  currentLanguage = lang;
-  localStorage.setItem('language', lang);
+  const normalizedLang = normalizeLang(lang);
+  currentLanguage = normalizedLang;
+  setStoredLanguage(normalizedLang);
 
-  syncNavigationLanguage(lang);
+  syncNavigationLanguage(normalizedLang);
 
-  const redirectedPath = resolveLocalizedPath(lang);
-  if (redirectedPath && redirectedPath !== window.location.pathname) {
-    window.location.href = redirectedPath;
-    return;
+  const redirectedPath = resolveLocalizedPath(normalizedLang);
+  if (redirectedPath) {
+    const normalizedTarget = normalizePathForCompare(redirectedPath);
+    const normalizedCurrent = normalizePathForCompare(window.location.pathname);
+
+    if (normalizedTarget !== normalizedCurrent) {
+      const hash = window.location.hash || '';
+      window.location.href = `${redirectedPath}${hash}`;
+      return;
+    } else if (window.location.hash) {
+      window.location.href = `${redirectedPath}${window.location.hash}`;
+      return;
+    }
   }
 
   translatePage();
@@ -338,8 +417,8 @@ function setLanguage(lang) {
   // Update language button text
   const langButton = document.getElementById('currentLang');
   if (langButton) {
-    const langMap = { en: 'EN', de: 'DE', fr: 'FR' };
-    langButton.textContent = langMap[lang] || 'EN';
+    const langMap = { en: 'EN', de: 'DE' };
+    langButton.textContent = langMap[normalizedLang] || 'EN';
   }
 }
 
@@ -350,7 +429,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update language button
   const langButton = document.getElementById('currentLang');
   if (langButton) {
-    const langMap = { en: 'EN', de: 'DE', fr: 'FR' };
+    const langMap = { en: 'EN', de: 'DE' };
     langButton.textContent = langMap[currentLanguage] || 'EN';
   }
 

@@ -5,56 +5,157 @@
   'use strict';
 
   const STORAGE_KEY = 'language';
-  const SUPPORTED_LANGS = ['en', 'de', 'fr'];
+  const SUPPORTED_LANGS = ['en', 'de'];
 
   const ROUTE_MAP = {
     index: {
-      en: '/',
-      de: '/de/index.html',
-      fr: '/fr/index.html'
+      en: '',
+      de: 'de/index.html'
     },
     'google-ads': {
-      en: '/google-ads.html',
-      de: '/de/google-ads.html',
-      fr: '/fr/google-ads.html'
+      en: 'google-ads.html',
+      de: 'de/google-ads.html'
     },
     'custom-website': {
-      en: '/custom-website.html',
-      de: '/de/custom-website.html',
-      fr: '/custom-website.html'
+      en: 'custom-website.html',
+      de: 'de/custom-website.html'
     },
     'digital-products': {
-      en: '/digital-products.html',
-      de: '/de/digital-products.html',
-      fr: '/digital-products.html'
+      en: 'digital-products.html',
+      de: 'de/digital-products.html'
     },
     'learning-platform': {
-      en: '/learning-platform.html',
-      de: '/de/learning-platform.html',
-      fr: '/learning-platform.html'
+      en: 'learning-platform.html',
+      de: 'de/learning-platform.html'
     },
     pricing: {
-      en: '/pricing.html',
-      de: '/pricing.html',
-      fr: '/pricing.html'
+      en: 'pricing.html',
+      de: 'pricing.html'
     },
     portfolio: {
-      en: '/portfolio.html',
-      de: '/de/portfolio.html',
-      fr: '/portfolio.html'
+      en: 'portfolio.html',
+      de: 'de/portfolio.html'
     },
     'why-choose-us': {
-      en: '/why-choose-us.html',
-      de: '/de/why-choose-us.html',
-      fr: '/why-choose-us.html'
+      en: 'why-choose-us.html',
+      de: 'de/why-choose-us.html'
     }
   };
 
+  function normalizeLang(lang) {
+    if (typeof lang !== 'string') return 'en';
+    const normalized = lang.toLowerCase();
+    return SUPPORTED_LANGS.includes(normalized) ? normalized : 'en';
+  }
+
+  function getPathSegments(pathname) {
+    if (typeof pathname !== 'string') return [];
+    return pathname.split('/').filter(Boolean);
+  }
+
+  function splitWithoutLocale(segments) {
+    if (!segments.length) {
+      return { baseSegments: [], pageSegments: [] };
+    }
+
+    const last = segments[segments.length - 1];
+    if (last && last.includes('.')) {
+      return {
+        baseSegments: segments.slice(0, -1),
+        pageSegments: segments.slice(-1)
+      };
+    }
+
+    return { baseSegments: segments, pageSegments: [] };
+  }
+
+  function deriveSlug(pageSegments) {
+    if (!pageSegments.length) {
+      return 'index';
+    }
+    const last = pageSegments[pageSegments.length - 1];
+    if (!last || last === '' || /index\.html?$/i.test(last)) {
+      return 'index';
+    }
+    if (last.includes('.')) {
+      return last.replace(/\.html?$/i, '') || 'index';
+    }
+    return last;
+  }
+
+  function getPathInfo(pathname) {
+    const segments = getPathSegments(pathname);
+    const localeIndex = segments.findIndex(seg => SUPPORTED_LANGS.includes(seg.toLowerCase()));
+
+    let baseSegments = [];
+    let pageSegments = [];
+    let locale = null;
+
+    if (localeIndex !== -1) {
+      locale = segments[localeIndex].toLowerCase();
+      baseSegments = segments.slice(0, localeIndex);
+      pageSegments = segments.slice(localeIndex + 1);
+    } else {
+      const split = splitWithoutLocale(segments);
+      baseSegments = split.baseSegments;
+      pageSegments = split.pageSegments;
+    }
+
+    const slug = deriveSlug(pageSegments);
+    const basePath = baseSegments.length ? `/${baseSegments.join('/')}` : '';
+
+    return {
+      basePath,
+      locale,
+      pageSegments,
+      slug
+    };
+  }
+
+  function joinPath(basePath, target) {
+    const normalizedBase = basePath ? basePath.replace(/\/+$/, '') : '';
+    const normalizedTarget = target ? String(target).replace(/^\/+/, '') : '';
+
+    if (!normalizedTarget) {
+      return normalizedBase ? `${normalizedBase}/` : '/';
+    }
+
+    if (!normalizedBase) {
+      return `/${normalizedTarget}`;
+    }
+
+    return `${normalizedBase}/${normalizedTarget}`;
+  }
+
+  function buildRelativeFallback(info, lang) {
+    const targetLang = normalizeLang(lang);
+    const lastSegment = info.pageSegments.length ? info.pageSegments[info.pageSegments.length - 1] : '';
+    const fileName = lastSegment && lastSegment.includes('.') ? lastSegment : (info.slug === 'index' ? 'index.html' : `${info.slug}.html`);
+
+    if (targetLang === 'en') {
+      if (info.slug === 'index') {
+        return '';
+      }
+      return fileName;
+    }
+
+    if (info.slug === 'index') {
+      return `${targetLang}/`;
+    }
+
+    return `${targetLang}/${fileName}`;
+  }
+
+  function normalizePathForCompare(path) {
+    if (typeof path !== 'string' || path === '') {
+      return '/';
+    }
+    return path === '/' ? '/' : path.replace(/\/+$/, '');
+  }
+
   function detectLanguageFromPath() {
-    const path = window.location.pathname;
-    if (path.startsWith('/de/')) return 'de';
-    if (path.startsWith('/fr/')) return 'fr';
-    return 'en';
+    const info = getPathInfo(window.location.pathname);
+    return info.locale && SUPPORTED_LANGS.includes(info.locale) ? info.locale : 'en';
   }
 
   function getStoredLanguage() {
@@ -77,53 +178,27 @@
     }
   }
 
-  function getSlugFromPath(pathname) {
-    const cleanPath = pathname.replace(/\/+$/, '');
-    if (!cleanPath || cleanPath === '/') {
-      return 'index';
-    }
-
-    const segments = cleanPath.split('/').filter(Boolean);
-    const filtered = segments.filter(seg => !SUPPORTED_LANGS.includes(seg));
-
-    if (!filtered.length) {
-      return 'index';
-    }
-
-    const last = filtered[filtered.length - 1];
-    if (!last) return 'index';
-
-    if (!last.includes('.')) {
-      return last;
-    }
-
-    return last.replace(/\.html$/i, '') || 'index';
-  }
-
   function resolveLocalizedPath(lang) {
-    const slug = getSlugFromPath(window.location.pathname);
-    const route = ROUTE_MAP[slug];
-    if (!route) {
-      return null;
+    const info = getPathInfo(window.location.pathname);
+    const normalizedLang = normalizeLang(lang);
+    const route = ROUTE_MAP[info.slug];
+
+    let relativeTarget = null;
+
+    if (route) {
+      relativeTarget = route[normalizedLang] || route.en;
     }
 
-    let target = route[lang] || route.en;
-    if (!target) {
-      return null;
+    if (!relativeTarget) {
+      relativeTarget = buildRelativeFallback(info, normalizedLang);
     }
 
-    if (!target.startsWith('/')) {
-      target = `/${target}`;
-    }
-
-    if (target === '/index.html') {
-      return '/';
-    }
-
-    return target;
+    return joinPath(info.basePath, relativeTarget);
   }
 
   function applyLocalizedLinks(container, lang) {
+    const info = getPathInfo(window.location.pathname);
+    const normalizedLang = normalizeLang(lang);
     const links = container.querySelectorAll('[data-route]');
 
     links.forEach(link => {
@@ -135,25 +210,18 @@
         return;
       }
 
-      let href = route[lang] || route.en;
-      if (!href) {
+      const relativeTarget = route[normalizedLang] || route.en;
+      if (!relativeTarget || typeof relativeTarget !== 'string') {
         return;
       }
 
-      if (!href.startsWith('/')) {
-        href = `/${href}`;
-      }
-
-      if (href === '/index.html') {
-        href = '/';
-      }
-
+      const href = joinPath(info.basePath, relativeTarget);
       link.setAttribute('href', `${href}${anchor}`);
     });
   }
 
   function updateLanguageIndicator(lang) {
-    const langMap = { en: 'EN', de: 'DE', fr: 'FR' };
+    const langMap = { en: 'EN', de: 'DE' };
     const langButton = document.getElementById('currentLang');
     if (langButton) {
       langButton.textContent = langMap[lang] || 'EN';
@@ -178,28 +246,41 @@
 
   function redirectToLanguage(lang) {
     const target = resolveLocalizedPath(lang);
-    if (target && target !== window.location.pathname) {
-      window.location.href = target;
-    } else if (target && window.location.hash) {
-      // Ensure anchors still align if only hash differs
-      window.location.href = target + window.location.hash;
+    if (!target) {
+      return;
+    }
+
+    const normalizedTarget = normalizePathForCompare(target);
+    const normalizedCurrent = normalizePathForCompare(window.location.pathname);
+
+    if (normalizedTarget !== normalizedCurrent) {
+      const hash = window.location.hash || '';
+      window.location.href = `${target}${hash}`;
+    } else if (window.location.hash) {
+      window.location.href = `${target}${window.location.hash}`;
     }
   }
 
   async function loadNavigation() {
     try {
       const currentPath = window.location.pathname;
-      const isInLocalizedFolder = currentPath.includes('/de/') || currentPath.includes('/fr/');
+      const pathInfo = getPathInfo(currentPath);
+      const isInLocalizedFolder = pathInfo.locale && pathInfo.locale !== 'en';
       const navPath = isInLocalizedFolder ? '../components/navigation.html' : 'components/navigation.html';
 
-      const storedLang = getStoredLanguage();
+      const storedLangRaw = getStoredLanguage();
+      const storedLang = storedLangRaw ? normalizeLang(storedLangRaw) : null;
       const pathLang = detectLanguageFromPath();
       if (storedLang && storedLang !== pathLang) {
         const targetPath = resolveLocalizedPath(storedLang);
-        if (targetPath && targetPath !== window.location.pathname) {
-          const hash = window.location.hash || '';
-          window.location.replace(`${targetPath}${hash}`);
-          return;
+        if (targetPath) {
+          const normalizedTarget = normalizePathForCompare(targetPath);
+          const normalizedCurrent = normalizePathForCompare(window.location.pathname);
+          if (normalizedTarget !== normalizedCurrent) {
+            const hash = window.location.hash || '';
+            window.location.replace(`${targetPath}${hash}`);
+            return;
+          }
         }
       }
 
@@ -342,17 +423,27 @@
   }
 
   if (typeof window !== 'undefined') {
+    window.__lynckRouting = {
+      SUPPORTED_LANGS: SUPPORTED_LANGS.slice(),
+      ROUTE_MAP,
+      getPathInfo,
+      resolveLocalizedPath,
+      detectLanguageFromPath,
+      normalizeLang
+    };
+
     window.__lynckApplyLocalizedLinks = function (lang) {
-      if (!SUPPORTED_LANGS.includes(lang)) {
+      const normalizedLang = normalizeLang(lang);
+      if (!SUPPORTED_LANGS.includes(normalizedLang)) {
         return;
       }
       const navContainer = document.getElementById('navigation-placeholder');
       if (!navContainer) {
         return;
       }
-      applyLocalizedLinks(navContainer, lang);
-      updateLanguageIndicator(lang);
-      highlightSelectedLanguage(lang);
+      applyLocalizedLinks(navContainer, normalizedLang);
+      updateLanguageIndicator(normalizedLang);
+      highlightSelectedLanguage(normalizedLang);
     };
   }
 })();

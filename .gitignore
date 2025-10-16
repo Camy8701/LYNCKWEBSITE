@@ -27,3 +27,13 @@ yarn-error.log*
 # Temporary files
 *.bak
 .tmp/
+
+# Eleventy / Static site generators
+_site/
+.eleventy.js
+eleventy/
+.backup-eleventy/
+
+# Build artifacts
+dist/
+build/
