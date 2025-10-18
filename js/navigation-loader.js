@@ -30,7 +30,7 @@
     },
     pricing: {
       en: 'pricing.html',
-      de: 'pricing.html'
+      de: 'de/pricing.html'
     },
     portfolio: {
       en: 'portfolio.html',
@@ -268,20 +268,16 @@
       const isInLocalizedFolder = pathInfo.locale && pathInfo.locale !== 'en';
       const navPath = isInLocalizedFolder ? '../components/navigation.html' : 'components/navigation.html';
 
+      // Always prioritize path language over stored language
+      // This ensures the page you're on determines the language, not localStorage
+      const pathLang = detectLanguageFromPath();
       const storedLangRaw = getStoredLanguage();
       const storedLang = storedLangRaw ? normalizeLang(storedLangRaw) : null;
-      const pathLang = detectLanguageFromPath();
+
+      // If stored language differs from path, update storage to match path
+      // This prevents the conflict where localStorage says 'de' but we're on English page
       if (storedLang && storedLang !== pathLang) {
-        const targetPath = resolveLocalizedPath(storedLang);
-        if (targetPath) {
-          const normalizedTarget = normalizePathForCompare(targetPath);
-          const normalizedCurrent = normalizePathForCompare(window.location.pathname);
-          if (normalizedTarget !== normalizedCurrent) {
-            const hash = window.location.hash || '';
-            window.location.replace(`${targetPath}${hash}`);
-            return;
-          }
-        }
+        setStoredLanguage(pathLang);
       }
 
       const response = await fetch(navPath);
@@ -300,12 +296,18 @@
 
       navContainer.innerHTML = navHTML;
 
-      const activeLang = storedLang || pathLang;
+      // Always use path language as the active language
+      // The URL determines the language, not localStorage
+      const activeLang = pathLang;
       setStoredLanguage(activeLang);
       applyLocalizedLinks(navContainer, activeLang);
       updateLanguageIndicator(activeLang);
       highlightSelectedLanguage(activeLang);
       initializeNavigationFunctionality(navContainer, activeLang);
+      if (typeof translatePage === 'function') {
+        translatePage();
+      }
+
     } catch (error) {
       console.error('Error loading navigation:', error);
     }

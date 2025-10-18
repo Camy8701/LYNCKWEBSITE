@@ -9,7 +9,16 @@ const translations = {
     "Testimonials": "Testimonials",
     "Portfolio": "Portfolio",
     "Learning Platform": "Learning Platform",
+    "Pricing": "Pricing",
+    "All": "All",
     "Let's connect": "Let's connect",
+    "Google Ads": "Google Ads",
+    "Custom Website": "Custom Website",
+    "Digital Products": "Digital Products",
+    "Work": "Work",
+    "About": "About",
+    "Process": "Process",
+    "Journal": "Journal",
 
     // Hero Section
     "Crafting digital marketing experiences that feel intuitive, look beautiful, and drive real results for companies like Apple, Tesla, and Stripe.": "Crafting digital marketing experiences that feel intuitive, look beautiful, and drive real results for companies like Apple, Tesla, and Stripe.",
@@ -77,7 +86,16 @@ const translations = {
     "Testimonials": "Referenzen",
     "Portfolio": "Portfolio",
     "Learning Platform": "Lernplattform",
+    "Pricing": "Preise",
+    "All": "Alle",
     "Let's connect": "Kontakt aufnehmen",
+    "Google Ads": "Google Ads",
+    "Custom Website": "Individuelle Website",
+    "Digital Products": "Digitale Produkte",
+    "Work": "Arbeit",
+    "About": "Über",
+    "Process": "Prozess",
+    "Journal": "Journal",
 
     // Hero Section
     "Crafting digital marketing experiences that feel intuitive, look beautiful, and drive real results for companies like Apple, Tesla, and Stripe.": "Wir schaffen digitale Marketing-Erlebnisse, die intuitiv und schön sind und echte Ergebnisse für Unternehmen wie Apple, Tesla und Stripe erzielen.",
@@ -342,15 +360,18 @@ function syncNavigationLanguage(lang) {
 
 const storedLanguage = getStoredLanguage();
 const pathLanguage = normalizeLang(detectLanguageFromPath());
-let currentLanguage = storedLanguage || pathLanguage;
 
-if (currentLanguage !== pathLanguage) {
-  currentLanguage = pathLanguage;
-  setStoredLanguage(currentLanguage);
-  syncNavigationLanguage(currentLanguage);
-} else if (!storedLanguage) {
+// Priority: path language > stored language > default 'en'
+// If we're on a German page (/de/...), always use German
+// If we're on an English page and have no stored preference, use English
+let currentLanguage = pathLanguage || storedLanguage || 'en';
+
+// Store the language preference
+if (currentLanguage !== storedLanguage) {
   setStoredLanguage(currentLanguage);
 }
+
+syncNavigationLanguage(currentLanguage);
 
 function resolveLocalizedPath(lang) {
   if (routing && typeof routing.resolveLocalizedPath === 'function') {
