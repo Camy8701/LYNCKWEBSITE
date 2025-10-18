@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
 <!-- Preload Critical Resources -->
-<link rel="preload" href="js/translations.js" as="script">
+<link rel="preload" href="../js/translations.js" as="script">
 <!-- Optimized Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
@@ -62,8 +62,8 @@
     <section class="py-20 relative">
       <div class="max-w-7xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
         <div class="relative z-10 text-center">
-          <h1 class="text-6xl lg:text-8xl font-black text-white tracking-tighter mb-8 leading-none">
-            PRICING
+          <h1 class="text-6xl lg:text-8xl font-black text-white tracking-tighter mb-8 leading-none" data-translate="PRICING">
+            PREISE
           </h1>
         </div>
       </div>
@@ -83,38 +83,44 @@
               </button>
             </div>
             <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-2xl font-bold text-white mb-2 font-geist">Bronze</h3>
-              <div class="text-3xl font-bold text-white mb-4 font-geist">From €499<span class="text-lg text-gray-400">/month</span></div>
-              <p class="text-sm text-gray-300 mb-4">Perfect for smaller budgets building a reliable foundation. We stabilize your account, align targeting with intent, and create a roadmap for profitable scaling.</p>
+              <h3 class="text-2xl font-bold text-white mb-2 font-geist" data-translate="Bronze">Bronze</h3>
+              <div class="text-3xl font-bold text-white mb-4 font-geist">Ab €499<span class="text-lg text-gray-400">/Monat</span></div>
+              <p class="text-sm text-gray-300 mb-4" data-translate="Perfect for smaller budgets building a reliable foundation. We stabilize your account, align targeting with intent, and create a roadmap for profitable scaling.">Ideal für kleinere Budgets und den Einstieg in profitables Suchmaschinenmarketing. Wir legen die Basis für sauberes Tracking, effiziente Anzeigen und nachhaltiges Wachstum.</p>
               <ul class="space-y-2 text-sm text-gray-300 mb-6">
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>Account and conversion tracking audit</span>
+                  <span data-translate="Account and conversion tracking audit">Account- & Conversion-Tracking-Audit bei Übernahme</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>Keyword research with negative list build-out</span>
+                  <span data-translate="Keyword research with negative list build-out">Keyword-Recherche & Anzeigenerstellung</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>Ad copywriting and creative direction</span>
+                  <span data-translate="Ad copywriting and creative direction">Monatliche Optimierung (Gebote, Keywords, Anzeigen)</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>Monthly performance review and strategy call</span>
+                  <span data-translate="Monthly performance review and strategy call">1 Strategie-Call pro Quartal</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span data-translate="Monthly performance report">Monatsreport mit den wichtigsten Kennzahlen</span>
                 </li>
               </ul>
               <div class="mt-auto">
                 <button onclick="openContactModal()" class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md font-geist">
-                  <span>Get Started</span>
+                  <span data-translate="Get Started">Jetzt Starten</span>
                 </button>
               </div>
             </div>
@@ -130,38 +136,50 @@
               </button>
             </div>
             <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-2xl font-bold text-white mb-2 font-geist">Silver</h3>
-              <div class="text-3xl font-bold text-white mb-4 font-geist">€799–1,199<span class="text-lg text-gray-400">/month</span></div>
-              <p class="text-sm text-gray-300 mb-4">Built for teams ready to scale beyond the basics. We align analytics, search, and creative testing to uncover new growth levers and accelerate ROAS.</p>
+              <h3 class="text-2xl font-bold text-white mb-2 font-geist" data-translate="Silver">Silber</h3>
+              <div class="text-3xl font-bold text-white mb-4 font-geist">799–1.199 €<span class="text-lg text-gray-400">/Monat</span></div>
+              <p class="text-sm text-gray-300 mb-4" data-translate="Built for teams ready to scale beyond the basics. We align analytics, search, and creative testing to uncover new growth levers and accelerate ROAS.">Für Unternehmen, die bereits stabile Ergebnisse erzielen und gezielt weiter skalieren möchten. Mehr Struktur, tiefere Analysen und saisonale Strategieanpassungen.</p>
               <ul class="space-y-2 text-sm text-gray-300 mb-6">
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>Bi-weekly performance reviews and optimization sprints</span>
+                  <span data-translate="Bi-weekly performance reviews and optimization sprints">Zweiwöchentliche Performance-Checks & Optimierungen</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>Competitor and SERP intelligence reporting</span>
+                  <span data-translate="Competitor and SERP intelligence reporting">Conversion-Tracking-Review pro Quartal</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>New campaign launches across additional networks</span>
+                  <span data-translate="New campaign launches across additional networks">1 Strategie-Call pro Monat</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>Advanced conversion tracking and data visualizations</span>
+                  <span data-translate="Advanced conversion tracking and data visualizations">Konkurrenzanalyse (Auction Insights & SERP-Vergleich)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span data-translate="Detailed monthly reporting">Detailliertes Monatsreporting mit Trendanalysen</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span data-translate="Seasonal campaign adjustments">Saisonale Kampagnenanpassungen & neue Schwerpunkte</span>
                 </li>
               </ul>
               <div class="mt-auto">
                 <button onclick="openContactModal()" class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md font-geist">
-                  <span>Get Started</span>
+                  <span data-translate="Get Started">Jetzt Starten</span>
                 </button>
               </div>
             </div>
@@ -177,38 +195,50 @@
               </button>
             </div>
             <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-2xl font-bold text-white mb-2 font-geist">Gold</h3>
-              <div class="text-3xl font-bold text-white mb-4 font-geist">€1,299–2,199<span class="text-lg text-gray-400">/month</span></div>
-              <p class="text-sm text-gray-300 mb-4">For brands investing heavily across channels. We engineer continuous testing programs and advanced bidding strategies to unlock scalable growth.</p>
+              <h3 class="text-2xl font-bold text-white mb-2 font-geist" data-translate="Gold">Gold</h3>
+              <div class="text-3xl font-bold text-white mb-4 font-geist">1.299–2.199 €<span class="text-lg text-gray-400">/Monat</span></div>
+              <p class="text-sm text-gray-300 mb-4" data-translate="For brands investing heavily across channels. We engineer continuous testing programs and advanced bidding strategies to unlock scalable growth.">Für Marken mit klarer Wachstumsvision. Datengetriebene Optimierung kombiniert mit kontinuierlicher Kampagnenentwicklung und kreativer Weiterentwicklung.</p>
               <ul class="space-y-2 text-sm text-gray-300 mb-6">
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>Always-on bid, budget, and creative optimization</span>
+                  <span data-translate="Always-on bid, budget, and creative optimization">A/B-Tests für Anzeigen & Keywords, Qualitätsfaktor-Optimierung</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>Structured A/B testing for ads, landing pages, and offers</span>
+                  <span data-translate="Structured A/B testing for ads, landing pages, and offers">Monatlicher KPI-Review & Forecasting</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>Dedicated strategist and weekly performance councils</span>
+                  <span data-translate="Dedicated strategist and weekly performance councils">Monatlicher Conversion-Audit & Handlungsempfehlungen</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>Priority support and rapid experiment deployment</span>
+                  <span data-translate="Priority support and rapid experiment deployment">Ad-Creative Feedback & Copywriting-Support (Hooks, CTAs, Ideen)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span data-translate="Monthly strategy call">1 Strategie-Call pro Monat</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span data-translate="Dedicated contact and priority support">Dedizierter Ansprechpartner & priorisierter Support</span>
                 </li>
               </ul>
               <div class="mt-auto">
                 <button onclick="openContactModal()" class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md font-geist">
-                  <span>Get Started</span>
+                  <span data-translate="Get Started">Jetzt Starten</span>
                 </button>
               </div>
             </div>
@@ -224,38 +254,56 @@
               </button>
             </div>
             <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-2xl font-bold text-white mb-2 font-geist">Platinum</h3>
-              <div class="text-3xl font-bold text-white mb-4 font-geist">From €2,599<span class="text-lg text-gray-400">/month</span></div>
-              <p class="text-sm text-gray-300 mb-4">Enterprise-level partnership with daily stewardship, bespoke growth frameworks, and full-funnel integrations for large-scale advertisers.</p>
+              <h3 class="text-2xl font-bold text-white mb-2 font-geist" data-translate="Platinum">Platinum</h3>
+              <div class="text-3xl font-bold text-white mb-4 font-geist">Ab 2.599 €<span class="text-lg text-gray-400">/Monat</span></div>
+              <p class="text-sm text-gray-300 mb-4" data-translate="Enterprise-level partnership with daily stewardship, bespoke growth frameworks, and full-funnel integrations for large-scale advertisers.">Für Unternehmen mit hohem Werbebudget und Fokus auf Performance-Exzellenz. Tägliche Betreuung, tiefes Reporting und kreative Zusammenarbeit für skalierbares Wachstum.</p>
               <ul class="space-y-2 text-sm text-gray-300 mb-6">
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>Daily optimization with multi-market budget orchestration</span>
+                  <span data-translate="Daily optimization with multi-market budget orchestration">Tägliche Optimierung & Budgetmanagement</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>Custom growth playbooks and scaling models</span>
+                  <span data-translate="Custom growth playbooks and scaling models">Echtzeit-Monitoring und Performance-Alerts</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>Executive dashboards with predictive forecasting</span>
+                  <span data-translate="Executive dashboards with predictive forecasting">Regelmäßige Performance-Workshops</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span>Dedicated senior strategist and cross-channel task force</span>
+                  <span data-translate="Dedicated senior strategist and cross-channel task force">Zwei Strategie-Calls pro Monat</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span data-translate="Creative direction calls">Creative Direction Calls – direkte Zusammenarbeit mit Design- oder Content-Teams</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span data-translate="Individual scaling strategies">Individuelle Skalierungsstrategien & Wachstumsmodelle</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span data-translate="Forecasting and budget allocation">Forecasting, Quartalsplanung & Budgetallokation</span>
                 </li>
               </ul>
               <div class="mt-auto">
                 <button onclick="openContactModal()" class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md font-geist">
-                  <span>Get Started</span>
+                  <span data-translate="Get Started">Jetzt Starten</span>
                 </button>
               </div>
             </div>
@@ -268,11 +316,11 @@
     <section class="py-20 relative">
       <div class="max-w-7xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
         <div class="text-center mb-12 relative z-10">
-          <h2 class="text-4xl lg:text-5xl text-white font-geist tracking-tight font-light mb-4">
+          <h2 class="text-4xl lg:text-5xl text-white font-geist tracking-tight font-light mb-4" data-translate="LYNCK Partner & Partner Plus">
             LYNCK Partner & Partner Plus
           </h2>
-          <p class="text-lg text-gray-300 font-geist max-w-4xl mx-auto">
-            With the LYNCK Partner Package, your team becomes your most powerful marketing asset — trained by Google Ads professionals to perform like an agency. At LYNCK We Build Freedom.
+          <p class="text-lg text-gray-300 font-geist max-w-4xl mx-auto" data-translate="With the LYNCK Partner Package, your team becomes your most powerful marketing asset — trained by Google Ads professionals to perform like an agency. At LYNCK We Build Freedom.">
+            Mit dem LYNCK Partner-Paket wird Ihr Team zu Ihrem wertvollsten Marketing-Asset – geschult von Google Ads-Profis, um wie eine Agentur zu performen. Bei LYNCK bauen wir Freiheit.
           </p>
         </div>
 
@@ -280,74 +328,74 @@
           <!-- LYNCK Partner Card -->
           <div class="group relative overflow-hidden rounded-2xl bg-black/40 border border-white/10 backdrop-blur-lg hover:border-white/15 transition-all duration-500">
             <div class="p-8">
-              <h3 class="text-3xl font-bold text-white mb-4 font-geist">LYNCK Partner</h3>
+              <h3 class="text-3xl font-bold text-white mb-4 font-geist" data-translate="LYNCK Partner">LYNCK Partner</h3>
               <div class="mb-6">
                 <div class="text-2xl font-bold text-white mb-2 font-geist">€2,999 one-time</div>
                 <p class="text-sm text-gray-400">(or 2× €1,000 and 1× €999/month)</p>
                 <div class="mt-3 space-y-1 text-gray-300">
-                  <p class="text-sm"><strong>Duration:</strong> 8 weeks</p>
-                  <p class="text-sm"><strong>Seats:</strong> 1 trainee</p>
-                  <p class="text-sm mt-2"><strong>Best for:</strong> Small businesses that want to train one internal team member to manage and grow their Google Ads campaigns.</p>
+                  <p class="text-sm"><strong data-translate="Duration:">Dauer:</strong> <span data-translate="8 weeks">8 Wochen</span></p>
+                  <p class="text-sm"><strong data-translate="Seats:">Plätze:</strong> <span data-translate="1 trainee">1 Teilnehmer</span></p>
+                  <p class="text-sm mt-2"><strong data-translate="Best for:">Ideal für:</strong> <span data-translate="Small businesses that want to train one internal team member to manage and grow their Google Ads campaigns.">Kleine Unternehmen, die ein internes Teammitglied schulen möchten, um ihre Google Ads-Kampagnen zu verwalten und zu steigern.</span></p>
                 </div>
               </div>
 
               <div class="border-t border-white/10 pt-6">
-                <h4 class="text-xl font-bold text-white mb-4 font-geist">What's Included</h4>
+                <h4 class="text-xl font-bold text-white mb-4 font-geist" data-translate="What's Included">Was ist enthalten</h4>
                 <ul class="space-y-3 text-sm text-gray-300">
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>1:1 live training</strong> with certified Google experts (2h/week × 8 weeks)</span>
+                    <span data-translate="1:1 live training with certified Google experts (2h/week × 8 weeks)"><strong>1:1 Live-Training</strong> mit zertifizierten Google-Experten (2h/Woche × 8 Wochen)</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>Full digital Google Ads course</strong> with videos, audio lessons, and visual walkthroughs from beginner to advanced</span>
+                    <span data-translate="Full digital Google Ads course with videos, audio lessons, and visual walkthroughs from beginner to advanced"><strong>Vollständiger digitaler Google Ads-Kurs</strong> mit Videos, Audio-Lektionen und visuellen Anleitungen von Anfänger bis Fortgeschritten</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>Customized training plan</strong> tailored to your company, product, market, and customer journey</span>
+                    <span data-translate="Customized training plan tailored to your company, product, market, and customer journey"><strong>Individueller Trainingsplan</strong> zugeschnitten auf Ihr Unternehmen, Produkt, Markt und Customer Journey</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>Live work on your Google Ads account</strong> including advanced campaign builds, testing, and budget optimization</span>
+                    <span data-translate="Live work on your Google Ads account including advanced campaign builds, testing, and budget optimization"><strong>Live-Arbeit an Ihrem Google Ads-Konto</strong> einschließlich fortgeschrittenem Kampagnen-Setup, Testing und Budget-Optimierung</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>Campaign audit and conversion setup review</strong> with KPI planning</span>
+                    <span data-translate="Campaign audit and conversion setup review with KPI planning"><strong>Kampagnen-Audit und Conversion-Setup-Review</strong> mit KPI-Planung</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>Post-training support</strong> for up to 2 months (email & chat) or a 2h strategy call each month</span>
+                    <span data-translate="Post-training support for up to 2 months (email & chat) or a 2h strategy call each month"><strong>Post-Training-Support</strong> für bis zu 2 Monate (E-Mail & Chat) oder ein 2h-Strategiegespräch pro Monat</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>LYNCK Certified In-House Marketer certificate</strong></span>
+                    <span data-translate="LYNCK Certified In-House Marketer certificate"><strong>LYNCK Certified In-House Marketer Zertifikat</strong></span>
                   </li>
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>Two hours per week of live training</strong> plus guided campaign execution</span>
+                    <span data-translate="Two hours per week of live training plus guided campaign execution"><strong>Zwei Stunden Live-Training pro Woche</strong> plus geführte Kampagnen-Umsetzung</span>
                   </li>
                 </ul>
               </div>
 
               <div class="mt-8">
                 <button onclick="openContactModal()" class="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:from-green-700 hover:to-emerald-700 transition-all duration-200 font-geist font-semibold">
-                  <span>Get Started</span>
+                  <span data-translate="Get Started">Jetzt Starten</span>
                 </button>
               </div>
             </div>
@@ -356,74 +404,74 @@
           <!-- LYNCK Partner Plus Card -->
           <div class="group relative overflow-hidden rounded-2xl bg-black/40 border border-white/10 backdrop-blur-lg hover:border-white/15 transition-all duration-500">
             <div class="p-8">
-              <h3 class="text-3xl font-bold text-white mb-4 font-geist">LYNCK Partner Plus</h3>
+              <h3 class="text-3xl font-bold text-white mb-4 font-geist" data-translate="LYNCK Partner Plus">LYNCK Partner Plus</h3>
               <div class="mb-6">
                 <div class="text-2xl font-bold text-white mb-2 font-geist">€4,999 one-time</div>
                 <p class="text-sm text-gray-400">(or 2× €2,000 and 1× €999/month)</p>
                 <div class="mt-3 space-y-1 text-gray-300">
-                  <p class="text-sm"><strong>Duration:</strong> 12 weeks</p>
-                  <p class="text-sm"><strong>Seats:</strong> Up to 2 trainees with the option to add more seats</p>
-                  <p class="text-sm mt-2"><strong>Best for:</strong> Established companies building an internal performance team capable of scaling complex campaigns.</p>
+                  <p class="text-sm"><strong data-translate="Duration:">Dauer:</strong> <span data-translate="12 weeks">12 Wochen</span></p>
+                  <p class="text-sm"><strong data-translate="Seats:">Plätze:</strong> <span data-translate="Up to 2 trainees with the option to add more seats">Bis zu 2 Teilnehmer mit Option auf weitere Plätze</span></p>
+                  <p class="text-sm mt-2"><strong data-translate="Best for:">Ideal für:</strong> <span data-translate="Established companies building an internal performance team capable of scaling complex campaigns.">Etablierte Unternehmen, die ein internes Performance-Team aufbauen, das komplexe Kampagnen skalieren kann.</span></p>
                 </div>
               </div>
 
               <div class="border-t border-white/10 pt-6">
-                <h4 class="text-xl font-bold text-white mb-4 font-geist">What's Included</h4>
+                <h4 class="text-xl font-bold text-white mb-4 font-geist" data-translate="What's Included">Was ist enthalten</h4>
                 <ul class="space-y-3 text-sm text-gray-300">
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>1:1 live training</strong> with certified Google experts (2h/week × 12 weeks)</span>
+                    <span data-translate="1:1 live training with certified Google experts (2h/week × 12 weeks)"><strong>1:1 Live-Training</strong> mit zertifizierten Google-Experten (2h/Woche × 12 Wochen)</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>Full digital Google Ads course</strong> with videos, audio lessons, and visual walkthroughs from beginner to advanced</span>
+                    <span data-translate="Full digital Google Ads course with videos, audio lessons, and visual walkthroughs from beginner to advanced"><strong>Vollständiger digitaler Google Ads-Kurs</strong> mit Videos, Audio-Lektionen und visuellen Anleitungen von Anfänger bis Fortgeschritten</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>Customized training plan</strong> tailored to your company, product, market, and customer journey</span>
+                    <span data-translate="Customized training plan tailored to your company, product, market, and customer journey"><strong>Individueller Trainingsplan</strong> zugeschnitten auf Ihr Unternehmen, Produkt, Markt und Customer Journey</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>Live work on your Google Ads account</strong> including advanced campaign builds, testing, and budget optimization</span>
+                    <span data-translate="Live work on your Google Ads account including advanced campaign builds, testing, and budget optimization"><strong>Live-Arbeit an Ihrem Google Ads-Konto</strong> einschließlich fortgeschrittenem Kampagnen-Setup, Testing und Budget-Optimierung</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>Campaign audit and conversion setup review</strong> with KPI planning</span>
+                    <span data-translate="Campaign audit and conversion setup review with KPI planning"><strong>Kampagnen-Audit und Conversion-Setup-Review</strong> mit KPI-Planung</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>Extended post-training support</strong> for up to 2 months (Email & Chat) or a 2h strategy call each month</span>
+                    <span data-translate="Extended post-training support for up to 2 months (Email & Chat) or a 2h strategy call each month"><strong>Erweiterter Post-Training-Support</strong> für bis zu 2 Monate (E-Mail & Chat) oder ein 2h-Strategiegespräch pro Monat</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>LYNCK Certified In-House Marketer certificate</strong></span>
+                    <span data-translate="LYNCK Certified In-House Marketer certificate"><strong>LYNCK Certified In-House Marketer Zertifikat</strong></span>
                   </li>
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span><strong>Two hours per week of live training</strong> plus guided campaign execution</span>
+                    <span data-translate="Two hours per week of live training plus guided campaign execution"><strong>Zwei Stunden Live-Training pro Woche</strong> plus geführte Kampagnen-Umsetzung</span>
                   </li>
                 </ul>
               </div>
 
               <div class="mt-8">
                 <button onclick="openContactModal()" class="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 font-geist font-semibold">
-                  <span>Get Started</span>
+                  <span data-translate="Get Started">Jetzt Starten</span>
                 </button>
               </div>
             </div>
@@ -432,56 +480,56 @@
 
         <!-- Why Companies Choose Section -->
           <div class="relative z-10 bg-black/40 border border-white/10 rounded-2xl p-8 backdrop-blur-lg">
-            <h3 class="text-3xl font-bold text-white mb-6 font-geist">Why Companies Choose LYNCK Partner & Partner Plus</h3>
-            <h4 class="text-xl font-semibold text-white mb-4 font-geist">Key Benefits for Your Business</h4>
+            <h3 class="text-3xl font-bold text-white mb-6 font-geist" data-translate="Why Companies Choose LYNCK Partner & Partner Plus">Warum Unternehmen LYNCK Partner & Partner Plus wählen</h3>
+            <h4 class="text-xl font-semibold text-white mb-4 font-geist" data-translate="Key Benefits for Your Business">Hauptvorteile für Ihr Unternehmen</h4>
             <div class="grid md:grid-cols-2 gap-4 text-gray-300">
               <div class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span><strong>Real-time application:</strong> Your campaigns run and improve during the program.</span>
+                <span data-translate="Real-time application: Your campaigns run and improve during the program."><strong>Echtzeit-Anwendung:</strong> Ihre Kampagnen laufen und verbessern sich während des Programms.</span>
               </div>
               <div class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span><strong>Long-term savings:</strong> Replace expensive agency retainers with trained internal experts.</span>
+                <span data-translate="Long-term savings: Replace expensive agency retainers with trained internal experts."><strong>Langfristige Einsparungen:</strong> Ersetzen Sie teure Agentur-Retainer durch geschulte interne Experten.</span>
               </div>
               <div class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span><strong>Tailored strategy:</strong> Every session focuses on your product, market, and customer.</span>
+                <span data-translate="Tailored strategy: Every session focuses on your product, market, and customer."><strong>Maßgeschneiderte Strategie:</strong> Jede Session konzentriert sich auf Ihr Produkt, Ihren Markt und Ihre Kunden.</span>
               </div>
               <div class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span><strong>Immediate availability:</strong> Your in-house marketer is always accessible, no more waiting on agencies.</span>
+                <span data-translate="Immediate availability: Your in-house marketer is always accessible, no more waiting on agencies."><strong>Sofortige Verfügbarkeit:</strong> Ihr interner Marketer ist immer erreichbar, kein Warten mehr auf Agenturen.</span>
               </div>
               <div class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span><strong>Faster decisions:</strong> Campaigns evolve at your speed, not someone else's.</span>
+                <span data-translate="Faster decisions: Campaigns evolve at your speed, not someone else's."><strong>Schnellere Entscheidungen:</strong> Kampagnen entwickeln sich in Ihrem Tempo, nicht in dem anderer.</span>
               </div>
               <div class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span><strong>True independence:</strong> You own the skills, the systems, and the results — permanently.</span>
+                <span data-translate="True independence: You own the skills, the systems, and the results — permanently."><strong>Echte Unabhängigkeit:</strong> Sie besitzen die Fähigkeiten, die Systeme und die Ergebnisse – dauerhaft.</span>
               </div>
               <div class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span><strong>Certified credibility:</strong> Gain professional recognition backed by the LYNCK brand.</span>
+                <span data-translate="Certified credibility: Gain professional recognition backed by the LYNCK brand."><strong>Zertifizierte Glaubwürdigkeit:</strong> Gewinnen Sie professionelle Anerkennung unterstützt durch die LYNCK-Marke.</span>
               </div>
               <div class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span><strong>Confidence:</strong> Your in-house expert understands your product, your customers, and your goals better than any external agency ever could. Your team knows exactly what works and why.</span>
+                <span data-translate="Confidence: Your in-house expert understands your product, your customers, and your goals better than any external agency ever could. Your team knows exactly what works and why."><strong>Vertrauen:</strong> Ihr interner Experte versteht Ihr Produkt, Ihre Kunden und Ihre Ziele besser als jede externe Agentur es jemals könnte. Ihr Team weiß genau, was funktioniert und warum.</span>
               </div>
             </div>
           </div>
@@ -492,8 +540,8 @@
     <section class="py-20 relative">
       <div class="max-w-7xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
         <div class="text-center mb-16 relative z-10">
-          <h2 class="text-4xl lg:text-5xl text-white font-geist tracking-tight font-light mb-4">
-            Website Development
+          <h2 class="text-4xl lg:text-5xl text-white font-geist tracking-tight font-light mb-4" data-translate="Website Development">
+            Website-Entwicklung
           </h2>
         </div>
 
@@ -508,30 +556,30 @@
               </button>
             </div>
             <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-2xl font-bold text-green-400 mb-2 font-geist">Launch Website</h3>
+              <h3 class="text-2xl font-bold text-green-400 mb-2 font-geist" data-translate="Launch Website">Launch Website</h3>
               <div class="text-3xl font-bold text-white mb-4 font-geist">€1,200<span class="text-lg text-gray-400"> one-time</span></div>
-              <p class="text-sm text-gray-300 mb-4">Perfect for new businesses launching their online presence with a professional, easy-to-manage website.</p>
+              <p class="text-sm text-gray-300 mb-4" data-translate="Perfect for new businesses launching their online presence with a professional, easy-to-manage website.">Perfekt für neue Unternehmen, die ihre Online-Präsenz mit einer professionellen, einfach zu verwaltenden Website starten.</p>
               <ul class="space-y-2 text-sm text-gray-300 mb-6">
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>1–5 responsive pages</span>
+                  <span data-translate="1–5 responsive pages">1–5 responsive Seiten</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Easy-Edit Admin Dashboard</span>
+                  <span data-translate="Easy-Edit Admin Dashboard">Einfach zu bearbeitendes Admin-Dashboard</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Hosting (12 months)</span>
+                  <span data-translate="Hosting (12 months)">Hosting (12 Monate)</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Tutorial video onboarding</span>
+                  <span data-translate="Tutorial video onboarding">Tutorial-Video-Onboarding</span>
                 </li>
               </ul>
               <div class="mt-auto">
                 <button onclick="openContactModal()" class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md font-geist">
-                  <span>Get Started</span>
+                  <span data-translate="Get Started">Jetzt Starten</span>
                 </button>
               </div>
             </div>
@@ -547,30 +595,30 @@
               </button>
             </div>
             <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-2xl font-bold text-yellow-500 mb-2 font-geist">Growth Website</h3>
+              <h3 class="text-2xl font-bold text-yellow-500 mb-2 font-geist" data-translate="Growth Website">Growth Website</h3>
               <div class="text-3xl font-bold text-white mb-4 font-geist">€1,900<span class="text-lg text-gray-400"> one-time</span></div>
-              <p class="text-sm text-gray-300 mb-4">Growing brands need advanced features. Get a full CMS with blog capabilities and ongoing support.</p>
+              <p class="text-sm text-gray-300 mb-4" data-translate="Growing brands need advanced features. Get a full CMS with blog capabilities and ongoing support.">Wachsende Marken benötigen erweiterte Funktionen. Erhalten Sie ein vollständiges CMS mit Blog-Funktionen und fortlaufendem Support.</p>
               <ul class="space-y-2 text-sm text-gray-300 mb-6">
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>6–10 responsive pages</span>
+                  <span data-translate="6–10 responsive pages">6–10 responsive Seiten</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Advanced CMS + blog setup</span>
+                  <span data-translate="Advanced CMS + blog setup">Fortgeschrittenes CMS + Blog-Setup</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Hosting + backups (12 months)</span>
+                  <span data-translate="Hosting + backups (12 months)">Hosting + Backups (12 Monate)</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>30-min training call</span>
+                  <span data-translate="30-min training call">30-minütiger Schulungsanruf</span>
                 </li>
               </ul>
               <div class="mt-auto">
                 <button onclick="openContactModal()" class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md font-geist">
-                  <span>Get Started</span>
+                  <span data-translate="Get Started">Jetzt Starten</span>
                 </button>
               </div>
             </div>
@@ -586,30 +634,30 @@
               </button>
             </div>
             <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-2xl font-bold text-red-400 mb-2 font-geist">Professional Website</h3>
+              <h3 class="text-2xl font-bold text-red-400 mb-2 font-geist" data-translate="Professional Website">Professional Website</h3>
               <div class="text-3xl font-bold text-white mb-4 font-geist">€2,900<span class="text-lg text-gray-400"> one-time</span></div>
-              <p class="text-sm text-gray-300 mb-4">Established companies deserve premium features with full CMS, media library, and advanced analytics integration.</p>
+              <p class="text-sm text-gray-300 mb-4" data-translate="Established companies deserve premium features with full CMS, media library, and advanced analytics integration.">Etablierte Unternehmen verdienen Premium-Features mit vollständigem CMS, Medienbibliothek und fortgeschrittener Analytics-Integration.</p>
               <ul class="space-y-2 text-sm text-gray-300 mb-6">
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>10–20 custom pages</span>
+                  <span data-translate="10–20 custom pages">10–20 individuelle Seiten</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Full CMS + media library</span>
+                  <span data-translate="Full CMS + media library">Vollständiges CMS + Medienbibliothek</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Hosting + security + analytics</span>
+                  <span data-translate="Hosting + security + analytics">Hosting + Sicherheit + Analytics</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>60-min team training</span>
+                  <span data-translate="60-min team training">60-minütiges Team-Training</span>
                 </li>
               </ul>
               <div class="mt-auto">
                 <button onclick="openContactModal()" class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md font-geist">
-                  <span>Get Started</span>
+                  <span data-translate="Get Started">Jetzt Starten</span>
                 </button>
               </div>
             </div>
@@ -625,30 +673,30 @@
               </button>
             </div>
             <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-2xl font-bold text-purple-400 mb-2 font-geist">Enterprise Website</h3>
+              <h3 class="text-2xl font-bold text-purple-400 mb-2 font-geist" data-translate="Enterprise Website">Enterprise Website</h3>
               <div class="text-3xl font-bold text-white mb-4 font-geist">From €3,900<span class="text-lg text-gray-400"> one-time</span></div>
-              <p class="text-sm text-gray-300 mb-4">Large multi-brand projects require fully custom solutions with CRM integration and dedicated support.</p>
+              <p class="text-sm text-gray-300 mb-4" data-translate="Large multi-brand projects require fully custom solutions with CRM integration and dedicated support.">Große Multi-Brand-Projekte benötigen vollständig angepasste Lösungen mit CRM-Integration und dediziertem Support.</p>
               <ul class="space-y-2 text-sm text-gray-300 mb-6">
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Fully custom layout & integrations</span>
+                  <span data-translate="Fully custom layout & integrations">Vollständig individuelles Layout & Integrationen</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Custom modules + CRM integration</span>
+                  <span data-translate="Custom modules + CRM integration">Individuelle Module + CRM-Integration</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Hosting + security + advanced tracking</span>
+                  <span data-translate="Hosting + security + advanced tracking">Hosting + Sicherheit + fortgeschrittenes Tracking</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Dedicated training + manual</span>
+                  <span data-translate="Dedicated training + manual">Dediziertes Training + Handbuch</span>
                 </li>
               </ul>
               <div class="mt-auto">
                 <button onclick="openContactModal()" class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md font-geist">
-                  <span>Get Started</span>
+                  <span data-translate="Get Started">Jetzt Starten</span>
                 </button>
               </div>
             </div>
@@ -661,8 +709,8 @@
     <section class="py-20 relative">
       <div class="max-w-7xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
         <div class="text-center mb-16 relative z-10">
-          <h2 class="text-4xl lg:text-5xl text-white font-geist tracking-tight font-light mb-4">
-            Combo Packages
+          <h2 class="text-4xl lg:text-5xl text-white font-geist tracking-tight font-light mb-4" data-translate="Combo Packages">
+            Kombipakete
           </h2>
         </div>
 
@@ -679,47 +727,47 @@
               </button>
             </div>
             <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-2xl font-bold text-white mb-2 font-geist">Smart Launch Combo</h3>
+              <h3 class="text-2xl font-bold text-white mb-2 font-geist" data-translate="Smart Launch Combo">Smart Launch Kombi</h3>
               <div class="text-3xl font-bold text-white mb-2 font-geist">From €1,359<span class="text-lg text-gray-400">/month</span></div>
-              <p class="text-sm text-gray-400 mb-4">instead of €1,699 — Save €340/month</p>
-              <p class="text-sm text-gray-300 mb-6">Perfect for startups launching their first Google Ads campaign with a professional website. Get your business online and start attracting customers immediately.</p>
+              <p class="text-sm text-gray-400 mb-4" data-translate="instead of €1,699 — Save €340/month">statt €1.699 — Sparen Sie €340/Monat</p>
+              <p class="text-sm text-gray-300 mb-6" data-translate="Perfect for startups launching their first Google Ads campaign with a professional website. Get your business online and start attracting customers immediately.">Perfekt für Startups, die ihre erste Google Ads-Kampagne mit einer professionellen Website starten. Bringen Sie Ihr Unternehmen online und beginnen Sie sofort, Kunden anzuziehen.</p>
               <ul class="space-y-2.5 text-sm text-gray-300 mb-6">
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span><strong>Google Ads — Bronze Tier</strong> (Up to €2,000 ad spend/month)</span>
+                  <span data-translate="Google Ads — Bronze Tier (Up to €2,000 ad spend/month)"><strong>Google Ads — Bronze Tier</strong> (Bis zu €2.000 Werbebudget/Monat)</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span><strong>Easy-Edit Website</strong> (5–8 pages)</span>
+                  <span data-translate="Easy-Edit Website (5–8 pages)"><strong>Einfach zu bearbeitende Website</strong> (5–8 Seiten)</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Account setup & conversion tracking</span>
+                  <span data-translate="Account setup & conversion tracking">Konto-Setup & Conversion-Tracking</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Keyword research & ad creation</span>
+                  <span data-translate="Keyword research & ad creation">Keyword-Recherche & Anzeigenerstellung</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>SEO & Analytics setup</span>
+                  <span data-translate="SEO & Analytics setup">SEO & Analytics-Setup</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>2 strategy calls / month</span>
+                  <span data-translate="2 strategy calls / month">2 Strategiegespräche / Monat</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Hosting & support (12 months)</span>
+                  <span data-translate="Hosting & support (12 months)">Hosting & Support (12 Monate)</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>6-month minimum contract</span>
+                  <span data-translate="6-month minimum contract">6 Monate Mindestlaufzeit</span>
                 </li>
               </ul>
               <div class="mt-auto">
                 <button onclick="openContactModal()" class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md font-geist">
-                  <span>Get Started</span>
+                  <span data-translate="Get Started">Jetzt Starten</span>
                 </button>
               </div>
             </div>
@@ -737,47 +785,47 @@
               </button>
             </div>
             <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-2xl font-bold text-white mb-2 font-geist">Performance Plus Combo</h3>
+              <h3 class="text-2xl font-bold text-white mb-2 font-geist" data-translate="Performance Plus Combo">Performance Plus Kombi</h3>
               <div class="text-3xl font-bold text-white mb-2 font-geist">From €1,839<span class="text-lg text-gray-400">/month</span></div>
-              <p class="text-sm text-gray-400 mb-4">instead of €2,299 — Save €460/month</p>
-              <p class="text-sm text-gray-300 mb-6">Ideal for growing businesses ready to scale. Combine advanced Google Ads management with a professional website featuring blog integration and comprehensive analytics.</p>
+              <p class="text-sm text-gray-400 mb-4" data-translate="instead of €2,299 — Save €460/month">statt €2.299 — Sparen Sie €460/Monat</p>
+              <p class="text-sm text-gray-300 mb-6" data-translate="Ideal for growing businesses ready to scale. Combine advanced Google Ads management with a professional website featuring blog integration and comprehensive analytics.">Ideal für wachsende Unternehmen, die bereit sind zu skalieren. Kombinieren Sie fortgeschrittenes Google Ads-Management mit einer professionellen Website mit Blog-Integration und umfassenden Analytics.</p>
               <ul class="space-y-2.5 text-sm text-gray-300 mb-6">
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span><strong>Google Ads — Silver Tier</strong> (€2,000–5,000 ad spend/month)</span>
+                  <span data-translate="Google Ads — Silver Tier (€2,000–5,000 ad spend/month)"><strong>Google Ads — Silber Tier</strong> (€2.000–5.000 Werbebudget/Monat)</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span><strong>Easy-Edit Website</strong> (10–15 pages + blog)</span>
+                  <span data-translate="Easy-Edit Website (10–15 pages + blog)"><strong>Einfach zu bearbeitende Website</strong> (10–15 Seiten + Blog)</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Bi-weekly optimizations + quarterly reviews</span>
+                  <span data-translate="Bi-weekly optimizations + quarterly reviews">Zweiwöchentliche Optimierungen + vierteljährliche Reviews</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Competitor analysis + seasonal adjustments</span>
+                  <span data-translate="Competitor analysis + seasonal adjustments">Wettbewerbsanalyse + saisonale Anpassungen</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>SEO + analytics dashboard integration</span>
+                  <span data-translate="SEO + analytics dashboard integration">SEO + Analytics-Dashboard-Integration</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>3 strategy calls / month</span>
+                  <span data-translate="3 strategy calls / month">3 Strategiegespräche / Monat</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Hosting, maintenance & analytics (12 months)</span>
+                  <span data-translate="Hosting, maintenance & analytics (12 months)">Hosting, Wartung & Analytics (12 Monate)</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>6-month minimum contract</span>
+                  <span data-translate="6-month minimum contract">6 Monate Mindestlaufzeit</span>
                 </li>
               </ul>
               <div class="mt-auto">
                 <button onclick="openContactModal()" class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md font-geist">
-                  <span>Get Started</span>
+                  <span data-translate="Get Started">Jetzt Starten</span>
                 </button>
               </div>
             </div>
@@ -795,47 +843,47 @@
               </button>
             </div>
             <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-2xl font-bold text-white mb-2 font-geist">Ultimate Growth Combo</h3>
+              <h3 class="text-2xl font-bold text-white mb-2 font-geist" data-translate="Ultimate Growth Combo">Ultimate Growth Kombi</h3>
               <div class="text-3xl font-bold text-white mb-2 font-geist">From €2,799<span class="text-lg text-gray-400">/month</span></div>
-              <p class="text-sm text-gray-400 mb-4">instead of €3,499 — Save €700/month</p>
-              <p class="text-sm text-gray-300 mb-6">For established businesses seeking aggressive growth. Premium Google Ads management paired with a custom-designed professional website and dedicated account support.</p>
+              <p class="text-sm text-gray-400 mb-4" data-translate="instead of €3,499 — Save €700/month">statt €3.499 — Sparen Sie €700/Monat</p>
+              <p class="text-sm text-gray-300 mb-6" data-translate="For established businesses seeking aggressive growth. Premium Google Ads management paired with a custom-designed professional website and dedicated account support.">Für etablierte Unternehmen, die aggressives Wachstum suchen. Premium Google Ads-Management gepaart mit einer individuell gestalteten professionellen Website und dediziertem Account-Support.</p>
               <ul class="space-y-2.5 text-sm text-gray-300 mb-6">
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span><strong>Google Ads — Gold Tier</strong> (€5,000–15,000 ad spend/month)</span>
+                  <span data-translate="Google Ads — Gold Tier (€5,000–15,000 ad spend/month)"><strong>Google Ads — Gold Tier</strong> (€5.000–15.000 Werbebudget/Monat)</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span><strong>Professional Website</strong> (15–20 pages, custom design)</span>
+                  <span data-translate="Professional Website (15–20 pages, custom design)"><strong>Professional Website</strong> (15–20 Seiten, individuelles Design)</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Ongoing optimizations + A/B testing</span>
+                  <span data-translate="Ongoing optimizations + A/B testing">Laufende Optimierungen + A/B-Testing</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Dedicated account manager + monthly KPI reviews</span>
+                  <span data-translate="Dedicated account manager + monthly KPI reviews">Dedizierter Account-Manager + monatliche KPI-Reviews</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Advanced SEO, analytics & retargeting funnels</span>
+                  <span data-translate="Advanced SEO, analytics & retargeting funnels">Fortgeschrittenes SEO, Analytics & Retargeting-Funnels</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>4 strategy calls / month + dashboard review</span>
+                  <span data-translate="4 strategy calls / month + dashboard review">4 Strategiegespräche / Monat + Dashboard-Review</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Hosting, UX updates & quarterly optimization review</span>
+                  <span data-translate="Hosting, UX updates & quarterly optimization review">Hosting, UX-Updates & vierteljährliches Optimierungs-Review</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>12-month minimum contract</span>
+                  <span data-translate="12-month minimum contract">12 Monate Mindestlaufzeit</span>
                 </li>
               </ul>
               <div class="mt-auto">
                 <button onclick="openContactModal()" class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md font-geist">
-                  <span>Get Started</span>
+                  <span data-translate="Get Started">Jetzt Starten</span>
                 </button>
               </div>
             </div>
@@ -853,51 +901,51 @@
               </button>
             </div>
             <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-2xl font-bold text-white mb-2 font-geist">Enterprise Power Combo</h3>
+              <h3 class="text-2xl font-bold text-white mb-2 font-geist" data-translate="Enterprise Power Combo">Enterprise Power Kombi</h3>
               <div class="text-3xl font-bold text-white mb-2 font-geist">From €3,599<span class="text-lg text-gray-400">/month</span></div>
-              <p class="text-sm text-gray-400 mb-4">instead of €4,499 — Save €900/month</p>
-              <p class="text-sm text-gray-300 mb-6">The ultimate solution for large-scale operations. Enterprise-grade Google Ads management with a fully customized website, priority support, and executive-level reporting.</p>
+              <p class="text-sm text-gray-400 mb-4" data-translate="instead of €4,499 — Save €900/month">statt €4.499 — Sparen Sie €900/Monat</p>
+              <p class="text-sm text-gray-300 mb-6" data-translate="The ultimate solution for large-scale operations. Enterprise-grade Google Ads management with a fully customized website, priority support, and executive-level reporting.">Die ultimative Lösung für große Operationen. Google Ads-Management auf Enterprise-Niveau mit einer vollständig individualisierten Website, Prioritäts-Support und Executive-Level-Reporting.</p>
               <ul class="space-y-2.5 text-sm text-gray-300 mb-6">
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span><strong>Google Ads — Platinum Tier</strong> (Over €15,000 ad spend/month)</span>
+                  <span data-translate="Google Ads — Platinum Tier (Over €15,000 ad spend/month)"><strong>Google Ads — Platin Tier</strong> (Über €15.000 Werbebudget/Monat)</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span><strong>Enterprise Website</strong> (20+ pages, full customization)</span>
+                  <span data-translate="Enterprise Website (20+ pages, full customization)"><strong>Enterprise Website</strong> (20+ Seiten, vollständige Individualisierung)</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Daily optimization, budget control & scaling strategies</span>
+                  <span data-translate="Daily optimization, budget control & scaling strategies">Tägliche Optimierung, Budgetkontrolle & Skalierungsstrategien</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Executive reporting + performance workshops</span>
+                  <span data-translate="Executive reporting + performance workshops">Executive-Reporting + Performance-Workshops</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Real-time performance monitoring</span>
+                  <span data-translate="Real-time performance monitoring">Echtzeit-Performance-Monitoring</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Advanced SEO, analytics, and automation workflows</span>
+                  <span data-translate="Advanced SEO, analytics, and automation workflows">Fortgeschrittenes SEO, Analytics und Automatisierungs-Workflows</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Two strategy calls per month with senior strategist</span>
+                  <span data-translate="Two strategy calls per month with senior strategist">Zwei Strategiegespräche pro Monat mit Senior-Strategen</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>Hosting, priority support & quarterly UX updates</span>
+                  <span data-translate="Hosting, priority support & quarterly UX updates">Hosting, Prioritäts-Support & vierteljährliche UX-Updates</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-green-400 mt-0.5">✓</span>
-                  <span>12-month minimum contract</span>
+                  <span data-translate="12-month minimum contract">12 Monate Mindestlaufzeit</span>
                 </li>
               </ul>
               <div class="mt-auto">
                 <button onclick="openContactModal()" class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md font-geist">
-                  <span>Get Started</span>
+                  <span data-translate="Get Started">Jetzt Starten</span>
                 </button>
               </div>
             </div>
@@ -910,17 +958,17 @@
     <section class="py-32 relative">
       <div class="max-w-4xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
         <div class="text-center relative z-10">
-          <h2 class="text-4xl lg:text-6xl text-white font-geist tracking-tight font-light mb-6">
-            Ready to <span class="bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">Grow Your Business?</span>
+          <h2 class="text-4xl lg:text-6xl text-white font-geist tracking-tight font-light mb-6" data-translate="Ready to Grow Your Business?">
+            Bereit, <span class="bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">Ihr Geschäft zu erweitern?</span>
           </h2>
-          <p class="text-xl text-gray-300 font-geist mb-12 max-w-2xl mx-auto">
-            Get in touch today and let's discuss which package is right for you
+          <p class="text-xl text-gray-300 font-geist mb-12 max-w-2xl mx-auto" data-translate="Get in touch today and let's discuss which package is right for you">
+            Kontaktieren Sie uns noch heute und lassen Sie uns besprechen, welches Paket das Richtige für Sie ist
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button onclick="openContactModal()" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl shadow-2xl hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-green-500/25 cursor-pointer border-0">
-              <span class="relative z-10 flex items-center gap-2 font-geist">
-                Contact Us Today
+              <span class="relative z-10 flex items-center gap-2 font-geist" data-translate="Contact Us Today">
+                Kontaktieren Sie uns heute
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform">
                   <path d="M5 12h14"></path>
                   <path d="m12 5 7 7-7 7"></path>
