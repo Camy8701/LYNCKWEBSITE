@@ -359,12 +359,15 @@ function syncNavigationLanguage(lang) {
 }
 
 const storedLanguage = getStoredLanguage();
-const pathLanguage = normalizeLang(detectLanguageFromPath());
+const pathLanguage = detectLanguageFromPath();
 
 // Priority: path language > stored language > default 'en'
 // If we're on a German page (/de/...), always use German
 // If we're on an English page and have no stored preference, use English
-let currentLanguage = pathLanguage || storedLanguage || 'en';
+// Use explicit check for path language to avoid empty string issues
+let currentLanguage = (pathLanguage && supportedLanguages.includes(pathLanguage))
+  ? pathLanguage
+  : (storedLanguage || 'en');
 
 // Store the language preference
 if (currentLanguage !== storedLanguage) {
