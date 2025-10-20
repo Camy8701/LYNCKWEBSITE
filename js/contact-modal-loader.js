@@ -48,8 +48,6 @@
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
       contactForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-
         const firstName = document.getElementById('firstName').value.trim();
         const email = document.getElementById('email').value.trim();
 
@@ -61,6 +59,7 @@
 
         // Validate first name
         if (!firstName) {
+          event.preventDefault();
           document.getElementById('firstNameError').textContent = 'First name is required';
           hasErrors = true;
         }
@@ -68,60 +67,23 @@
         // Validate email
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!email) {
+          event.preventDefault();
           document.getElementById('emailError').textContent = 'Email is required';
           hasErrors = true;
         } else if (!emailRegex.test(email)) {
+          event.preventDefault();
           document.getElementById('emailError').textContent = 'Please enter a valid email address';
           hasErrors = true;
         }
 
         if (!hasErrors) {
-          // Get form data
-          const service = document.getElementById('selectedService').textContent;
-          const budget = document.getElementById('selectedBudget').textContent;
-
-          const formData = new FormData();
-          formData.append('access_key', 'a4f10748-f6e9-4a3a-b8f6-f9e339f59019');
-          formData.append('subject', 'New Contact Form Submission from LYNCK Website');
-          formData.append('from_name', `${firstName} ${document.getElementById('lastName').value.trim()}`);
-          formData.append('email', email);
-          formData.append('First Name', firstName);
-          formData.append('Last Name', document.getElementById('lastName').value.trim());
-          formData.append('Service', service !== 'Select a service' ? service : 'Not specified');
-          formData.append('Budget', budget !== 'Select budget range' ? budget : 'Not specified');
-          formData.append('message', document.getElementById('message').value.trim());
-
-          // Update submit button
+          // Show loading state
           const submitBtn = document.getElementById('submitBtn');
-          const originalHTML = submitBtn.innerHTML;
           submitBtn.innerHTML = '<span>Sending...</span>';
           submitBtn.disabled = true;
 
-          // Send form data to Web3Forms
-          fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formData
-          })
-          .then(response => response.json())
-          .then(data => {
-            if (data.success) {
-              alert('Thank you for your message! We\'ll get back to you within 24 hours.');
-              closeContactModal();
-              document.getElementById('contactForm').reset();
-              document.getElementById('selectedService').textContent = 'Select a service';
-              document.getElementById('selectedBudget').textContent = 'Select budget range';
-            } else {
-              alert('Oops! Something went wrong. Please try again or email us directly at info@lynckstudio.pro');
-            }
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            alert('Oops! Something went wrong. Please try again or email us directly at info@lynckstudio.pro');
-          })
-          .finally(() => {
-            submitBtn.innerHTML = originalHTML;
-            submitBtn.disabled = false;
-          });
+          // Form will submit naturally to Web3Forms
+          // Web3Forms will handle the redirect
         }
       });
     }
@@ -164,6 +126,10 @@
     if (selectedService) {
       selectedService.textContent = service;
     }
+    const serviceInput = document.getElementById('serviceInput');
+    if (serviceInput) {
+      serviceInput.value = service;
+    }
     const dropdown = document.getElementById('servicesDropdown');
     if (dropdown) {
       dropdown.classList.add('hidden');
@@ -174,6 +140,10 @@
     const selectedBudget = document.getElementById('selectedBudget');
     if (selectedBudget) {
       selectedBudget.textContent = budget;
+    }
+    const budgetInput = document.getElementById('budgetInput');
+    if (budgetInput) {
+      budgetInput.value = budget;
     }
     const dropdown = document.getElementById('budgetDropdown');
     if (dropdown) {

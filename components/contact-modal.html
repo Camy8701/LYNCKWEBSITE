@@ -12,7 +12,12 @@
       </p>
     </div>
 
-    <form id="contactForm" class="space-y-6">
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+      <!-- Web3Forms Access Key -->
+      <input type="hidden" name="access_key" value="a4f10748-f6e9-4a3a-b8f6-f9e339f59019">
+      <input type="hidden" name="subject" value="New Contact Form Submission from LYNCK Website">
+      <input type="hidden" name="redirect" value="https://lynckstudio.pro/thank-you">
+
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label class="block text-sm font-medium text-gray-300 mb-2">
@@ -21,6 +26,7 @@
           <input
             type="text"
             id="firstName"
+            name="First Name"
             required
             class="w-full bg-black/70 border border-white/20 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-gray-500 focus:border-green-400/40 focus:outline-none transition-all"
             placeholder="Geben Sie Ihren Vornamen ein"
@@ -33,6 +39,7 @@
           <input
             type="text"
             id="lastName"
+            name="Last Name"
             class="w-full bg-black/70 border border-white/20 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-gray-500 focus:border-green-400/40 focus:outline-none transition-all"
             placeholder="Geben Sie Ihren Nachnamen ein"
             data-translate-placeholder="Enter your last name"
@@ -47,6 +54,7 @@
         <input
           type="email"
           id="email"
+          name="email"
           required
           class="w-full bg-black/70 border border-white/20 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-gray-500 focus:border-green-400/40 focus:outline-none transition-all"
           placeholder="ihre.email@firma.com"
@@ -57,6 +65,7 @@
 
       <div>
         <label class="block text-sm font-medium text-gray-300 mb-2"><span data-translate="Service Interested In">Interessierter Service</span></label>
+        <input type="hidden" id="serviceInput" name="Service" value="">
         <div class="form-dropdown">
           <button type="button" class="dropdown-button" onclick="toggleDropdown('services')">
             <span id="selectedService" data-translate="Select a service">Wählen Sie einen Service</span>
@@ -74,6 +83,7 @@
 
       <div>
         <label class="block text-sm font-medium text-gray-300 mb-2"><span data-translate="Budget Range">Budgetbereich</span></label>
+        <input type="hidden" id="budgetInput" name="Budget" value="">
         <div class="form-dropdown">
           <button type="button" class="dropdown-button" onclick="toggleDropdown('budget')">
             <span id="selectedBudget" data-translate="Select budget range">Wählen Sie einen Budgetbereich</span>
@@ -98,6 +108,7 @@
         <label class="block text-sm font-medium text-gray-300 mb-2"><span data-translate="How can LYNCK help you?">Wie kann LYNCK Ihnen helfen?</span></label>
         <textarea
           id="message"
+          name="message"
           class="w-full bg-black/70 border border-white/20 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-gray-500 focus:border-green-400/40 focus:outline-none transition-all resize-none h-32"
           placeholder="Erzählen Sie uns von Ihren Geschäftszielen und wie wir Ihnen helfen können, diese zu erreichen..."
           data-translate-placeholder="Tell us about your business goals and how we can help you achieve them..."
