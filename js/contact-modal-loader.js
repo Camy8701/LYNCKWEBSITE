@@ -77,29 +77,51 @@
 
         if (!hasErrors) {
           // Get form data
-          const formData = {
-            firstName: firstName,
-            lastName: document.getElementById('lastName').value.trim(),
-            email: email,
-            service: document.getElementById('selectedService').textContent !== 'Select a service' ? document.getElementById('selectedService').textContent : '',
-            budget: document.getElementById('selectedBudget').textContent !== 'Select budget range' ? document.getElementById('selectedBudget').textContent : '',
-            message: document.getElementById('message').value.trim()
-          };
+          const service = document.getElementById('selectedService').textContent;
+          const budget = document.getElementById('selectedBudget').textContent;
 
-          // Simulate form submission
+          const formData = new FormData();
+          formData.append('access_key', '1234567890'); // REPLACE THIS WITH YOUR WEB3FORMS API KEY
+          formData.append('subject', 'New Contact Form Submission from LYNCK Website');
+          formData.append('from_name', `${firstName} ${document.getElementById('lastName').value.trim()}`);
+          formData.append('email', email);
+          formData.append('First Name', firstName);
+          formData.append('Last Name', document.getElementById('lastName').value.trim());
+          formData.append('Service', service !== 'Select a service' ? service : 'Not specified');
+          formData.append('Budget', budget !== 'Select budget range' ? budget : 'Not specified');
+          formData.append('message', document.getElementById('message').value.trim());
+
+          // Update submit button
           const submitBtn = document.getElementById('submitBtn');
+          const originalHTML = submitBtn.innerHTML;
           submitBtn.innerHTML = '<span>Sending...</span>';
           submitBtn.disabled = true;
 
-          setTimeout(() => {
-            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
-            closeContactModal();
-            document.getElementById('contactForm').reset();
-            document.getElementById('selectedService').textContent = 'Select a service';
-            document.getElementById('selectedBudget').textContent = 'Select budget range';
-            submitBtn.innerHTML = '<span>Send Message</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>';
+          // Send form data to Web3Forms
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+              closeContactModal();
+              document.getElementById('contactForm').reset();
+              document.getElementById('selectedService').textContent = 'Select a service';
+              document.getElementById('selectedBudget').textContent = 'Select budget range';
+            } else {
+              alert('Oops! Something went wrong. Please try again or email us directly at info@lynckstudio.pro');
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('Oops! Something went wrong. Please try again or email us directly at info@lynckstudio.pro');
+          })
+          .finally(() => {
+            submitBtn.innerHTML = originalHTML;
             submitBtn.disabled = false;
-          }, 2000);
+          });
         }
       });
     }
