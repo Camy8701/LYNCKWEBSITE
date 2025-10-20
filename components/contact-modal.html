@@ -5,10 +5,10 @@
 
     <div class="text-center mb-8">
       <h2 class="text-4xl font-light text-white tracking-tight font-geist mb-4" data-translate="Let's Work Together">
-        Lassen Sie uns zusammenarbeiten
+        Let's Work Together
       </h2>
       <p class="text-lg text-gray-300 max-w-lg mx-auto" data-translate="Ready to scale your business with proven marketing strategies? Let's discuss your project.">
-        Bereit, Ihr Geschäft mit bewährten Marketing-Strategien zu skalieren? Lassen Sie uns über Ihr Projekt sprechen.
+        Ready to scale your business with proven marketing strategies? Let's discuss your project.
       </p>
     </div>
 
@@ -21,7 +21,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label class="block text-sm font-medium text-gray-300 mb-2">
-            <span data-translate="First Name">Vorname</span> <span class="text-red-400">*</span>
+            <span data-translate="First Name">First Name</span> <span class="text-red-400">*</span>
           </label>
           <input
             type="text"
@@ -29,19 +29,19 @@
             name="First Name"
             required
             class="w-full bg-black/70 border border-white/20 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-gray-500 focus:border-green-400/40 focus:outline-none transition-all"
-            placeholder="Geben Sie Ihren Vornamen ein"
+            placeholder="Enter your first name"
             data-translate-placeholder="Enter your first name"
           >
           <div id="firstNameError" class="form-error"></div>
         </div>
         <div>
-          <label class="block text-sm font-medium text-gray-300 mb-2"><span data-translate="Last Name">Nachname</span></label>
+          <label class="block text-sm font-medium text-gray-300 mb-2"><span data-translate="Last Name">Last Name</span></label>
           <input
             type="text"
             id="lastName"
             name="Last Name"
             class="w-full bg-black/70 border border-white/20 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-gray-500 focus:border-green-400/40 focus:outline-none transition-all"
-            placeholder="Geben Sie Ihren Nachnamen ein"
+            placeholder="Enter your last name"
             data-translate-placeholder="Enter your last name"
           >
         </div>
@@ -49,7 +49,7 @@
 
       <div>
         <label class="block text-sm font-medium text-gray-300 mb-2">
-          <span data-translate="Email Address">E-Mail-Adresse</span> <span class="text-red-400">*</span>
+          <span data-translate="Email Address">Email Address</span> <span class="text-red-400">*</span>
         </label>
         <input
           type="email"
@@ -57,41 +57,41 @@
           name="email"
           required
           class="w-full bg-black/70 border border-white/20 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-gray-500 focus:border-green-400/40 focus:outline-none transition-all"
-          placeholder="ihre.email@firma.com"
+          placeholder="your.email@company.com"
           data-translate-placeholder="your.email@company.com"
         >
         <div id="emailError" class="form-error"></div>
       </div>
 
       <div>
-        <label class="block text-sm font-medium text-gray-300 mb-2"><span data-translate="Service Interested In">Interessierter Service</span></label>
+        <label class="block text-sm font-medium text-gray-300 mb-2"><span data-translate="Service Interested In">Service Interested In</span></label>
         <input type="hidden" id="serviceInput" name="Service" value="">
         <div class="form-dropdown">
           <button type="button" class="dropdown-button" onclick="toggleDropdown('services')">
-            <span id="selectedService" data-translate="Select a service">Wählen Sie einen Service</span>
+            <span id="selectedService" data-translate="Select a service">Select a service</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M6 9l6 6 6-6"></path>
             </svg>
           </button>
-          <div id="servicesDropdown" class="dropdown-menu">
+          <div id="servicesDropdown" class="dropdown-menu hidden">
             <div class="dropdown-item" onclick="selectService('Digital Marketing')" data-translate="Digital Marketing">Digital Marketing</div>
-            <div class="dropdown-item" onclick="selectService('Build a Website')" data-translate="Build a Website">Website erstellen</div>
-            <div class="dropdown-item" onclick="selectService('Something Else')" data-translate="Something Else">Etwas anderes</div>
+            <div class="dropdown-item" onclick="selectService('Build a Website')" data-translate="Build a Website">Build a Website</div>
+            <div class="dropdown-item" onclick="selectService('Something Else')" data-translate="Something Else">Something Else</div>
           </div>
         </div>
       </div>
 
       <div>
-        <label class="block text-sm font-medium text-gray-300 mb-2"><span data-translate="Budget Range">Budgetbereich</span></label>
+        <label class="block text-sm font-medium text-gray-300 mb-2"><span data-translate="Budget Range">Budget Range</span></label>
         <input type="hidden" id="budgetInput" name="Budget" value="">
         <div class="form-dropdown">
           <button type="button" class="dropdown-button" onclick="toggleDropdown('budget')">
-            <span id="selectedBudget" data-translate="Select budget range">Wählen Sie einen Budgetbereich</span>
+            <span id="selectedBudget" data-translate="Select budget range">Select budget range</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M6 9l6 6 6-6"></path>
             </svg>
           </button>
-          <div id="budgetDropdown" class="dropdown-menu">
+          <div id="budgetDropdown" class="dropdown-menu hidden">
             <div class="dropdown-item" onclick="selectBudget('$100 - $500')">$100 - $500</div>
             <div class="dropdown-item" onclick="selectBudget('$500 - $1,000')">$500 - $1,000</div>
             <div class="dropdown-item" onclick="selectBudget('$1,000 - $2,000')">$1,000 - $2,000</div>
@@ -105,12 +105,12 @@
       </div>
 
       <div>
-        <label class="block text-sm font-medium text-gray-300 mb-2"><span data-translate="How can LYNCK help you?">Wie kann LYNCK Ihnen helfen?</span></label>
+        <label class="block text-sm font-medium text-gray-300 mb-2"><span data-translate="How can LYNCK help you?">How can LYNCK help you?</span></label>
         <textarea
           id="message"
           name="message"
           class="w-full bg-black/70 border border-white/20 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-gray-500 focus:border-green-400/40 focus:outline-none transition-all resize-none h-32"
-          placeholder="Erzählen Sie uns von Ihren Geschäftszielen und wie wir Ihnen helfen können, diese zu erreichen..."
+          placeholder="Tell us about your business goals and how we can help you achieve them..."
           data-translate-placeholder="Tell us about your business goals and how we can help you achieve them..."
         ></textarea>
       </div>
@@ -120,7 +120,7 @@
         class="w-full inline-flex items-center justify-center gap-2 shiny-cta font-geist"
         id="submitBtn"
       >
-        <span data-translate="Send Message">Nachricht senden</span>
+        <span data-translate="Send Message">Send Message</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14"></path>
           <path d="m12 5 7 7-7 7"></path>
