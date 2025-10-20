@@ -81,7 +81,7 @@
           const budget = document.getElementById('selectedBudget').textContent;
 
           const formData = new FormData();
-          formData.append('access_key', '1234567890'); // REPLACE THIS WITH YOUR WEB3FORMS API KEY
+          formData.append('access_key', 'a4f10748-f6e9-4a3a-b8f6-f9e339f59019');
           formData.append('subject', 'New Contact Form Submission from LYNCK Website');
           formData.append('from_name', `${firstName} ${document.getElementById('lastName').value.trim()}`);
           formData.append('email', email);
