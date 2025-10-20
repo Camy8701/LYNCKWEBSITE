@@ -21,7 +21,7 @@ const translations = {
     "Journal": "Journal",
 
     // Hero Section
-    "Crafting digital marketing experiences that feel intuitive, look beautiful, and drive real results for companies like Apple, Tesla, and Stripe.": "Crafting digital marketing experiences that feel intuitive, look beautiful, and drive real results for companies like Apple, Tesla, and Stripe.",
+    "At LYNCK, we craft digital marketing experiences and websites that look beautiful, feel intuitive, and deliver results — with Google Ads, editable sites, and clear training that put you in control": "At LYNCK, we craft digital marketing experiences and websites that look beautiful, feel intuitive, and deliver results — with Google Ads, editable sites, and clear training that put you in control",
     "View our work": "View our work",
     "About us": "About us",
 
@@ -120,7 +120,7 @@ const translations = {
     "Journal": "Journal",
 
     // Hero Section
-    "Crafting digital marketing experiences that feel intuitive, look beautiful, and drive real results for companies like Apple, Tesla, and Stripe.": "Wir schaffen digitale Marketing-Erlebnisse, die intuitiv und schön sind und echte Ergebnisse für Unternehmen wie Apple, Tesla und Stripe erzielen.",
+    "At LYNCK, we craft digital marketing experiences and websites that look beautiful, feel intuitive, and deliver results — with Google Ads, editable sites, and clear training that put you in control": "Bei LYNCK gestalten wir digitale Marketingerlebnisse und Websites, die schön aussehen, intuitiv sind und Ergebnisse liefern — mit Google Ads, bearbeitbaren Websites und klaren Schulungen, die Ihnen die Kontrolle geben",
     "View our work": "Unsere Arbeit ansehen",
     "About us": "Über uns",
 
