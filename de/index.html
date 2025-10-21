@@ -303,66 +303,102 @@
           </p>
         </div>
 
-        <!-- Testimonials Container -->
-        <div class="testimonial-container opacity-0 animate-scale-in relative" style="animation-delay: 2.4s;">
-          <div class="testimonial-grid">
-            <!-- Images Container -->
-            <div class="image-container" id="imageContainer">
-              <!-- Testimonial 1 -->
-              <div class="testimonial-image-wrapper" data-index="0">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-                     alt="Marcus Thompson"
-                     loading="lazy"
-                     class="testimonial-image">
-              </div>
-              <!-- Testimonial 2 -->
-              <div class="testimonial-image-wrapper" data-index="1">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face"
-                     alt="Sarah Chen"
-                     loading="lazy"
-                     class="testimonial-image">
-              </div>
-              <!-- Testimonial 3 -->
-              <div class="testimonial-image-wrapper" data-index="2">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
-                     alt="David Rodriguez"
-                     loading="lazy"
-                     class="testimonial-image">
-              </div>
-              <!-- Testimonial 4 -->
-              <div class="testimonial-image-wrapper" data-index="3">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face"
-                     alt="Michael Johnson"
-                     loading="lazy"
-                     class="testimonial-image">
-              </div>
-            </div>
+        <!-- Testimonial Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 opacity-0 animate-scale-in" style="animation-delay: 2.4s;">
 
-            <!-- Content Container -->
-            <div class="testimonial-content">
-              <div class="testimonial-text" id="testimonialText">
-                <h3 class="testimonial-name font-geist" id="testimonialName">Marcus Thompson</h3>
-                <p class="testimonial-designation font-geist" id="testimonialDesignation">CEO, TechFlow Solutions</p>
-                <p class="testimonial-quote font-geist" id="testimonialQuote">
-                  LYNCK transformed our digital presence completely. Their strategic approach increased our lead generation by 300% in just 3 months. The team's expertise in both creative and technical execution is unmatched.
+          <!-- Testimonial Card 1 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card-content">
+              <!-- Profile Image -->
+              <div class="testimonial-image-container">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face" alt="Sarah Chen" class="testimonial-avatar" loading="lazy">
+              </div>
+
+              <!-- Testimonial Text -->
+              <div class="testimonial-text-content">
+                <p class="testimonial-quote" data-translate="Working with LYNCK Academy was a game-changer for our startup. They didn't just create campaigns – they educated our team and built sustainable marketing processes that continue to drive growth.">
+                  Die Zusammenarbeit mit LYNCK Academy war ein Game-Changer für unser Startup. Sie haben nicht nur Kampagnen erstellt - sie haben unser Team geschult und nachhaltige Marketing-Prozesse aufgebaut, die weiterhin Wachstum fördern.
                 </p>
               </div>
+
+              <!-- Author Info -->
+              <div class="testimonial-author-info">
+                <h4 class="testimonial-name" data-translate="Sarah Chen">Sarah Chen</h4>
+                <p class="testimonial-title" data-translate="Marketing Director, InnovateLab">Marketing Direktorin, InnovateLab</p>
+              </div>
+
+              <!-- Quote Icon -->
+              <div class="testimonial-quote-icon">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 20C10 15.5817 13.5817 12 18 12V16C15.7909 16 14 17.7909 14 20H18V28H10V20Z" fill="currentColor" opacity="0.3"/>
+                  <path d="M22 20C22 15.5817 25.5817 12 30 12V16C27.7909 16 26 17.7909 26 20H30V28H22V20Z" fill="currentColor" opacity="0.3"/>
+                </svg>
+              </div>
             </div>
           </div>
 
-          <!-- Navigation Buttons - Positioned between images and text -->
-          <div class="arrow-buttons-positioned">
-            <button class="arrow-button prev-button" id="prevBtn" aria-label="Vorheriges Testimonial" data-translate="Previous testimonial">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M15 18l-6-6 6-6"></path>
-              </svg>
-            </button>
-            <button class="arrow-button next-button" id="nextBtn" aria-label="Nächstes Testimonial" data-translate="Next testimonial">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 18l6-6-6-6"></path>
-              </svg>
-            </button>
+          <!-- Testimonial Card 2 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card-content">
+              <!-- Profile Image -->
+              <div class="testimonial-image-container">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Marcus Thompson" class="testimonial-avatar" loading="lazy">
+              </div>
+
+              <!-- Testimonial Text -->
+              <div class="testimonial-text-content">
+                <p class="testimonial-quote" data-translate="LYNCK transformed our digital presence completely. Their strategic approach increased our lead generation by 300% in just 3 months. The team's expertise in both creative and technical execution is unmatched.">
+                  LYNCK hat unsere digitale Präsenz vollständig transformiert. Ihr strategischer Ansatz hat unsere Lead-Generierung in nur 3 Monaten um 300% gesteigert. Die Expertise des Teams sowohl in kreativer als auch technischer Umsetzung ist unübertroffen.
+                </p>
+              </div>
+
+              <!-- Author Info -->
+              <div class="testimonial-author-info">
+                <h4 class="testimonial-name" data-translate="Marcus Thompson">Marcus Thompson</h4>
+                <p class="testimonial-title" data-translate="CEO, TechFlow Solutions">CEO, TechFlow Solutions</p>
+              </div>
+
+              <!-- Quote Icon -->
+              <div class="testimonial-quote-icon">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 20C10 15.5817 13.5817 12 18 12V16C15.7909 16 14 17.7909 14 20H18V28H10V20Z" fill="currentColor" opacity="0.3"/>
+                  <path d="M22 20C22 15.5817 25.5817 12 30 12V16C27.7909 16 26 17.7909 26 20H30V28H22V20Z" fill="currentColor" opacity="0.3"/>
+                </svg>
+              </div>
+            </div>
           </div>
+
+          <!-- Testimonial Card 3 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card-content">
+              <!-- Profile Image -->
+              <div class="testimonial-image-container">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="David Rodriguez" class="testimonial-avatar" loading="lazy">
+              </div>
+
+              <!-- Testimonial Text -->
+              <div class="testimonial-text-content">
+                <p class="testimonial-quote" data-translate="The ROI from our LYNCK partnership has been incredible. Their data-driven approach combined with creative storytelling helped us reach our target audience authentically and effectively.">
+                  Der ROI aus unserer LYNCK-Partnerschaft war unglaublich. Ihr datengesteuerter Ansatz kombiniert mit kreativem Storytelling hat uns geholfen, unsere Zielgruppe authentisch und effektiv zu erreichen.
+                </p>
+              </div>
+
+              <!-- Author Info -->
+              <div class="testimonial-author-info">
+                <h4 class="testimonial-name" data-translate="David Rodriguez">David Rodriguez</h4>
+                <p class="testimonial-title" data-translate="Founder, Digital Dynamics">Gründer, Digital Dynamics</p>
+              </div>
+
+              <!-- Quote Icon -->
+              <div class="testimonial-quote-icon">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 20C10 15.5817 13.5817 12 18 12V16C15.7909 16 14 17.7909 14 20H18V28H10V20Z" fill="currentColor" opacity="0.3"/>
+                  <path d="M22 20C22 15.5817 25.5817 12 30 12V16C27.7909 16 26 17.7909 26 20H30V28H22V20Z" fill="currentColor" opacity="0.3"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -383,8 +419,11 @@
           <div class="relative aspect-[16/10] overflow-hidden flex-shrink-0">
             <!-- Use either img or video tag - comment out the one you don't need -->
 
-            <!-- For Image -->
-            <img class="h-full w-full object-cover transition duration-700 group-hover:scale-105" src="../assets/images/google-ads-experts.png" alt="Google Ads Spezialisten" loading="lazy">
+            <!-- For Image - WebP with fallback -->
+            <picture>
+              <source srcset="../assets/images/google-ads-experts.webp" type="image/webp">
+              <img class="h-full w-full object-cover transition duration-700 group-hover:scale-105" src="../assets/images/google-ads-experts.png" alt="Google Ads Spezialisten" loading="lazy">
+            </picture>
 
             <!-- For Video (uncomment to use) -->
             <!-- <video class="h-full w-full object-cover" autoplay loop muted playsinline>

@@ -72,6 +72,15 @@ const translations = {
     // Testimonials
     "What Our Clients Say": "What Our Clients Say",
     "Real results from real partnerships": "Real results from real partnerships",
+    "Sarah Chen": "Sarah Chen",
+    "Marketing Director, InnovateLab": "Marketing Director, InnovateLab",
+    "LYNCK transformed our digital presence completely. Their strategic approach increased our lead generation by 300% in just 3 months. The team's expertise in both creative and technical execution is unmatched.": "LYNCK transformed our digital presence completely. Their strategic approach increased our lead generation by 300% in just 3 months. The team's expertise in both creative and technical execution is unmatched.",
+    "Marcus Thompson": "Marcus Thompson",
+    "CEO, TechFlow Solutions": "CEO, TechFlow Solutions",
+    "Working with LYNCK Academy was a game-changer for our startup. They didn't just create campaigns – they educated our team and built sustainable marketing processes that continue to drive growth.": "Working with LYNCK Academy was a game-changer for our startup. They didn't just create campaigns – they educated our team and built sustainable marketing processes that continue to drive growth.",
+    "David Rodriguez": "David Rodriguez",
+    "Founder, Digital Dynamics": "Founder, Digital Dynamics",
+    "The ROI from our LYNCK partnership has been incredible. Their data-driven approach combined with creative storytelling helped us reach our target audience authentically and effectively.": "The ROI from our LYNCK partnership has been incredible. Their data-driven approach combined with creative storytelling helped us reach our target audience authentically and effectively.",
 
     // Footer
     "Let's create something amazing together": "Let's create something amazing together",
@@ -112,7 +121,7 @@ const translations = {
     "All": "Alle",
     "Let's connect": "Jetzt kontaktieren",
     "Google Ads": "Google Ads",
-    "Custom Website": "Individuelle Website",
+    "Custom Website": "Anpassbare Website",
     "Digital Products": "Digitale Produkte",
     "Work": "Arbeit",
     "About": "Über",
@@ -126,10 +135,10 @@ const translations = {
 
     // Services
     "OUR SERVICES": "UNSERE LEISTUNGEN",
-    "1. Easy-Edit Websites": "1. Einfach Bearbeitbare Websites",
+    "1. Easy-Edit Websites": "1. Easy-Edit Websites",
     "2. Google Ads Specialists": "2. Google Ads Spezialisten",
     "3. Learning Platform": "3. Lernplattform",
-    "Easy-Edit Websites": "Einfach Bearbeitbare Websites",
+    "Easy-Edit Websites": "Easy-Edit Websites",
     "We consolidated three tools and shaved minutes off every task. Setup took under 10 minutes. Websites you can edit yourself - instantly. Change any text, image, or background in seconds. No technical knowledge required.": "Wir haben drei Tools konsolidiert und Minuten von jeder Aufgabe eingespart. Die Einrichtung dauerte unter 10 Minuten. Websites, die Sie selbst bearbeiten können - sofort. Ändern Sie jeden Text, jedes Bild oder jeden Hintergrund in Sekunden. Keine technischen Kenntnisse erforderlich.",
     "Google Ads Specialists": "Google Ads Spezialisten",
     "Learning Platform Access": "Zugang zur Lernplattform",
@@ -171,6 +180,15 @@ const translations = {
     // Testimonials
     "What Our Clients Say": "Was Unsere Kunden Sagen",
     "Real results from real partnerships": "Echte Ergebnisse aus echten Partnerschaften",
+    "Sarah Chen": "Sarah Chen",
+    "Marketing Director, InnovateLab": "Marketing Direktorin, InnovateLab",
+    "LYNCK transformed our digital presence completely. Their strategic approach increased our lead generation by 300% in just 3 months. The team's expertise in both creative and technical execution is unmatched.": "LYNCK hat unsere digitale Präsenz vollständig transformiert. Ihr strategischer Ansatz hat unsere Lead-Generierung in nur 3 Monaten um 300% gesteigert. Die Expertise des Teams sowohl in kreativer als auch technischer Umsetzung ist unübertroffen.",
+    "Marcus Thompson": "Marcus Thompson",
+    "CEO, TechFlow Solutions": "CEO, TechFlow Solutions",
+    "Working with LYNCK Academy was a game-changer for our startup. They didn't just create campaigns – they educated our team and built sustainable marketing processes that continue to drive growth.": "Die Zusammenarbeit mit LYNCK Academy war ein Game-Changer für unser Startup. Sie haben nicht nur Kampagnen erstellt - sie haben unser Team geschult und nachhaltige Marketing-Prozesse aufgebaut, die weiterhin Wachstum fördern.",
+    "David Rodriguez": "David Rodriguez",
+    "Founder, Digital Dynamics": "Gründer, Digital Dynamics",
+    "The ROI from our LYNCK partnership has been incredible. Their data-driven approach combined with creative storytelling helped us reach our target audience authentically and effectively.": "Der ROI aus unserer LYNCK-Partnerschaft war unglaublich. Ihr datengesteuerter Ansatz kombiniert mit kreativem Storytelling hat uns geholfen, unsere Zielgruppe authentisch und effektiv zu erreichen.",
 
     // Footer
     "Let's create something amazing together": "Lassen Sie uns gemeinsam etwas Erstaunliches schaffen",
