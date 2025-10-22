@@ -7,25 +7,26 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!track || !prevBtn || !nextBtn) return;
 
   let currentIndex = 0;
-  let cardsPerView = 3; // Default for desktop
+  let cardsPerView = 3; // Default for desktop (shows 3 cards)
 
   // Calculate cards per view based on screen width
   function updateCardsPerView() {
     const width = window.innerWidth;
     if (width < 768) {
-      cardsPerView = 1; // Mobile
+      cardsPerView = 1; // Mobile - 1 card
     } else if (width < 1024) {
-      cardsPerView = 2; // Tablet
+      cardsPerView = 2; // Tablet - 2 cards
     } else {
-      cardsPerView = 3; // Desktop
+      cardsPerView = 3; // Desktop - 3 cards visible (2 cards can be scrolled to)
     }
   }
 
-  // Get total number of cards
-  const cards = track.querySelectorAll('.testimonial-card');
+  // Get total number of cards (5 cards total)
+  const cards = track.querySelectorAll('.testimonial-card-white');
   const totalCards = cards.length;
 
   // Calculate max index (last possible position)
+  // For 5 cards showing 3: maxIndex = 5 - 3 = 2 (can scroll twice)
   function getMaxIndex() {
     return Math.max(0, totalCards - cardsPerView);
   }
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update carousel position
   function updateCarousel() {
     const cardWidth = cards[0].offsetWidth;
-    const gap = 32; // 2rem gap between cards
+    const gap = 24; // 1.5rem gap between cards (gap-6)
     const offset = -(currentIndex * (cardWidth + gap));
     track.style.transform = `translateX(${offset}px)`;
 
