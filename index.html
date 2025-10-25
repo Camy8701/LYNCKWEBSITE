@@ -49,6 +49,7 @@
 <link rel="stylesheet" href="css/main.css">
 <script src="js/navigation-loader.js" defer></script>
     <script src="js/contact-modal-loader.js" defer></script>
+    <script src="js/testimonial-carousel.js" defer></script>
 <script src="js/translations.js" defer></script>
 <script src="js/webgl-background.js" defer></script>
 </head>
@@ -627,6 +628,198 @@
 
   </div>
 </section>
+
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="pt-24 pb-24 relative">
+      <div class="max-w-7xl lg:px-8 mr-auto ml-auto pr-6 pl-6">
+        <div class="text-center mb-16 relative z-10">
+          <h2 class="text-4xl lg:text-5xl text-white opacity-0 animate-slide-up font-geist tracking-tight font-light mb-4" style="animation-delay: 2s;" data-translate="What Our Clients Say">
+            What Our Clients Say
+          </h2>
+          <p class="text-xl text-gray-200 opacity-0 animate-slide-up font-geist" style="animation-delay: 2.2s;" data-translate="Real results from real partnerships">
+            Real results from real partnerships
+          </p>
+        </div>
+
+        <!-- Testimonial Carousel - 7 cards, show 3 at a time -->
+        <div class="relative opacity-0 animate-scale-in" style="animation-delay: 2.4s;">
+          <div class="overflow-hidden">
+            <div id="testimonialTrack" class="flex gap-8 transition-transform duration-500 ease-in-out">
+
+              <!-- Card 1 -->
+              <article class="flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)] group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-105 flex flex-col">
+                <div class="p-8 space-y-4 flex-grow flex flex-col">
+                  <div class="w-16 h-16 mx-auto rounded-full p-1 bg-white/10 border border-white/10">
+                    <div class="w-full h-full rounded-full overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop" alt="Sarah Williams" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                  </div>
+                  <div class="flex-grow">
+                    <p class="text-gray-300 leading-relaxed text-center" data-translate="I constantly strive to add value in every conversation with prospects and customers. Your team helped us organize assets so sales can find what they need and reach the right prospects at the right time.">
+                      I constantly strive to add value in every conversation with prospects and customers. Your team helped us organize assets so sales can find what they need and reach the right prospects at the right time.
+                    </p>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-xs tracking-[0.2em] text-white uppercase font-bold">
+                      <span data-translate="SARAH WILLIAMS">SARAH WILLIAMS</span>
+                    </div>
+                    <div class="text-xs tracking-[0.15em] text-gray-400 uppercase mt-1" data-translate="BRIDE &amp; CEO">BRIDE &amp; CEO</div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 2 -->
+              <article class="flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)] group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-105 flex flex-col">
+                <div class="p-8 space-y-4 flex-grow flex flex-col">
+                  <div class="w-16 h-16 mx-auto rounded-full p-1 bg-white/10 border border-white/10">
+                    <div class="w-full h-full rounded-full overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop" alt="Jessica Martinez" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                  </div>
+                  <div class="flex-grow">
+                    <p class="text-gray-300 leading-relaxed text-center" data-translate="I'm amazed at how quickly the team gets back to me—and in such helpful fashion. The experience feels truly customized to my needs with support staff that's genuinely legendary.">
+                      I'm amazed at how quickly the team gets back to me—and in such helpful fashion. The experience feels truly customized to my needs with support staff that's genuinely legendary.
+                    </p>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-xs tracking-[0.2em] text-white uppercase font-bold">
+                      <span data-translate="JESSICA MARTINEZ">JESSICA MARTINEZ</span>
+                    </div>
+                    <div class="text-xs tracking-[0.15em] text-gray-400 uppercase mt-1" data-translate="FASHION INFLUENCER">FASHION INFLUENCER</div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 3 -->
+              <article class="flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)] group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-105 flex flex-col">
+                <div class="p-8 space-y-4 flex-grow flex flex-col">
+                  <div class="w-16 h-16 mx-auto rounded-full p-1 bg-white/10 border border-white/10">
+                    <div class="w-full h-full rounded-full overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" alt="Michael Thompson" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                  </div>
+                  <div class="flex-grow">
+                    <p class="text-gray-300 leading-relaxed text-center" data-translate="An incredibly effective service—our team can collaborate seamlessly and deliver with confidence. The process is simple, elegant, and consistently reliable.">
+                      An incredibly effective service—our team can collaborate seamlessly and deliver with confidence. The process is simple, elegant, and consistently reliable.
+                    </p>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-xs tracking-[0.2em] text-white uppercase font-bold">
+                      <span data-translate="MICHAEL THOMPSON">MICHAEL THOMPSON</span>
+                    </div>
+                    <div class="text-xs tracking-[0.15em] text-gray-400 uppercase mt-1" data-translate="EXECUTIVE DIRECTOR">EXECUTIVE DIRECTOR</div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 4 -->
+              <article class="flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)] group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-105 flex flex-col">
+                <div class="p-8 space-y-4 flex-grow flex flex-col">
+                  <div class="w-16 h-16 mx-auto rounded-full p-1 bg-white/10 border border-white/10">
+                    <div class="w-full h-full rounded-full overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop" alt="Marcus Chen" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                  </div>
+                  <div class="flex-grow">
+                    <p class="text-gray-300 leading-relaxed text-center" data-translate="LYNCK transformed our digital presence completely. Their strategic approach increased our lead generation by 300% in just 3 months. The team's expertise in both creative and technical execution is unmatched.">
+                      LYNCK transformed our digital presence completely. Their strategic approach increased our lead generation by 300% in just 3 months. The team's expertise in both creative and technical execution is unmatched.
+                    </p>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-xs tracking-[0.2em] text-white uppercase font-bold">
+                      <span data-translate="MARCUS CHEN">MARCUS CHEN</span>
+                    </div>
+                    <div class="text-xs tracking-[0.15em] text-gray-400 uppercase mt-1" data-translate="CEO, TECHFLOW">CEO, TECHFLOW</div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 5 -->
+              <article class="flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)] group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-105 flex flex-col">
+                <div class="p-8 space-y-4 flex-grow flex flex-col">
+                  <div class="w-16 h-16 mx-auto rounded-full p-1 bg-white/10 border border-white/10">
+                    <div class="w-full h-full rounded-full overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop" alt="Emma Rodriguez" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                  </div>
+                  <div class="flex-grow">
+                    <p class="text-gray-300 leading-relaxed text-center" data-translate="Working with LYNCK Academy was a game-changer for our startup. They didn't just create campaigns – they educated our team and built sustainable marketing processes that continue to drive growth.">
+                      Working with LYNCK Academy was a game-changer for our startup. They didn't just create campaigns – they educated our team and built sustainable marketing processes that continue to drive growth.
+                    </p>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-xs tracking-[0.2em] text-white uppercase font-bold">
+                      <span data-translate="EMMA RODRIGUEZ">EMMA RODRIGUEZ</span>
+                    </div>
+                    <div class="text-xs tracking-[0.15em] text-gray-400 uppercase mt-1" data-translate="VP MARKETING">VP MARKETING</div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 6 -->
+              <article class="flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)] group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-105 flex flex-col">
+                <div class="p-8 space-y-4 flex-grow flex flex-col">
+                  <div class="w-16 h-16 mx-auto rounded-full p-1 bg-white/10 border border-white/10">
+                    <div class="w-full h-full rounded-full overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop" alt="David Anderson" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                  </div>
+                  <div class="flex-grow">
+                    <p class="text-gray-300 leading-relaxed text-center" data-translate="The ROI from our LYNCK partnership has been incredible. Their data-driven approach combined with creative storytelling helped us reach our target audience authentically and effectively.">
+                      The ROI from our LYNCK partnership has been incredible. Their data-driven approach combined with creative storytelling helped us reach our target audience authentically and effectively.
+                    </p>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-xs tracking-[0.2em] text-white uppercase font-bold">
+                      <span data-translate="DAVID ANDERSON">DAVID ANDERSON</span>
+                    </div>
+                    <div class="text-xs tracking-[0.15em] text-gray-400 uppercase mt-1" data-translate="FOUNDER, DIGITAL DYNAMICS">FOUNDER, DIGITAL DYNAMICS</div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 7 -->
+              <article class="flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)] group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-105 flex flex-col">
+                <div class="p-8 space-y-4 flex-grow flex flex-col">
+                  <div class="w-16 h-16 mx-auto rounded-full p-1 bg-white/10 border border-white/10">
+                    <div class="w-full h-full rounded-full overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop" alt="Lisa Park" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                  </div>
+                  <div class="flex-grow">
+                    <p class="text-gray-300 leading-relaxed text-center" data-translate="Outstanding results and exceptional service. LYNCK's expertise in Google Ads has transformed our business growth trajectory. Their transparent communication and strategic insights make them invaluable partners.">
+                      Outstanding results and exceptional service. LYNCK's expertise in Google Ads has transformed our business growth trajectory. Their transparent communication and strategic insights make them invaluable partners.
+                    </p>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-xs tracking-[0.2em] text-white uppercase font-bold">
+                      <span data-translate="LISA PARK">LISA PARK</span>
+                    </div>
+                    <div class="text-xs tracking-[0.15em] text-gray-400 uppercase mt-1" data-translate="CMO, GROWTHTECH">CMO, GROWTHTECH</div>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Navigation Arrows -->
+          <div class="flex justify-center gap-4 mt-12">
+            <button id="testimonialPrev" class="bg-white/10 hover:bg-white/20 text-white rounded-full p-4 transition-all duration-300 border border-white/10 hover:border-white/30" aria-label="Previous testimonial">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button id="testimonialNext" class="bg-white/10 hover:bg-white/20 text-white rounded-full p-4 transition-all duration-300 border border-white/10 hover:border-white/30" aria-label="Next testimonial">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
 <section id="process" class="bg-[url(https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/0d850914-e949-410a-ac08-c604b47ea90f_3840w.jpg)] bg-cover pt-24 pb-24">
