@@ -125,6 +125,8 @@ const translations = {
     "About LYNCK": "Über LYNCK",
     "Testimonials": "Referenzen",
     "Portfolio": "Portfolio",
+    "Our Portfolio": "Unser Portfolio",
+    "Discover the campaigns and strategies that drove real results for our clients across industries": "Entdecken Sie die Kampagnen und Strategien, die echte Ergebnisse für unsere Kunden in verschiedenen Branchen geliefert haben",
     "Learning Platform": "Lernplattform",
     "Pricing": "Preise",
     "All": "Alle",
