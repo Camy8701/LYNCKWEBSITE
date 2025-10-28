@@ -100,6 +100,8 @@ const translations = {
     "Contact Info": "Contact Info",
 
     // Contact Form
+    "Let's Work Together": "Let's Work Together",
+    "Ready to scale your business with proven marketing strategies? Let's discuss your project.": "Ready to scale your business with proven marketing strategies? Let's discuss your project.",
     "Get in touch with us": "Get in touch with us",
     "Ready to transform your digital presence? Let's discuss your project and see how we can help you achieve your goals.": "Ready to transform your digital presence? Let's discuss your project and see how we can work together to achieve your goals.",
     "First Name": "First Name",
@@ -219,6 +221,8 @@ const translations = {
     "Contact Info": "Kontakt Info",
 
     // Contact Form
+    "Let's Work Together": "Lassen Sie uns zusammenarbeiten",
+    "Ready to scale your business with proven marketing strategies? Let's discuss your project.": "Bereit, Ihr Unternehmen mit bewährten Marketing-Strategien zu skalieren? Lassen Sie uns über Ihr Projekt sprechen.",
     "Get in touch with us": "Kontaktieren Sie uns",
     "Ready to transform your digital presence? Let's discuss your project and see how we can help you achieve your goals.": "Bereit, Ihre digitale Präsenz zu transformieren? Lassen Sie uns Ihr Projekt besprechen und sehen, wie wir Ihnen helfen können, Ihre Ziele zu erreichen.",
     "First Name": "Vorname",

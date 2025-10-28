@@ -49,10 +49,12 @@
     if (contactForm) {
       contactForm.addEventListener('submit', function(event) {
         const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
         const email = document.getElementById('email').value.trim();
 
         // Clear previous errors
         document.getElementById('firstNameError').textContent = '';
+        document.getElementById('lastNameError').textContent = '';
         document.getElementById('emailError').textContent = '';
 
         let hasErrors = false;
@@ -61,6 +63,13 @@
         if (!firstName) {
           event.preventDefault();
           document.getElementById('firstNameError').textContent = 'First name is required';
+          hasErrors = true;
+        }
+
+        // Validate last name
+        if (!lastName) {
+          event.preventDefault();
+          document.getElementById('lastNameError').textContent = 'Last name is required';
           hasErrors = true;
         }
 
