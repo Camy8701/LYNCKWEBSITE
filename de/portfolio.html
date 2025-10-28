@@ -223,48 +223,6 @@
     </div>
   </div>
 
-  <!-- Translation System -->
-  <script>
-    // Get translations from index.html by referencing parent window or load from same source
-    let currentLanguage = localStorage.getItem('language') || 'en';
-
-    function updateLanguageDisplay() {
-      const langMap = { en: 'EN', de: 'DE', fr: 'FR' };
-      document.getElementById('currentLang').textContent = langMap[currentLanguage];
-    }
-
-    // Initialize language system
-    document.addEventListener('DOMContentLoaded', function() {
-      updateLanguageDisplay();
-
-      // Language button toggle
-      document.getElementById('languageBtn').addEventListener('click', function() {
-        const menu = document.getElementById('languageMenu');
-        menu.classList.toggle('hidden');
-      });
-
-      // Language selection
-      document.querySelectorAll('.lang-option').forEach(button => {
-        button.addEventListener('click', function() {
-          const lang = this.getAttribute('data-lang');
-          currentLanguage = lang;
-          localStorage.setItem('language', lang);
-          updateLanguageDisplay();
-          document.getElementById('languageMenu').classList.add('hidden');
-          // Redirect to index.html with language preference
-          window.location.href = 'index.html';
-        });
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener('click', function(event) {
-        if (!event.target.closest('#languageBtn') && !event.target.closest('#languageMenu')) {
-          document.getElementById('languageMenu').classList.add('hidden');
-        }
-      });
-    });
-  </script>
-
   <!-- Project Modal System -->
   <script>
     // Project data
@@ -384,10 +342,6 @@
       }
     });
   </script>
-
-  <!-- Shared JavaScript files -->
-  <script src="../js/translations.js" defer></script>
-  <script src="../js/webgl-background.js" defer></script>
 
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
