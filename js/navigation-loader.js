@@ -302,10 +302,19 @@
       // The URL determines the language, not localStorage
       const activeLang = pathLang;
       setStoredLanguage(activeLang);
+
+      // Update translations.js currentLanguage before translating
+      // This ensures translatePage() uses the correct language
+      if (typeof window.updateCurrentLanguage === 'function') {
+        window.updateCurrentLanguage(activeLang);
+      }
+
       applyLocalizedLinks(navContainer, activeLang);
       updateLanguageIndicator(activeLang);
       highlightSelectedLanguage(activeLang);
       initializeNavigationFunctionality(navContainer, activeLang);
+
+      // Translate navigation after it's been loaded and language is set
       if (typeof translatePage === 'function') {
         translatePage();
       }

@@ -542,9 +542,18 @@ document.addEventListener('DOMContentLoaded', function() {
   syncNavigationLanguage(currentLanguage);
 });
 
+// Update current language without triggering redirects
+// Used by navigation-loader.js to sync language before translating
+function updateCurrentLanguage(lang) {
+  const normalizedLang = normalizeLang(lang);
+  currentLanguage = normalizedLang;
+  setStoredLanguage(normalizedLang);
+}
+
 // Export for global access
 if (typeof window !== 'undefined') {
   window.translations = translations;
   window.setLanguage = setLanguage;
   window.translatePage = translatePage;
+  window.updateCurrentLanguage = updateCurrentLanguage;
 }
