@@ -25,6 +25,13 @@ const translations = {
     "View our work": "View our work",
     "About us": "About us",
 
+    // Carousel / Ticker Section
+    "What sets LYNCK apart": "What sets LYNCK apart",
+    "1. A Google Ads expert team backed by receipts for ads that convert": "1. A Google Ads expert team backed by receipts for ads that convert",
+    "2. Custom websites you can edit": "2. Custom websites you can edit",
+    "3. Expert digital products": "3. Expert digital products",
+    "4. A learning platform built on experience — learn from proven professionals": "4. A learning platform built on experience — learn from proven professionals",
+
     // Services
     "OUR SERVICES": "OUR SERVICES",
     "1. Easy-Edit Websites": "1. Easy-Edit Websites",
@@ -145,6 +152,13 @@ const translations = {
     "At LYNCK, we craft digital marketing experiences and websites that look beautiful, feel intuitive, and deliver results — with Google Ads, editable sites, and clear training that put you in control": "Bei LYNCK gestalten wir digitale Marketing-Erlebnisse und Websites, die ästhetisch überzeugen, einfach zu bedienen sind und nachhaltige Ergebnisse liefern - mit Google Ads, selbst anpassbaren Websites und klaren Trainings, die Ihnen ermöglichen, Ihre Onlinepräsenz selbst in der Hand haben.",
     "View our work": "Unsere Arbeit ansehen",
     "About us": "Über uns",
+
+    // Carousel / Ticker Section
+    "What sets LYNCK apart": "Was LYNCK auszeichnet",
+    "1. A Google Ads expert team backed by receipts for ads that convert": "1. Ein Google Ads Expertenteam mit nachweisbaren Erfolgen für konvertierende Anzeigen",
+    "2. Custom websites you can edit": "2. Individuelle Websites, die Sie selbst bearbeiten können",
+    "3. Expert digital products": "3. Professionelle digitale Produkte",
+    "4. A learning platform built on experience — learn from proven professionals": "4. Eine Lernplattform basierend auf Erfahrung – lernen Sie von bewährten Profis",
 
     // Services
     "OUR SERVICES": "UNSERE LEISTUNGEN",
