@@ -193,11 +193,12 @@
       relativeTarget = buildRelativeFallback(info, normalizedLang);
     }
 
-    return joinPath(info.basePath, relativeTarget);
+    // Always build path from root, not from current location
+    // This prevents /de/de/ double prefix issues
+    return '/' + (relativeTarget || '').replace(/^\/+/, '');
   }
 
   function applyLocalizedLinks(container, lang) {
-    const info = getPathInfo(window.location.pathname);
     const normalizedLang = normalizeLang(lang);
     const links = container.querySelectorAll('[data-route]');
 
@@ -215,7 +216,8 @@
         return;
       }
 
-      const href = joinPath(info.basePath, relativeTarget);
+      // Always use absolute paths from root to avoid double /de/ prefixes
+      const href = '/' + relativeTarget.replace(/^\/+/, '');
       link.setAttribute('href', `${href}${anchor}`);
     });
   }
