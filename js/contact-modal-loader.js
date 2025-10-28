@@ -36,6 +36,13 @@
       // Initialize modal functionality after injection
       initializeModalFunctionality();
 
+      // CRITICAL: Translate the modal content after injection
+      // The modal is loaded AFTER the initial translatePage() call
+      // So we need to translate it again here
+      if (typeof window.translatePage === 'function') {
+        window.translatePage();
+      }
+
     } catch (error) {
       console.error('Error loading contact modal:', error);
       // Fail silently in production, but log for debugging
@@ -102,9 +109,9 @@
       const dropdowns = ['servicesDropdown', 'budgetDropdown', 'countryDropdown', 'timeDropdown', 'timezoneDropdown'];
       dropdowns.forEach(dropdownId => {
         const dropdown = document.getElementById(dropdownId);
-        if (dropdown && !dropdown.classList.contains('hidden')) {
+        if (dropdown && dropdown.classList.contains('active')) {
           if (!e.target.closest('.form-dropdown')) {
-            dropdown.classList.add('hidden');
+            dropdown.classList.remove('active');
           }
         }
       });
@@ -126,7 +133,8 @@
 
     const dropdown = document.getElementById(dropdownId);
     if (dropdown) {
-      dropdown.classList.toggle('hidden');
+      // Use 'active' class instead of 'hidden' to match CSS
+      dropdown.classList.toggle('active');
     }
   };
 
@@ -141,7 +149,7 @@
     }
     const dropdown = document.getElementById('servicesDropdown');
     if (dropdown) {
-      dropdown.classList.add('hidden');
+      dropdown.classList.remove('active');
     }
   };
 
@@ -156,7 +164,7 @@
     }
     const dropdown = document.getElementById('budgetDropdown');
     if (dropdown) {
-      dropdown.classList.add('hidden');
+      dropdown.classList.remove('active');
     }
   };
 
@@ -167,7 +175,7 @@
     }
     const dropdown = document.getElementById('countryDropdown');
     if (dropdown) {
-      dropdown.classList.add('hidden');
+      dropdown.classList.remove('active');
     }
   };
 
@@ -178,7 +186,7 @@
     }
     const dropdown = document.getElementById('timeDropdown');
     if (dropdown) {
-      dropdown.classList.add('hidden');
+      dropdown.classList.remove('active');
     }
   };
 
@@ -189,7 +197,7 @@
     }
     const dropdown = document.getElementById('timezoneDropdown');
     if (dropdown) {
-      dropdown.classList.add('hidden');
+      dropdown.classList.remove('active');
     }
   };
 
