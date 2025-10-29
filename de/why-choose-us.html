@@ -96,23 +96,28 @@
 
           <!-- Top Row: Main Video + Text Content -->
           <div class="grid lg:grid-cols-2 gap-8 mb-8 relative z-10">
-            <!-- Left: Main Video Frame -->
-            <div class="group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl pt-4 pr-4 pb-4 pl-4 backdrop-blur-lg">
-              <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10">
-                <video
-                  src="mid-video.mp4"
-                  class="w-full h-full object-cover"
-                  controls
-                  preload="none"
-                  poster=""
-                >
-                  Your browser does not support the video tag.
-                </video>
+            <!-- Left Column: Video and Info Cards -->
+            <div class="space-y-4">
+              <!-- Video Card -->
+              <div class="group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl p-4 backdrop-blur-lg">
+                <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10">
+                  <video
+                    src="../mid-video.mp4"
+                    class="w-full h-full object-cover"
+                    controls
+                    preload="none"
+                    poster=""
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
               </div>
-              <div class="mt-4">
+
+              <!-- Info Card -->
+              <div class="group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl p-4 backdrop-blur-lg">
                 <p class="text-lg italic" style="font-weight: 500">LYNCK Studio</p>
-                <p class="mt-2 text-sm text-gray-300" data-translate="Transforming complex marketing challenges into simple, effective solutions.">"Komplexe Marketing-Herausforderungen in einfache, effektive Lösungen verwandeln."</p>
-                <p class="mt-4 text-xs text-gray-300" data-translate="Marketing Academy • Digital Solutions">Marketing Akademie • Digitale Lösungen</p>
+                <p class="mt-1 text-sm text-gray-300" data-translate="Transforming complex marketing challenges into simple, effective solutions.">"Komplexe Marketing-Herausforderungen in einfache, effektive Lösungen verwandeln."</p>
+                <p class="mt-2 text-xs text-gray-300" data-translate="Marketing Academy • Digital Solutions">Marketing Akademie • Digitale Lösungen</p>
               </div>
             </div>
 
