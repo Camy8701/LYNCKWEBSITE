@@ -219,42 +219,6 @@
 
     <!-- Contact modal loaded from external file (../js/contact-modal-loader.js) -->
 
-  <!-- Translation System -->
-  <script>
-    let currentLanguage = localStorage.getItem('language') || 'de';
-
-    function updateLanguageDisplay() {
-      const langMap = { en: 'EN', de: 'DE', fr: 'FR' };
-      document.getElementById('currentLang').textContent = langMap[currentLanguage];
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      updateLanguageDisplay();
-
-      document.getElementById('languageBtn').addEventListener('click', function() {
-        const menu = document.getElementById('languageMenu');
-        menu.classList.toggle('hidden');
-      });
-
-      document.querySelectorAll('.lang-option').forEach(button => {
-        button.addEventListener('click', function() {
-          const lang = this.getAttribute('data-lang');
-          currentLanguage = lang;
-          localStorage.setItem('language', lang);
-          updateLanguageDisplay();
-          document.getElementById('languageMenu').classList.add('hidden');
-          window.location.href = 'index.html';
-        });
-      });
-
-      document.addEventListener('click', function(event) {
-        if (!event.target.closest('#languageBtn') && !event.target.closest('#languageMenu')) {
-          document.getElementById('languageMenu').classList.add('hidden');
-        }
-      });
-    });
-  </script>
-
   <!-- WebGL background animations loaded from external file (js/webgl-background.js) -->
 
   <!-- Shared JavaScript files -->
