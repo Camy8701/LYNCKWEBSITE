@@ -754,5 +754,46 @@ section {
 
 
 /* ========================================
+   11. UTILITY CLASSES (Extracted from inline styles)
+   ======================================== */
+
+/* Z-index Utilities */
+.z-n-30 { z-index: -30; }
+.z-n-20 { z-index: -20; }
+.z-n-10 { z-index: -10; }
+
+/* Transform Utilities */
+.translate-y-25 { transform: translateY(25%); }
+
+/* Opacity Utilities */
+.opacity-10 { opacity: 0.1; }
+
+/* Font Weight Utilities */
+.font-medium { font-weight: 500; }
+
+/* Display Utilities */
+.hidden { display: none; }
+
+/* Animation Delay Utilities */
+.delay-200 { animation-delay: 0.2s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-1000 { animation-delay: 1s; }
+.delay-1200 { animation-delay: 1.2s; }
+.delay-1400 { animation-delay: 1.4s; }
+.delay-1600 { animation-delay: 1.6s; }
+.delay-1800 { animation-delay: 1.8s; }
+
+/* Text Shadow Utilities */
+.text-shadow-yellow { text-shadow: 0 0 20px rgba(252, 211, 77, 0.3); }
+.text-shadow-pink { text-shadow: 0 0 20px rgba(251, 113, 133, 0.3); }
+.text-shadow-green { text-shadow: 0 0 20px rgba(110, 231, 183, 0.3); }
+.text-shadow-cyan { text-shadow: 0 0 20px rgba(103, 232, 249, 0.3); }
+
+/* Will-change Performance Utilities */
+.will-change-transform { will-change: transform; }
+
+/* ========================================
    END OF MAIN STYLESHEET
    ======================================== */

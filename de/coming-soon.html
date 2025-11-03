@@ -45,10 +45,10 @@
 </head>
 <body class="h-full bg-black text-white antialiased overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
   <!-- Starfield Background Layer -->
-  <canvas id="starfield-canvas" class="w-full h-full fixed top-0 left-0" style="z-index: -20; will-change: transform;"></canvas>
+  <canvas id="starfield-canvas" class="w-full h-full fixed top-0 left-0 z-n-20 will-change-transform"></canvas>
 
   <!-- Floating Oval Animation Layer -->
-  <canvas id="shader-canvas" class="w-full h-full fixed top-0 left-0" style="z-index: -10; will-change: transform;"></canvas>
+  <canvas id="shader-canvas" class="w-full h-full fixed top-0 left-0 z-n-10 will-change-transform"></canvas>
 
   <!-- Navigation -->
   <div id="navigation-placeholder"></div>
@@ -58,7 +58,7 @@
     <div class="max-w-4xl mx-auto text-center">
 
       <!-- Icon/Logo -->
-      <div class="mb-8 opacity-0 animate-fade-in" style="animation-delay: 0.2s">
+      <div class="mb-8 opacity-0 animate-fade-in delay-200">
         <div class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-white/10 backdrop-blur-lg border border-white/20">
           <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-white">
             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
@@ -68,22 +68,22 @@
       </div>
 
       <!-- Main Heading -->
-      <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 opacity-0 animate-slide-up" style="animation-delay: 0.4s">
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 opacity-0 animate-slide-up delay-400">
         Kommt Bald
       </h1>
 
       <!-- Subheading -->
-      <p class="text-2xl md:text-3xl text-gray-300 font-geist font-light mb-8 opacity-0 animate-slide-up" style="animation-delay: 0.6s">
+      <p class="text-2xl md:text-3xl text-gray-300 font-geist font-light mb-8 opacity-0 animate-slide-up delay-600">
         LYNCK Lernplattform
       </p>
 
       <!-- Description -->
-      <p class="text-lg md:text-xl text-gray-400 font-geist max-w-2xl mx-auto mb-12 opacity-0 animate-fade-in" style="animation-delay: 0.8s">
+      <p class="text-lg md:text-xl text-gray-400 font-geist max-w-2xl mx-auto mb-12 opacity-0 animate-fade-in delay-800">
         Wir arbeiten hart daran, Ihnen umfassende digitale Marketing-Kurse, praktische Schulungen und von Experten geleitete Inhalte zu bieten. Unsere Lernplattform wird Sie befähigen, Google Ads, SEO, Webentwicklung und mehr zu meistern.
       </p>
 
       <!-- Features List -->
-      <div class="grid md:grid-cols-3 gap-6 mb-12 opacity-0 animate-fade-in" style="animation-delay: 1s">
+      <div class="grid md:grid-cols-3 gap-6 mb-12 opacity-0 animate-fade-in delay-1000">
         <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all duration-300">
           <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4 mx-auto">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -119,7 +119,7 @@
       </div>
 
       <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in" style="animation-delay: 1.2s">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in delay-1200">
         <a href="index.html" class="inline-flex items-center gap-3 shiny-cta font-geist">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="m12 19-7-7 7-7"></path>
@@ -136,7 +136,7 @@
       </div>
 
       <!-- Status Badge -->
-      <div class="mt-12 opacity-0 animate-fade-in" style="animation-delay: 1.4s">
+      <div class="mt-12 opacity-0 animate-fade-in delay-1400">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
           <div class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></div>
           <span class="text-sm text-gray-300 font-geist">In Entwicklung</span>

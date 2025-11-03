@@ -61,13 +61,13 @@
 </head>
 <body class="h-full bg-black text-white antialiased overflow-x-hidden font-geist">
   <!-- Black Background Overlay (Force black) -->
-  <div class="fixed top-0 left-0 w-full h-full bg-black" style="z-index: -30;"></div>
+  <div class="fixed top-0 left-0 w-full h-full bg-black z-n-30"></div>
 
   <!-- Floating Oval Animation Layer -->
-  <canvas id="shader-canvas" class="w-full h-full fixed top-0 left-0" style="z-index: -10;"></canvas>
+  <canvas id="shader-canvas" class="w-full h-full fixed top-0 left-0 z-n-10"></canvas>
 
   <!-- Starfield Background (Base Layer) -->
-  <canvas id="starfield-canvas" class="w-full h-full fixed top-0 left-0" style="z-index: -20;"></canvas>
+  <canvas id="starfield-canvas" class="w-full h-full fixed top-0 left-0 z-n-20"></canvas>
 
 
   <!-- Navigation loaded dynamically via navigation-loader.js -->
@@ -107,7 +107,7 @@
 
               <!-- Info Card -->
               <div class="group relative overflow-hidden hover:border-white/15 transition-all bg-black/40 border-white/10 border rounded-2xl p-4 backdrop-blur-lg">
-                <p class="text-lg italic" style="font-weight: 500">LYNCK Studio</p>
+                <p class="text-lg italic font-medium">LYNCK Studio</p>
                 <p class="mt-1 text-sm text-gray-300" data-translate="Transforming complex marketing challenges into simple, effective solutions.">"Komplexe Marketing-Herausforderungen in einfache, effektive Lösungen verwandeln."</p>
                 <p class="mt-2 text-xs text-gray-300" data-translate="Marketing Academy • Digital Solutions">Marketing Akademie • Digitale Lösungen</p>
               </div>
@@ -197,7 +197,7 @@
     </section>
 
         <!-- Call to Action -->
-        <div class="text-center mt-16 opacity-0 animate-fade-in" style="animation-delay: 1.4s;">
+        <div class="text-center mt-16 opacity-0 animate-fade-in delay-1400">
           <h3 class="text-3xl lg:text-4xl text-white font-geist tracking-tight font-light mb-6">
             Bereit, den Unterschied zu erleben?
           </h3>
