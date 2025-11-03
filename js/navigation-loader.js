@@ -28,6 +28,10 @@
       en: 'learning-platform.html',
       de: 'de/learning-platform.html'
     },
+    'coming-soon': {
+      en: 'learning-platform.html',
+      de: 'de/learning-platform.html'
+    },
     pricing: {
       en: 'pricing.html',
       de: 'de/pricing.html'
