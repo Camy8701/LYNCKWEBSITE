@@ -771,9 +771,6 @@ section {
 /* Font Weight Utilities */
 .font-medium { font-weight: 500; }
 
-/* Display Utilities */
-.hidden { display: none; }
-
 /* Animation Delay Utilities */
 .delay-200 { animation-delay: 0.2s; }
 .delay-400 { animation-delay: 0.4s; }
