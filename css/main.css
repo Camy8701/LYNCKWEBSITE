@@ -765,7 +765,7 @@ section {
 /* Ensure main content appears above background canvases */
 body > section,
 body > main,
-body > div:not(#starfield-canvas):not(#shader-canvas) {
+body > div:not(#starfield-canvas):not(#shader-canvas):not(#navigation-placeholder) {
   position: relative;
   z-index: 10;
 }
