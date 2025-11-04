@@ -758,9 +758,9 @@ section {
    ======================================== */
 
 /* Z-index Utilities */
-.z-n-30 { z-index: 1; }
-.z-n-20 { z-index: 1; }
-.z-n-10 { z-index: 2; }
+.z-n-30 { z-index: -30; }
+.z-n-20 { z-index: -20; }
+.z-n-10 { z-index: -10; }
 
 /* Transform Utilities */
 .translate-y-25 { transform: translateY(25%); }
