@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank You | LYNCK Studio</title>
+<meta name="description" content="Thank you for contacting LYNCK Studio. We'll get back to you soon.">
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://lynckstudio.com/thank-you.html">
+
+<!-- Hreflang Tags -->
+<link rel="alternate" hreflang="en" href="https://lynckstudio.com/thank-you.html" />
+<link rel="alternate" hreflang="de" href="https://lynckstudio.com/de/thank-you.html" />
+<link rel="alternate" hreflang="x-default" href="https://lynckstudio.com/thank-you.html" />
+
+<!-- Resource Hints for Performance -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Optimized Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="alternate icon" href="logo.svg">
+<link rel="apple-touch-icon" href="logo.svg">
+
+<!-- Load Tailwind CSS - Local Build -->
+<link rel="stylesheet" href="css/tailwind.min.css">
+<link rel="stylesheet" href="css/main.min.css">
+<script>
+  // Set language immediately before any other scripts load
+  try {
+    localStorage.setItem('language', 'en');
+  } catch (e) {
+    console.warn('Could not set language preference:', e);
+  }
+</script>
+<!-- Load translations first, before navigation-loader tries to call translatePage() -->
+<script src="js/navigation-loader.js" defer></script>
+<script src="js/contact-modal-loader.js" defer></script>
+<script src="js/webgl-background.js" defer></script>
+</head>
+<body class="min-h-full bg-black text-white antialiased overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <!-- Starfield Background Layer -->
+  <canvas id="starfield-canvas" class="w-full h-full fixed top-0 left-0 z-n-20 will-change-transform"></canvas>
+
+  <!-- Floating Oval Animation Layer -->
+  <canvas id="shader-canvas" class="w-full h-full fixed top-0 left-0 z-n-10 will-change-transform"></canvas>
+
+  <!-- Navigation -->
+  <div id="navigation-placeholder"></div>
+
+  <!-- Thank You Section -->
+  <section class="relative min-h-screen flex items-center justify-center py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+
+      <!-- Success Icon -->
+      <div class="mb-8 opacity-0 animate-fade-in delay-200">
+        <div class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-green-500/20 backdrop-blur-lg border border-green-500/40">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400">
+            <path d="M20 6 9 17l-5-5"></path>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 opacity-0 animate-slide-up delay-400" data-translate="Thank You!">
+        Thank You!
+      </h1>
+
+      <!-- Subheading -->
+      <p class="text-2xl md:text-3xl text-gray-300 font-geist font-light mb-8 opacity-0 animate-slide-up delay-600" data-translate="We've received your message">
+        We've received your message
+      </p>
+
+      <!-- Description -->
+      <p class="text-lg md:text-xl text-gray-400 font-geist max-w-2xl mx-auto mb-12 opacity-0 animate-fade-in delay-800" data-translate="thank-you-description">
+        Our team will review your inquiry and get back to you within 24 hours. We're excited to learn more about your project and explore how we can help you achieve your goals.
+      </p>
+
+      <!-- What's Next Section -->
+      <div class="mb-12 opacity-0 animate-fade-in delay-1000">
+        <h2 class="text-2xl md:text-3xl text-white font-geist font-light mb-8" data-translate="What's Next?">
+          What's Next?
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all duration-300 hover:scale-105">
+            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4 mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" x2="12" y1="15" y2="3"></line>
+              </svg>
+            </div>
+            <h3 class="text-white font-geist font-semibold mb-2" data-translate="Check Your Email">Check Your Email</h3>
+            <p class="text-gray-400 text-sm font-geist" data-translate="You'll receive a confirmation email shortly">You'll receive a confirmation email shortly</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all duration-300 hover:scale-105">
+            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4 mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 2v4"></path>
+                <path d="M16 2v4"></path>
+                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                <path d="M3 10h18"></path>
+              </svg>
+            </div>
+            <h3 class="text-white font-geist font-semibold mb-2" data-translate="We'll Respond Soon">We'll Respond Soon</h3>
+            <p class="text-gray-400 text-sm font-geist" data-translate="Our team will contact you within 24 hours">Our team will contact you within 24 hours</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all duration-300 hover:scale-105">
+            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4 mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+              </svg>
+            </div>
+            <h3 class="text-white font-geist font-semibold mb-2" data-translate="We'll Discuss Your Needs">We'll Discuss Your Needs</h3>
+            <p class="text-gray-400 text-sm font-geist" data-translate="Together we'll create a custom solution for you">Together we'll create a custom solution for you</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in delay-1200">
+        <a href="/" class="inline-flex items-center gap-2 shiny-cta font-geist">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <span data-translate="Back to Home">Back to Home</span>
+        </a>
+        <a href="portfolio.html" class="px-6 py-3 border border-white/20 rounded-lg hover:bg-white/10 transition-colors font-geist" data-translate="View Our Work">
+          View Our Work
+        </a>
+        <a href="/#work" class="px-6 py-3 border border-white/20 rounded-lg hover:bg-white/10 transition-colors font-geist" data-translate="Explore Services">
+          Explore Services
+        </a>
+      </div>
+
+      <!-- Social Proof -->
+      <div class="mt-16 opacity-0 animate-fade-in delay-1400">
+        <p class="text-sm text-gray-500 font-geist mb-4" data-translate="Trusted by 50+ businesses worldwide">Trusted by 50+ businesses worldwide</p>
+        <div class="flex items-center justify-center gap-8 flex-wrap">
+          <div class="text-gray-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="text-gray-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="text-gray-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="text-gray-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="text-gray-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
