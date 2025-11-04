@@ -65,14 +65,11 @@
 <script src="../js/contact-modal-loader.js" defer></script>
 </head>
 <body class="min-h-full bg-black text-white antialiased overflow-x-hidden font-geist">
-  <!-- Spline Background -->
-  <div class="spline-container fixed top-0 w-full h-screen -z-10">
-    <iframe src="https://my.spline.design/glowingplanetparticles-oNju9tQxB1nyaHSc0bBhpEAE" frameborder="0" width="100%"
-      height="100%" id="aura-spline" class="w-full h-full"></iframe>
-  </div>
+  <!-- Starfield Background Layer -->
+  <canvas id="starfield-canvas" class="w-full h-full fixed top-0 left-0 z-n-20 will-change-transform"></canvas>
 
-  <!-- Starfield Background -->
-  <canvas id="starfield-canvas" class="w-full h-full fixed top-0 left-0 z-n-20"></canvas>
+  <!-- Floating Oval Animation Layer -->
+  <canvas id="shader-canvas" class="w-full h-full fixed top-0 left-0 z-n-10 will-change-transform"></canvas>
 
   <!-- Navigation loaded dynamically via navigation-loader.js -->
   <div id="navigation-placeholder"></div>
