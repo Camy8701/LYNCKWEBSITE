@@ -45,6 +45,15 @@
 
 <link rel="stylesheet" href="css/tailwind.min.css">
 <link rel="stylesheet" href="css/main.min.css">
+<script>
+  // Set language immediately before any other scripts load
+  try {
+    localStorage.setItem('language', 'en');
+  } catch (e) {
+    console.warn('Could not set language preference:', e);
+  }
+</script>
+<!-- Load translations first, before navigation-loader tries to call translatePage() -->
 <script src="js/navigation-loader.js" defer></script>
     <script src="js/contact-modal-loader.js" defer></script>
 </head>
