@@ -36,10 +36,6 @@
       en: 'pricing.html',
       de: 'de/pricing.html'
     },
-    portfolio: {
-      en: 'portfolio.html',
-      de: 'de/portfolio.html'
-    },
     'why-choose-us': {
       en: 'why-choose-us.html',
       de: 'de/why-choose-us.html'

@@ -53,6 +53,14 @@
 <!-- Load Tailwind CSS - Local Build -->
 <link rel="stylesheet" href="../css/tailwind.min.css">
 <link rel="stylesheet" href="../css/main.min.css">
+<script>
+  // Set language immediately before any other scripts load
+  try {
+    localStorage.setItem('language', 'de');
+  } catch (e) {
+    console.warn('Could not set language preference:', e);
+  }
+</script>
 <!-- Load translations first, before navigation-loader tries to call translatePage() -->
 <script src="../js/translations.js" defer></script>
 <script src="../js/navigation-loader.js" defer></script>
@@ -89,11 +97,6 @@
           </div>
 
           <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-slide-up delay-1400">
-            <a href="/de/portfolio" class="group inline-flex items-center gap-3 shiny-cta font-geist">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg>
-              <span data-translate="View our work">View our work</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </a>
             <a href="/de/why-choose-us" class="inline-flex items-center gap-3 shiny-cta font-geist">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
               <span data-translate="About us">About us</span>
@@ -1073,7 +1076,6 @@
                 <div class="space-y-3">
                   <a href="/de/why-choose-us#about-lynck" class="shiny-cta-white"><span>Über LYNCK</span></a>
                   <a href="#work" class="block text-gray-300 hover:text-white transition-colors font-geist">Unsere Dienstleistungen</a>
-                  <a href="/de/portfolio" class="block text-gray-300 hover:text-white transition-colors font-geist">Portfolio</a>
                   <a href="coming-soon.html" class="block text-gray-300 hover:text-white transition-colors font-geist">Lernplattform</a>
                 </div>
               </div>
