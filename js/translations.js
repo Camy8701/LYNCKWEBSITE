@@ -259,9 +259,13 @@ const translations = {
 };
 
 // Shared translation functionality
-const routing = typeof window !== 'undefined' ? (window.__lynckRouting || null) : null;
+// Note: Don't cache routing as const - it needs to be checked dynamically
+// because navigation-loader.js sets it after translations.js loads
+function getRouting() {
+  return typeof window !== 'undefined' ? (window.__lynckRouting || null) : null;
+}
 
-const supportedLanguages = (routing?.SUPPORTED_LANGS || ['en', 'de']).map(lang => String(lang).toLowerCase());
+const supportedLanguages = ['en', 'de'].map(lang => String(lang).toLowerCase());
 
 const fallbackLocalizedRoutes = {
   index: {
@@ -298,7 +302,10 @@ const fallbackLocalizedRoutes = {
   }
 };
 
-const localizedRoutes = routing?.ROUTE_MAP || fallbackLocalizedRoutes;
+function getLocalizedRoutes() {
+  const routing = getRouting();
+  return routing?.ROUTE_MAP || fallbackLocalizedRoutes;
+}
 
 function fallbackNormalizeLang(lang) {
   if (typeof lang !== 'string') return 'en';
@@ -306,7 +313,13 @@ function fallbackNormalizeLang(lang) {
   return supportedLanguages.includes(normalized) ? normalized : 'en';
 }
 
-const normalizeLang = routing?.normalizeLang || fallbackNormalizeLang;
+function normalizeLang(lang) {
+  const routing = getRouting();
+  if (routing && typeof routing.normalizeLang === 'function') {
+    return routing.normalizeLang(lang);
+  }
+  return fallbackNormalizeLang(lang);
+}
 
 function fallbackGetPathSegments(pathname) {
   if (typeof pathname !== 'string') return [];
@@ -376,6 +389,7 @@ function fallbackGetPathInfo(pathname) {
 }
 
 function getPathInfo(pathname) {
+  const routing = getRouting();
   if (routing && typeof routing.getPathInfo === 'function') {
     return routing.getPathInfo(pathname);
   }
@@ -424,6 +438,7 @@ function normalizePathForCompare(path) {
 }
 
 function detectLanguageFromPath() {
+  const routing = getRouting();
   if (routing && typeof routing.detectLanguageFromPath === 'function') {
     return routing.detectLanguageFromPath();
   }
@@ -477,6 +492,7 @@ if (currentLanguage !== storedLanguage) {
 syncNavigationLanguage(currentLanguage);
 
 function resolveLocalizedPath(lang) {
+  const routing = getRouting();
   if (routing && typeof routing.resolveLocalizedPath === 'function') {
     return routing.resolveLocalizedPath(lang);
   }
@@ -484,6 +500,7 @@ function resolveLocalizedPath(lang) {
   try {
     const info = getPathInfo(window.location.pathname);
     const normalizedLang = normalizeLang(lang);
+    const localizedRoutes = getLocalizedRoutes();
     const route = localizedRoutes[info.slug];
     let relativeTarget = route ? (route[normalizedLang] || route.en) : null;
 
