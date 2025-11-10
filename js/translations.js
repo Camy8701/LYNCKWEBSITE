@@ -15,6 +15,7 @@ const translations = {
     "Google Ads": "Google Ads",
     "Custom Website": "Custom Website",
     "Digital Products": "Digital Products",
+    "Leads Supply": "Leads Supply",
     "Work": "Work",
     "About": "About",
     "Process": "Process",
@@ -143,6 +144,7 @@ const translations = {
     "Google Ads": "Google Ads",
     "Custom Website": "Anpassbare Website",
     "Digital Products": "Digitale Produkte",
+    "Leads Supply": "Lead-Bereitstellung",
     "Work": "Arbeit",
     "About": "Über",
     "Process": "Prozess",
@@ -287,6 +289,10 @@ const fallbackLocalizedRoutes = {
   'digital-products': {
     en: 'digital-products.html',
     de: 'de/digital-products.html'
+  },
+  'leads-supply': {
+    en: 'leads-supply.html',
+    de: 'de/leads-supply.html'
   },
   'learning-platform': {
     en: 'learning-platform.html',

@@ -24,6 +24,10 @@
       en: 'digital-products.html',
       de: 'de/digital-products.html'
     },
+    'leads-supply': {
+      en: 'leads-supply.html',
+      de: 'de/leads-supply.html'
+    },
     'learning-platform': {
       en: 'learning-platform.html',
       de: 'de/learning-platform.html'
