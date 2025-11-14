@@ -80,7 +80,6 @@ section {
   font-family: 'Brush Script MT', 'Lucida Handwriting', 'Apple Chancery', 'Segoe Script', cursive;
   font-style: italic;
   font-weight: 600;
-  text-transform: lowercase;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.45);
   letter-spacing: 0.12em;
   transform: rotate(-5deg);
