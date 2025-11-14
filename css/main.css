@@ -883,6 +883,49 @@ body {
   position: relative;
 }
 
+/* Mobile Navigation Optimizations */
+@media (max-width: 640px) {
+  header {
+    margin: 0.5rem;
+  }
+
+  header .flex.h-20 {
+    height: 4rem;
+  }
+
+  /* Prevent navigation items from wrapping */
+  nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Section Title Overflow Prevention */
+@media (max-width: 640px) {
+  h1, h2, h3 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Extra small screens - ensure no horizontal scroll */
+  .text-3xl {
+    font-size: 1.75rem !important;
+    line-height: 2rem !important;
+  }
+}
+
+/* Ensure all containers respect viewport width */
+@media (max-width: 768px) {
+  * {
+    max-width: 100vw;
+  }
+
+  section, div {
+    overflow-wrap: break-word;
+  }
+}
+
 /* ========================================
    END OF MAIN STYLESHEET
    ======================================== */
