@@ -801,5 +801,88 @@ body > div:not(#starfield-canvas):not(#shader-canvas):not(#navigation-placeholde
 .will-change-transform { will-change: transform; }
 
 /* ========================================
+   12. MOBILE OPTIMIZATIONS
+   ======================================== */
+
+/* iOS Text Size Adjustment Prevention */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* iOS Tap Highlight Removal */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Touch Action for Better Mobile Responsiveness */
+a, button, [role="button"], [onclick] {
+  touch-action: manipulation;
+}
+
+/* Minimum Touch Target Size (44x44px for accessibility) */
+@media (max-width: 768px) {
+  a, button, [role="button"], .shiny-cta, .shiny-cta-white {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Hardware Acceleration for Animations */
+.animate-fade-in,
+.animate-slide-up,
+.animate-scale-in,
+.shiny-cta,
+.shiny-cta-white,
+.card {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Prevent Text Inflation on Mobile */
+body {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Optimize Font Rendering on Mobile */
+@media (max-width: 768px) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Better Input Focus on Mobile */
+@media (max-width: 768px) {
+  input, textarea, select {
+    font-size: 16px;
+  }
+}
+
+/* Prevent Horizontal Overflow on Mobile */
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ========================================
    END OF MAIN STYLESHEET
    ======================================== */
