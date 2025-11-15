@@ -84,21 +84,18 @@
     </div>
   </div>
 </div>
-
-<!-- Cookie Settings Button (Always visible) -->
-<button id="cookieSettingsBtn" class="cookie-settings-btn" aria-label="Cookie Settings">
-  🍪
-</button>
 `;
 
   // Load cookie consent HTML
   function loadCookieConsent() {
-    // Create a container div
-    const container = document.createElement('div');
-    container.innerHTML = cookieConsentHTML;
+    // Insert HTML directly into body
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = cookieConsentHTML.trim();
 
-    // Append to body
-    document.body.appendChild(container);
+    // Append the actual cookie consent element (not the wrapper)
+    while (tempDiv.firstChild) {
+      document.body.appendChild(tempDiv.firstChild);
+    }
 
     // Initialize cookie consent logic immediately
     initCookieConsent();
@@ -121,10 +118,10 @@
       checkAndShowBanner: function() {
         const consent = this.getConsent();
         if (!consent) {
-          // First time visitor - show banner after 500ms
+          // First time visitor - show banner after 1 second
           setTimeout(() => {
             this.showBanner();
-          }, 500);
+          }, 1000);
         } else {
           // User has already consented - apply their preferences
           this.applyConsent(consent);
@@ -155,7 +152,6 @@
         const acceptAllBtn = document.getElementById('acceptAll');
         const acceptSelectedBtn = document.getElementById('acceptSelected');
         const rejectAllBtn = document.getElementById('rejectAll');
-        const settingsBtn = document.getElementById('cookieSettingsBtn');
 
         if (acceptAllBtn) {
           acceptAllBtn.addEventListener('click', () => this.acceptAll());
@@ -167,10 +163,6 @@
 
         if (rejectAllBtn) {
           rejectAllBtn.addEventListener('click', () => this.rejectAll());
-        }
-
-        if (settingsBtn) {
-          settingsBtn.addEventListener('click', () => this.showBanner());
         }
       },
 
