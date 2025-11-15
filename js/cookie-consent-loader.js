@@ -1,19 +1,20 @@
 /**
- * LYNCK Studio - Cookie Consent Loader
- * Embeds cookie consent component directly into the page
+ * LYNCK Studio - Cookie Consent
+ * GDPR-compliant cookie consent banner
  */
 
 (function() {
   'use strict';
 
-  // Cookie consent HTML (embedded directly)
+  const COOKIE_NAME = 'lynck_cookie_consent';
+  const COOKIE_EXPIRY_DAYS = 365;
+
+  // Cookie consent HTML
   const cookieConsentHTML = `
-<!-- Cookie Consent Banner -->
 <div id="cookieConsent" class="cookie-consent hidden">
   <div class="cookie-consent-overlay"></div>
   <div class="cookie-consent-modal">
     <div class="cookie-consent-content">
-      <!-- Header -->
       <div class="cookie-consent-header">
         <h3 class="cookie-consent-title">🍪 We Value Your Privacy</h3>
         <p class="cookie-consent-description">
@@ -22,7 +23,6 @@
         </p>
       </div>
 
-      <!-- Cookie Categories -->
       <div class="cookie-consent-options">
         <div class="cookie-option">
           <div class="cookie-option-header">
@@ -62,7 +62,6 @@
         </div>
       </div>
 
-      <!-- Actions -->
       <div class="cookie-consent-actions">
         <button id="acceptAll" class="cookie-btn cookie-btn-primary">
           Accept All
@@ -75,7 +74,6 @@
         </button>
       </div>
 
-      <!-- Footer Links -->
       <div class="cookie-consent-footer">
         <a href="#" class="cookie-link">Privacy Policy</a>
         <span class="cookie-separator">•</span>
@@ -86,220 +84,234 @@
 </div>
 `;
 
-  // Load cookie consent HTML
-  function loadCookieConsent() {
-    // Insert HTML directly into body
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = cookieConsentHTML.trim();
+  // Initialize cookie consent
+  function init() {
+    try {
+      // Insert HTML into page
+      const container = document.createElement('div');
+      container.innerHTML = cookieConsentHTML.trim();
 
-    // Append the actual cookie consent element (not the wrapper)
-    while (tempDiv.firstChild) {
-      document.body.appendChild(tempDiv.firstChild);
+      while (container.firstChild) {
+        document.body.appendChild(container.firstChild);
+      }
+
+      // Wait a tick for DOM to settle
+      setTimeout(() => {
+        setupCookieConsent();
+      }, 100);
+    } catch (error) {
+      console.error('Failed to initialize cookie consent:', error);
     }
-
-    // Initialize cookie consent logic immediately
-    initCookieConsent();
   }
 
-  /**
-   * Cookie Consent Logic
-   */
-  function initCookieConsent() {
-    const COOKIE_NAME = 'lynck_cookie_consent';
-    const COOKIE_EXPIRY_DAYS = 365;
+  // Setup cookie consent functionality
+  function setupCookieConsent() {
+    const banner = document.getElementById('cookieConsent');
 
-    const CookieConsent = {
-      init: function() {
-        this.loadConsentState();
-        this.attachEventListeners();
-        this.checkAndShowBanner();
-      },
+    if (!banner) {
+      console.error('Cookie consent banner not found');
+      return;
+    }
 
-      checkAndShowBanner: function() {
-        const consent = this.getConsent();
-        if (!consent) {
-          // First time visitor - show banner after 1 second
-          setTimeout(() => {
-            this.showBanner();
-          }, 1000);
-        } else {
-          // User has already consented - apply their preferences
-          this.applyConsent(consent);
-        }
-      },
+    // Attach event listeners
+    const acceptAllBtn = document.getElementById('acceptAll');
+    const acceptSelectedBtn = document.getElementById('acceptSelected');
+    const rejectAllBtn = document.getElementById('rejectAll');
 
-      showBanner: function() {
-        const banner = document.getElementById('cookieConsent');
-        if (banner) {
-          banner.classList.remove('hidden');
-          setTimeout(() => {
-            banner.classList.add('visible');
-          }, 10);
-        }
-      },
+    if (acceptAllBtn) {
+      acceptAllBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        handleAcceptAll();
+      });
+    }
 
-      hideBanner: function() {
-        const banner = document.getElementById('cookieConsent');
-        if (banner) {
-          banner.classList.remove('visible');
-          setTimeout(() => {
-            banner.classList.add('hidden');
-          }, 300);
-        }
-      },
+    if (acceptSelectedBtn) {
+      acceptSelectedBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        handleAcceptSelected();
+      });
+    }
 
-      attachEventListeners: function() {
-        const acceptAllBtn = document.getElementById('acceptAll');
-        const acceptSelectedBtn = document.getElementById('acceptSelected');
-        const rejectAllBtn = document.getElementById('rejectAll');
+    if (rejectAllBtn) {
+      rejectAllBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        handleRejectAll();
+      });
+    }
 
-        if (acceptAllBtn) {
-          acceptAllBtn.addEventListener('click', () => this.acceptAll());
-        }
+    // Check if consent already given
+    const existingConsent = getConsent();
 
-        if (acceptSelectedBtn) {
-          acceptSelectedBtn.addEventListener('click', () => this.acceptSelected());
-        }
+    if (existingConsent) {
+      // User already made a choice - keep banner hidden
+      console.log('Existing consent found:', existingConsent);
+      applyConsent(existingConsent);
+    } else {
+      // First time visitor - show banner after 1 second
+      setTimeout(() => {
+        showBanner();
+      }, 1000);
+    }
+  }
 
-        if (rejectAllBtn) {
-          rejectAllBtn.addEventListener('click', () => this.rejectAll());
-        }
-      },
+  // Show banner
+  function showBanner() {
+    const banner = document.getElementById('cookieConsent');
+    if (banner) {
+      banner.classList.remove('hidden');
+      // Force reflow
+      void banner.offsetWidth;
+      banner.classList.add('visible');
+      console.log('Cookie banner shown');
+    }
+  }
 
-      acceptAll: function() {
-        const consent = {
-          essential: true,
-          analytics: true,
-          marketing: true,
-          timestamp: new Date().toISOString()
-        };
-        this.saveConsent(consent);
-        this.applyConsent(consent);
-        this.hideBanner();
-      },
+  // Hide banner
+  function hideBanner() {
+    const banner = document.getElementById('cookieConsent');
+    if (banner) {
+      banner.classList.remove('visible');
+      banner.classList.add('hidden');
+      console.log('Cookie banner hidden');
+    }
+  }
 
-      acceptSelected: function() {
-        const analyticsCheckbox = document.getElementById('analyticsConsent');
-        const marketingCheckbox = document.getElementById('marketingConsent');
-
-        const consent = {
-          essential: true,
-          analytics: analyticsCheckbox ? analyticsCheckbox.checked : false,
-          marketing: marketingCheckbox ? marketingCheckbox.checked : false,
-          timestamp: new Date().toISOString()
-        };
-        this.saveConsent(consent);
-        this.applyConsent(consent);
-        this.hideBanner();
-      },
-
-      rejectAll: function() {
-        const consent = {
-          essential: true,
-          analytics: false,
-          marketing: false,
-          timestamp: new Date().toISOString()
-        };
-        this.saveConsent(consent);
-        this.applyConsent(consent);
-        this.hideBanner();
-      },
-
-      saveConsent: function(consent) {
-        try {
-          // Save to localStorage
-          localStorage.setItem(COOKIE_NAME, JSON.stringify(consent));
-
-          // Save to cookie for server-side access
-          const expiryDate = new Date();
-          expiryDate.setDate(expiryDate.getDate() + COOKIE_EXPIRY_DAYS);
-          document.cookie = `${COOKIE_NAME}=${JSON.stringify(consent)}; expires=${expiryDate.toUTCString()}; path=/; SameSite=Strict`;
-
-          console.log('✅ Cookie consent saved:', consent);
-        } catch (e) {
-          console.error('Failed to save cookie consent:', e);
-        }
-      },
-
-      getConsent: function() {
-        try {
-          const stored = localStorage.getItem(COOKIE_NAME);
-          return stored ? JSON.parse(stored) : null;
-        } catch (e) {
-          console.error('Failed to get cookie consent:', e);
-          return null;
-        }
-      },
-
-      loadConsentState: function() {
-        const consent = this.getConsent();
-        if (consent) {
-          const analyticsCheckbox = document.getElementById('analyticsConsent');
-          const marketingCheckbox = document.getElementById('marketingConsent');
-
-          if (analyticsCheckbox) analyticsCheckbox.checked = consent.analytics;
-          if (marketingCheckbox) marketingCheckbox.checked = consent.marketing;
-        }
-      },
-
-      applyConsent: function(consent) {
-        // Load Google Analytics if consent given
-        if (consent.analytics) {
-          this.loadGoogleAnalytics();
-        }
-
-        // Load marketing scripts if consent given
-        if (consent.marketing) {
-          this.loadMarketingScripts();
-        }
-
-        // Dispatch event for other scripts to listen to
-        window.dispatchEvent(new CustomEvent('cookieConsentUpdated', {
-          detail: consent
-        }));
-      },
-
-      loadGoogleAnalytics: function() {
-        // Replace with your GA4 Measurement ID
-        const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: Replace with actual ID
-
-        // Only load if not already loaded
-        if (!window.gtag && GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
-          const script = document.createElement('script');
-          script.async = true;
-          script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-          document.head.appendChild(script);
-
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          window.gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', GA_MEASUREMENT_ID, {
-            'anonymize_ip': true,
-            'cookie_flags': 'SameSite=None;Secure'
-          });
-
-          console.log('✅ Google Analytics loaded');
-        }
-      },
-
-      loadMarketingScripts: function() {
-        // Add your marketing scripts here
-        console.log('✅ Marketing scripts would be loaded here');
-      }
+  // Handle Accept All
+  function handleAcceptAll() {
+    console.log('Accept All clicked');
+    const consent = {
+      essential: true,
+      analytics: true,
+      marketing: true,
+      timestamp: new Date().toISOString()
     };
+    saveConsent(consent);
+    applyConsent(consent);
+    hideBanner();
+  }
 
-    // Initialize
-    CookieConsent.init();
+  // Handle Accept Selected
+  function handleAcceptSelected() {
+    console.log('Accept Selected clicked');
+    const analyticsCheckbox = document.getElementById('analyticsConsent');
+    const marketingCheckbox = document.getElementById('marketingConsent');
 
-    // Expose to window for external access
-    window.CookieConsent = CookieConsent;
+    const consent = {
+      essential: true,
+      analytics: analyticsCheckbox ? analyticsCheckbox.checked : false,
+      marketing: marketingCheckbox ? marketingCheckbox.checked : false,
+      timestamp: new Date().toISOString()
+    };
+    saveConsent(consent);
+    applyConsent(consent);
+    hideBanner();
+  }
+
+  // Handle Reject All
+  function handleRejectAll() {
+    console.log('Reject All clicked');
+    const consent = {
+      essential: true,
+      analytics: false,
+      marketing: false,
+      timestamp: new Date().toISOString()
+    };
+    saveConsent(consent);
+    applyConsent(consent);
+    hideBanner();
+  }
+
+  // Save consent
+  function saveConsent(consent) {
+    try {
+      // Save to localStorage
+      localStorage.setItem(COOKIE_NAME, JSON.stringify(consent));
+
+      // Save to cookie
+      const expiryDate = new Date();
+      expiryDate.setDate(expiryDate.getDate() + COOKIE_EXPIRY_DAYS);
+      document.cookie = `${COOKIE_NAME}=${JSON.stringify(consent)}; expires=${expiryDate.toUTCString()}; path=/; SameSite=Strict`;
+
+      console.log('✅ Cookie consent saved:', consent);
+    } catch (error) {
+      console.error('Failed to save cookie consent:', error);
+    }
+  }
+
+  // Get consent
+  function getConsent() {
+    try {
+      const stored = localStorage.getItem(COOKIE_NAME);
+      return stored ? JSON.parse(stored) : null;
+    } catch (error) {
+      console.error('Failed to get cookie consent:', error);
+      return null;
+    }
+  }
+
+  // Apply consent (load scripts if approved)
+  function applyConsent(consent) {
+    if (consent.analytics) {
+      loadGoogleAnalytics();
+    }
+    if (consent.marketing) {
+      loadMarketingScripts();
+    }
+
+    // Dispatch event
+    window.dispatchEvent(new CustomEvent('cookieConsentUpdated', {
+      detail: consent
+    }));
+  }
+
+  // Load Google Analytics
+  function loadGoogleAnalytics() {
+    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Replace with actual ID
+
+    if (!window.gtag && GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID, {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+      });
+
+      console.log('✅ Google Analytics loaded');
+    }
+  }
+
+  // Load marketing scripts
+  function loadMarketingScripts() {
+    console.log('✅ Marketing scripts would load here');
   }
 
   // Initialize when DOM is ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadCookieConsent);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    loadCookieConsent();
+    init();
   }
+
+  // Expose for debugging
+  window.CookieConsent = {
+    show: showBanner,
+    hide: hideBanner,
+    getConsent: getConsent,
+    reset: function() {
+      localStorage.removeItem(COOKIE_NAME);
+      document.cookie = `${COOKIE_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+      console.log('Cookie consent reset');
+    }
+  };
+
 })();
