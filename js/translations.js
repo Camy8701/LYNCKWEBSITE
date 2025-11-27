@@ -144,7 +144,7 @@ const translations = {
     "Google Ads": "Google Ads",
     "Custom Website": "Anpassbare Website",
     "Digital Products": "Digitale Produkte",
-    "Leads Supply": "Lead-Bereitstellung",
+    "Leads Supply": "Lead Bereitstellung",
     "Work": "Arbeit",
     "About": "Über",
     "Process": "Prozess",
