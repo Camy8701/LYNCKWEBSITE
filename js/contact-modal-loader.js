@@ -4,12 +4,27 @@
 (function() {
   'use strict';
 
+  function isGermanPath(pathname) {
+    if (typeof pathname !== 'string') return false;
+    const normalized = pathname.toLowerCase();
+    return normalized === '/de' || normalized.startsWith('/de/');
+  }
+
   // Function to load contact modal HTML
+  function getThankYouPath(pathname) {
+    return isGermanPath(pathname) ? '/de/thank-you.html' : '/thank-you.html';
+  }
+
+  function getThankYouUrl(pathname) {
+    const origin = window.location.origin || '';
+    return `${origin}${getThankYouPath(pathname)}`;
+  }
+
   async function loadContactModal() {
     try {
       // Determine the correct path based on current page location
       const currentPath = window.location.pathname;
-      const isInSubfolder = currentPath.includes('/de/');
+      const isInSubfolder = isGermanPath(currentPath);
       const modalPath = isInSubfolder ? '../components/contact-modal.html' : 'components/contact-modal.html';
 
       // Fetch the modal HTML
@@ -55,20 +70,18 @@
     const redirectField = document.getElementById('redirectField');
     if (redirectField) {
       const currentPath = window.location.pathname;
-      const isGerman = currentPath.includes('/de/');
-      redirectField.value = isGerman
-        ? 'https://lynckstudio.pro/de/thank-you'
-        : 'https://lynckstudio.pro/thank-you';
-      console.log('Redirect URL set to:', redirectField.value); // Debug log
+      redirectField.value = getThankYouUrl(currentPath);
     }
 
     // Contact form submission handling
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-      contactForm.addEventListener('submit', function(event) {
+      contactForm.addEventListener('submit', async function(event) {
         const firstName = document.getElementById('firstName').value.trim();
         const lastName = document.getElementById('lastName').value.trim();
         const email = document.getElementById('email').value.trim();
+
+        event.preventDefault();
 
         // Clear previous errors
         document.getElementById('firstNameError').textContent = '';
@@ -103,14 +116,40 @@
           hasErrors = true;
         }
 
-        if (!hasErrors) {
-          // Show loading state
-          const submitBtn = document.getElementById('submitBtn');
-          submitBtn.innerHTML = '<span>Sending...</span>';
-          submitBtn.disabled = true;
+        if (hasErrors) {
+          return;
+        }
 
-          // Form will submit naturally to Web3Forms
-          // Web3Forms will handle the redirect
+        const submitBtn = document.getElementById('submitBtn');
+        const isGerman = isGermanPath(window.location.pathname);
+        const originalLabel = submitBtn.dataset.originalLabel || submitBtn.innerHTML;
+        submitBtn.dataset.originalLabel = originalLabel;
+        submitBtn.innerHTML = isGerman ? '<span>Wird gesendet...</span>' : '<span>Sending...</span>';
+        submitBtn.disabled = true;
+
+        const formData = new FormData(contactForm);
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              Accept: 'application/json'
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error(`Form submission failed with status ${response.status}`);
+          }
+
+          const thankYouPath = getThankYouPath(window.location.pathname);
+          window.location.href = thankYouPath;
+        } catch (error) {
+          console.error('Error submitting form:', error);
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalLabel;
+          const errorMessage = isGerman ? 'Beim Senden des Formulars ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.' : 'There was an issue submitting the form. Please try again.';
+          alert(errorMessage);
         }
       });
     }
