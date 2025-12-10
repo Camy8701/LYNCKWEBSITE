@@ -51,6 +51,17 @@
 
   // Initialize modal functionality (form handling, dropdowns, etc.)
   function initializeModalFunctionality() {
+    // Set language-specific redirect URL for the form
+    const redirectField = document.getElementById('redirectField');
+    if (redirectField) {
+      const currentPath = window.location.pathname;
+      const isGerman = currentPath.includes('/de/');
+      redirectField.value = isGerman
+        ? 'https://lynckstudio.pro/de/thank-you'
+        : 'https://lynckstudio.pro/thank-you';
+      console.log('Redirect URL set to:', redirectField.value); // Debug log
+    }
+
     // Contact form submission handling
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
