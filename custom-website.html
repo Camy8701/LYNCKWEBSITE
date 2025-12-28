@@ -56,6 +56,7 @@
 <script src="js/navigation-loader.js" defer></script>
     <script src="js/contact-modal-loader.js" defer></script>
 <script src="js/translations.js" defer onerror="console.warn('Translation script failed to load. Some language features may be unavailable.')"></script>
+<script src="js/orb-text-sync.js" defer></script>
 <script src="js/webgl-background.js" defer></script>
 </head>
 
@@ -469,143 +470,7 @@
 
     <!-- Contact modal loaded from external file (js/contact-modal-loader.js) -->
 
-    <!-- Professional Orb-Text Synchronization System -->
-    <script>
-      class OrbTextSync {
-        constructor() {
-          this.canvas = null;
-          this.orbTextContainer = null;
-          this.orbSyncText = null;
-          this.originalText = null;
-          this.isActive = false;
-
-          this.init();
-        }
-
-        init() {
-          // Wait for DOM to be ready
-          if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => this.setup());
-          } else {
-            this.setup();
-          }
-        }
-
-        setup() {
-          // Get elements
-          this.canvas = document.getElementById('shader-canvas');
-          this.orbTextContainer = document.getElementById('orbTextContainer');
-          this.orbSyncText = document.getElementById('orbSyncText');
-          this.originalText = document.getElementById('orbText');
-
-          if (!this.canvas || !this.orbTextContainer || !this.orbSyncText || !this.originalText) {
-            console.warn('OrbTextSync: Required elements not found. Falling back to original layout.');
-            return;
-          }
-
-          // Setup resize observer for responsive behavior
-          this.resizeObserver = new ResizeObserver(() => this.handleResize());
-          this.resizeObserver.observe(document.body);
-
-          // Setup intersection observer to activate when visible
-          this.intersectionObserver = new IntersectionObserver(
-            (entries) => this.handleVisibilityChange(entries),
-            { threshold: 0.1 }
-          );
-          this.intersectionObserver.observe(this.originalText);
-
-          // Initial setup
-          this.handleResize();
-          this.startSynchronization();
-        }
-
-        handleVisibilityChange(entries) {
-          const entry = entries[0];
-          if (entry.isIntersecting && this.canvas) {
-            this.activateOrbSync();
-          }
-          // Keep orb text active even when scrolling - do not deactivate
-        }
-
-        activateOrbSync() {
-          if (this.isActive) return;
-
-          // Wait a moment for canvas to be ready
-          setTimeout(() => {
-            this.isActive = true;
-            this.orbTextContainer.style.display = 'block';
-
-            // Update position immediately
-            this.updateTextPosition();
-
-            // Add entrance animation
-            setTimeout(() => {
-              this.orbSyncText.style.opacity = '1';
-              this.orbSyncText.style.transform = this.orbSyncText.style.transform.replace('scale(0.95)', 'scale(1)');
-            }, 50);
-          }, 500); // Give canvas time to initialize
-        }
-
-        updateTextPosition() {
-          if (!this.isActive || !this.orbSyncText) return;
-
-          // Position text in center of container - scrolls with page like gray text
-          // Using vw units for responsive scaling with viewport
-          this.orbSyncText.style.left = '50%';
-          this.orbSyncText.style.top = '55%';
-          this.orbSyncText.style.fontSize = '8.58vw';
-          this.orbSyncText.style.fontWeight = 'bold';
-          this.orbSyncText.style.transform = 'translate(-50%, -50%)';
-          this.orbSyncText.style.textShadow = 'none';
-          this.orbSyncText.style.background = 'none';
-          this.orbSyncText.style.backdropFilter = 'none';
-        }
-
-        handleResize() {
-          // Throttle resize events for performance
-          clearTimeout(this.resizeTimeout);
-          this.resizeTimeout = setTimeout(() => {
-            this.updateTextPosition();
-          }, 16); // ~60fps
-        }
-
-        startSynchronization() {
-          // Text position is set once on activation and only updates on resize
-          // No continuous animation needed - text stays fixed at top
-        }
-
-        destroy() {
-          // Cleanup method for proper resource management
-          if (this.resizeObserver) {
-            this.resizeObserver.disconnect();
-          }
-          if (this.intersectionObserver) {
-            this.intersectionObserver.disconnect();
-          }
-          clearTimeout(this.resizeTimeout);
-        }
-      }
-
-      // Initialize the system with error handling
-      try {
-        window.orbTextSync = new OrbTextSync();
-      } catch (error) {
-        console.warn('OrbTextSync initialization failed:', error);
-        // Graceful fallback - ensure original text remains visible
-        const originalText = document.getElementById('orbText');
-        if (originalText) {
-          originalText.style.opacity = '0.1';
-        }
-      }
-
-      // Cleanup on page unload
-      window.addEventListener('beforeunload', () => {
-        if (window.orbTextSync) {
-          window.orbTextSync.destroy();
-        }
-      });
-    </script>
-
+    
     <!-- FAQ Schema -->
     <script type="application/ld+json">
     {

@@ -6,6 +6,11 @@
 
   // Wait for page to load before initializing WebGL canvases
   window.addEventListener('load', function() {
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (motionQuery.matches) {
+      console.info('Reduced motion preference detected; skipping WebGL background.');
+      return;
+    }
 
     // ========================================
     // Starfield Background Layer
@@ -102,13 +107,36 @@
             const starIResolution = starGL.getUniformLocation(starProgram, 'iResolution');
             const starITime = starGL.getUniformLocation(starProgram, 'iTime');
 
+            let starfieldFrame = null;
             function renderStarfield(time) {
               starGL.uniform2f(starIResolution, starfieldCanvas.width, starfieldCanvas.height);
               starGL.uniform1f(starITime, time * 0.001);
               starGL.drawArrays(starGL.TRIANGLES, 0, 6);
-              requestAnimationFrame(renderStarfield);
+              starfieldFrame = requestAnimationFrame(renderStarfield);
             }
-            requestAnimationFrame(renderStarfield);
+
+            function startStarfield() {
+              if (starfieldFrame === null) {
+                starfieldFrame = requestAnimationFrame(renderStarfield);
+              }
+            }
+
+            function stopStarfield() {
+              if (starfieldFrame !== null) {
+                cancelAnimationFrame(starfieldFrame);
+                starfieldFrame = null;
+              }
+            }
+
+            document.addEventListener('visibilitychange', () => {
+              if (document.visibilityState === 'visible') {
+                startStarfield();
+              } else {
+                stopStarfield();
+              }
+            });
+
+            startStarfield();
           }
         }
       }
@@ -223,12 +251,35 @@
     const iTimeLoc = gl.getUniformLocation(program, 'iTime');
     const iResLoc = gl.getUniformLocation(program, 'iResolution');
 
+    let ovalFrame = null;
     function render(time) {
       gl.uniform1f(iTimeLoc, time * 0.001);
       gl.uniform2f(iResLoc, canvas.width, canvas.height);
       gl.drawArrays(gl.TRIANGLES, 0, 6);
-      requestAnimationFrame(render);
+      ovalFrame = requestAnimationFrame(render);
     }
-    requestAnimationFrame(render);
+
+    function startOval() {
+      if (ovalFrame === null) {
+        ovalFrame = requestAnimationFrame(render);
+      }
+    }
+
+    function stopOval() {
+      if (ovalFrame !== null) {
+        cancelAnimationFrame(ovalFrame);
+        ovalFrame = null;
+      }
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        startOval();
+      } else {
+        stopOval();
+      }
+    });
+
+    startOval();
   });
 })();
