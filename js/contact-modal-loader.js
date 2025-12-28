@@ -76,12 +76,32 @@
     // Contact form submission handling
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
+      const currentPath = window.location.pathname;
+      const isGerman = isGermanPath(currentPath);
+      const copy = isGerman
+        ? {
+            firstNameRequired: 'Vorname ist erforderlich',
+            lastNameRequired: 'Nachname ist erforderlich',
+            emailRequired: 'E-Mail-Adresse ist erforderlich',
+            emailInvalid: 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
+            sendingLabel: 'Wird gesendet...',
+            submitError: 'Beim Senden des Formulars ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.'
+          }
+        : {
+            firstNameRequired: 'First name is required',
+            lastNameRequired: 'Last name is required',
+            emailRequired: 'Email is required',
+            emailInvalid: 'Please enter a valid email address',
+            sendingLabel: 'Sending...',
+            submitError: 'There was an issue submitting the form. Please try again.'
+          };
+
       contactForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
         const firstName = document.getElementById('firstName').value.trim();
         const lastName = document.getElementById('lastName').value.trim();
         const email = document.getElementById('email').value.trim();
-
-        event.preventDefault();
 
         // Clear previous errors
         document.getElementById('firstNameError').textContent = '';
@@ -92,27 +112,21 @@
 
         // Validate first name
         if (!firstName) {
-          event.preventDefault();
-          document.getElementById('firstNameError').textContent = 'First name is required';
+          document.getElementById('firstNameError').textContent = copy.firstNameRequired;
           hasErrors = true;
         }
 
-        // Validate last name
         if (!lastName) {
-          event.preventDefault();
-          document.getElementById('lastNameError').textContent = 'Last name is required';
+          document.getElementById('lastNameError').textContent = copy.lastNameRequired;
           hasErrors = true;
         }
 
-        // Validate email
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!email) {
-          event.preventDefault();
-          document.getElementById('emailError').textContent = 'Email is required';
+          document.getElementById('emailError').textContent = copy.emailRequired;
           hasErrors = true;
         } else if (!emailRegex.test(email)) {
-          event.preventDefault();
-          document.getElementById('emailError').textContent = 'Please enter a valid email address';
+          document.getElementById('emailError').textContent = copy.emailInvalid;
           hasErrors = true;
         }
 
@@ -121,10 +135,9 @@
         }
 
         const submitBtn = document.getElementById('submitBtn');
-        const isGerman = isGermanPath(window.location.pathname);
         const originalLabel = submitBtn.dataset.originalLabel || submitBtn.innerHTML;
         submitBtn.dataset.originalLabel = originalLabel;
-        submitBtn.innerHTML = isGerman ? '<span>Wird gesendet...</span>' : '<span>Sending...</span>';
+        submitBtn.innerHTML = `<span>${copy.sendingLabel}</span>`;
         submitBtn.disabled = true;
 
         const formData = new FormData(contactForm);
@@ -148,8 +161,7 @@
           console.error('Error submitting form:', error);
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalLabel;
-          const errorMessage = isGerman ? 'Beim Senden des Formulars ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.' : 'There was an issue submitting the form. Please try again.';
-          alert(errorMessage);
+          alert(copy.submitError);
         }
       });
     }

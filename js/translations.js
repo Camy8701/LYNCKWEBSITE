@@ -25,6 +25,10 @@ const translations = {
     "At LYNCK, we craft digital marketing experiences and websites that look beautiful, feel intuitive, and deliver results — with Google Ads, editable sites, and clear training that put you in control": "At LYNCK, we craft digital marketing experiences and websites that look beautiful, feel intuitive, and deliver results — with Google Ads, editable sites, and clear training that put you in control",
     "View our work": "View our work",
     "About us": "About us",
+    "Trusted by": "Trusted by",
+    "Years": "Years",
+    "Campaigns": "Campaigns",
+    "Clients": "Clients",
 
     // Carousel / Ticker Section
     "What sets LYNCK apart": "What sets LYNCK apart",
@@ -154,6 +158,10 @@ const translations = {
     "At LYNCK, we craft digital marketing experiences and websites that look beautiful, feel intuitive, and deliver results — with Google Ads, editable sites, and clear training that put you in control": "Bei LYNCK gestalten wir digitale Marketing-Erlebnisse und Websites, die ästhetisch überzeugen, einfach zu bedienen sind und nachhaltige Ergebnisse liefern - mit Google Ads, selbst anpassbaren Websites und klaren Trainings, die Ihnen ermöglichen, Ihre Onlinepräsenz selbst in der Hand haben.",
     "View our work": "Unsere Arbeit ansehen",
     "About us": "Über uns",
+    "Trusted by": "Vertrauen uns",
+    "Years": "Jahre",
+    "Campaigns": "Kampagnen",
+    "Clients": "Kunden",
 
     // Carousel / Ticker Section
     "What sets LYNCK apart": "Was LYNCK auszeichnet",
