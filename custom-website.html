@@ -57,6 +57,7 @@
     <script src="js/contact-modal-loader.js" defer></script>
 <script src="js/translations.js" defer onerror="console.warn('Translation script failed to load. Some language features may be unavailable.')"></script>
 <script src="js/orb-text-sync.js" defer></script>
+<script src="js/lazy-video-loader.js" defer></script>
 <script src="js/webgl-background.js" defer></script>
 </head>
 
@@ -110,10 +111,12 @@
                 id="customWebsiteVideo"
                 class="w-full h-full object-cover"
                 controls
-                preload="metadata"
+                preload="none"
                 playsinline
+                poster="assets/video-placeholder.svg"
+                data-video-src="latest.mp4"
+                data-video-type="video/mp4"
               >
-                <source src="latest.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
