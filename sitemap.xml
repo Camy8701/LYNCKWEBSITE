@@ -140,4 +140,20 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://lynckstudio.com/privacy-policy.html</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Cookie Policy -->
+  <url>
+    <loc>https://lynckstudio.com/cookie-policy.html</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
 </urlset>

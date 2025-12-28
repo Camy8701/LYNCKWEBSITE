@@ -6,6 +6,11 @@
 (function() {
   'use strict';
 
+  const GA_MEASUREMENT_ID = 'G-8QS1KCVG9Q';
+  const GTM_CONTAINER_ID = 'GTM-N5757GT5';
+  const PRIVACY_POLICY_URL = '/privacy-policy.html';
+  const COOKIE_POLICY_URL = '/cookie-policy.html';
+
   // Cookie consent HTML (embedded directly)
   const cookieConsentHTML = `
 <!-- Cookie Consent Banner -->
@@ -77,9 +82,9 @@
 
       <!-- Footer Links -->
       <div class="cookie-consent-footer">
-        <a href="#" class="cookie-link">Privacy Policy</a>
+        <a href="${PRIVACY_POLICY_URL}" target="_blank" rel="noopener noreferrer" class="cookie-link">Privacy Policy</a>
         <span class="cookie-separator">•</span>
-        <a href="#" class="cookie-link">Cookie Policy</a>
+        <a href="${COOKIE_POLICY_URL}" target="_blank" rel="noopener noreferrer" class="cookie-link">Cookie Policy</a>
       </div>
     </div>
   </div>
@@ -106,7 +111,14 @@
     const COOKIE_NAME = 'lynck_cookie_consent';
     const COOKIE_EXPIRY_DAYS = 365;
 
+    if (GA_MEASUREMENT_ID) {
+      window[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+    }
+
     const CookieConsent = {
+      analyticsLoaded: false,
+      gtmLoaded: false,
+      marketingLoaded: false,
       init: function() {
         this.loadConsentState();
         this.attachEventListeners();
@@ -133,7 +145,6 @@
           setTimeout(() => {
             banner.classList.add('visible');
           }, 10);
-          console.log('✅ Cookie banner shown');
         }
       },
 
@@ -144,7 +155,6 @@
           setTimeout(() => {
             banner.classList.add('hidden');
           }, 300);
-          console.log('✅ Cookie banner hidden');
         }
       },
 
@@ -213,9 +223,7 @@
           // Save to cookie for server-side access
           const expiryDate = new Date();
           expiryDate.setDate(expiryDate.getDate() + COOKIE_EXPIRY_DAYS);
-          document.cookie = `${COOKIE_NAME}=${JSON.stringify(consent)}; expires=${expiryDate.toUTCString()}; path=/; SameSite=Strict`;
-
-          console.log('✅ Cookie consent saved:', consent);
+          document.cookie = `${COOKIE_NAME}=${JSON.stringify(consent)}; expires=${expiryDate.toUTCString()}; path=/; SameSite=Strict; Secure`;
         } catch (e) {
           console.error('❌ Failed to save cookie consent:', e);
         }
@@ -243,55 +251,92 @@
       },
 
       applyConsent: function(consent) {
-        // Load Google Analytics if consent given
+        if (GA_MEASUREMENT_ID) {
+          window[`ga-disable-${GA_MEASUREMENT_ID}`] = !consent.analytics;
+        }
+
         if (consent.analytics) {
           this.loadGoogleAnalytics();
         }
 
-        // Load marketing scripts if consent given
         if (consent.marketing) {
           this.loadMarketingScripts();
         }
 
-        // Dispatch event for other scripts to listen to
         window.dispatchEvent(new CustomEvent('cookieConsentUpdated', {
           detail: consent
         }));
       },
 
-      loadGoogleAnalytics: function() {
-        // Replace with your GA4 Measurement ID
-        const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: Replace with actual ID
+      ensureDataLayer: function() {
+        window.dataLayer = window.dataLayer || [];
+      },
 
-        // Only load if not already loaded
-        if (!window.gtag && GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
+      loadGoogleTagManager: function() {
+        if (!GTM_CONTAINER_ID || this.gtmLoaded) {
+          return;
+        }
+
+        this.gtmLoaded = true;
+        this.ensureDataLayer();
+
+        (function(w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          const f = d.getElementsByTagName(s)[0];
+          const j = d.createElement(s);
+          const dl = l !== 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', GTM_CONTAINER_ID);
+      },
+
+      loadGoogleAnalytics: function() {
+        if (!GA_MEASUREMENT_ID || this.analyticsLoaded) {
+          return;
+        }
+
+        this.analyticsLoaded = true;
+        this.ensureDataLayer();
+
+        const gtagFunction = function() {
+          window.dataLayer.push(arguments);
+        };
+
+        if (!window.gtag) {
+          window.gtag = gtagFunction;
+        }
+
+        if (!document.querySelector('script[data-analytics-loader="gtag"]')) {
           const script = document.createElement('script');
           script.async = true;
           script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+          script.setAttribute('data-analytics-loader', 'gtag');
           document.head.appendChild(script);
-
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          window.gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', GA_MEASUREMENT_ID, {
-            'anonymize_ip': true,
-            'cookie_flags': 'SameSite=None;Secure'
-          });
-
-          console.log('✅ Google Analytics loaded');
         }
+
+        window.gtag('js', new Date());
+        window.gtag('config', GA_MEASUREMENT_ID, {
+          anonymize_ip: true,
+          cookie_flags: 'SameSite=None;Secure'
+        });
+
+        this.loadGoogleTagManager();
       },
 
       loadMarketingScripts: function() {
-        // Add your marketing scripts here
-        console.log('✅ Marketing scripts would be loaded here');
+        if (this.marketingLoaded) {
+          return;
+        }
+
+        this.marketingLoaded = true;
+        // Placeholder: add marketing or advertising pixels when available.
       },
 
       reset: function() {
         localStorage.removeItem(COOKIE_NAME);
-        document.cookie = `${COOKIE_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-        console.log('✅ Cookie consent reset - reload page to see banner again');
+        document.cookie = `${COOKIE_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Strict; Secure`;
       }
     };
 
