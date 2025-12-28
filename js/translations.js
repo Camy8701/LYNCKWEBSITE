@@ -280,7 +280,7 @@ const fallbackLocalizedRoutes = {
   },
   pricing: {
     en: 'pricing.html',
-    de: 'pricing.html'
+    de: 'de/pricing.html'
   },
   'custom-website': {
     en: 'custom-website.html',
@@ -298,9 +298,9 @@ const fallbackLocalizedRoutes = {
     en: 'learning-platform.html',
     de: 'de/learning-platform.html'
   },
-  portfolio: {
-    en: 'portfolio.html',
-    de: 'de/portfolio.html'
+  'coming-soon': {
+    en: 'coming-soon.html',
+    de: 'de/coming-soon.html'
   },
   'why-choose-us': {
     en: 'why-choose-us.html',

@@ -33,8 +33,8 @@
       de: 'de/learning-platform.html'
     },
     'coming-soon': {
-      en: 'learning-platform.html',
-      de: 'de/learning-platform.html'
+      en: 'coming-soon.html',
+      de: 'de/coming-soon.html'
     },
     pricing: {
       en: 'pricing.html',

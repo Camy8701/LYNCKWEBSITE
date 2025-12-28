@@ -53,14 +53,6 @@
 <!-- Load Tailwind CSS - Local Build -->
 <link rel="stylesheet" href="../css/tailwind.min.css">
 <link rel="stylesheet" href="../css/main.min.css">
-<script>
-  // Set language immediately before any other scripts load
-  try {
-    localStorage.setItem('language', 'de');
-  } catch (e) {
-    console.warn('Could not set language preference:', e);
-  }
-</script>
 <!-- Load translations first, before navigation-loader tries to call translatePage() -->
 <script src="../js/translations.js" defer onerror="console.warn('Translation script failed to load. Some language features may be unavailable.')"></script>
 <script src="../js/navigation-loader.js" defer></script>

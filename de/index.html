@@ -77,14 +77,6 @@
     }
   }
 </style>
-<script>
-  // Set language immediately before any other scripts load
-  try {
-    localStorage.setItem('language', 'de');
-  } catch (e) {
-    console.warn('Could not set language preference:', e);
-  }
-</script>
 <!-- Load translations first, before navigation-loader tries to call translatePage() -->
 <script src="../js/translations.js" defer></script>
 <script src="../js/navigation-loader.js" defer></script>
@@ -1427,19 +1419,6 @@
         "item": "https://lynckstudio.com/de/"
       }]
     }
-    </script>
-
-    <!-- Set German as default language for this page -->
-    <script>
-      // Force German language for German pages
-      if (typeof setLanguage === 'function') {
-        setLanguage('de');
-      } else {
-        localStorage.setItem('language', 'de');
-        if (typeof currentLanguage !== 'undefined') {
-          currentLanguage = 'de';
-        }
-      }
     </script>
 
     <!-- Cookie Consent Banner -->
