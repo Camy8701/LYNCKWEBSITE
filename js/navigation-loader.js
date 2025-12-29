@@ -46,6 +46,198 @@
     }
   };
 
+  const NAV_COPY = {
+    en: {
+      'All': 'All',
+      'Google Ads': 'Google Ads',
+      'Custom Website': 'Custom Website',
+      'Digital Products': 'Digital Products',
+      'Leads Supply': 'Leads Supply',
+      'Learning Platform': 'Learning Platform',
+      'Pricing': 'Pricing',
+      'About LYNCK': 'About LYNCK',
+      'Our Services': 'Our Services',
+      'Testimonials': 'Testimonials',
+      "Let's connect": "Let's connect",
+      'All Services': 'All Services',
+      'Language': 'Language'
+    },
+    de: {
+      'All': 'Alle',
+      'Google Ads': 'Google Ads',
+      'Custom Website': 'Anpassbare Website',
+      'Digital Products': 'Digitale Produkte',
+      'Leads Supply': 'Lead Bereitstellung',
+      'Learning Platform': 'Lernplattform',
+      'Pricing': 'Preise',
+      'About LYNCK': 'Über LYNCK',
+      'Our Services': 'Unsere Dienstleistungen',
+      'Testimonials': 'Referenzen',
+      "Let's connect": 'Jetzt kontaktieren',
+      'All Services': 'Alle Leistungen',
+      'Language': 'Sprache'
+    }
+  };
+
+const NAVIGATION_TEMPLATE = /* html */ `
+<header class="fixed top-0 left-0 right-0 z-40 opacity-0 animate-fade-in my-4 backdrop-blur-3xl delay-200">
+  <div class="mx-4 lg:mx-8">
+    <div class="relative ring-1 ring-white/10 bg-white/10 border-white/20 border rounded-2xl shadow-lg backdrop-blur-lg">
+      <div class="flex h-20 items-center justify-between px-3 sm:px-6 max-w-7xl mx-auto">
+<div class="flex items-center gap-2 sm:gap-4">
+  <div class="hidden sm:flex items-center gap-3">
+    <a href="https://www.linkedin.com/in/lynck-studio-9476a6392/" target="_blank" rel="noopener noreferrer" class="group" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 hover:text-white transition-all duration-300 group-hover:scale-110">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+        <rect x="2" y="9" width="4" height="12"></rect>
+        <circle cx="4" cy="4" r="2"></circle>
+      </svg>
+    </a>
+    <a href="https://www.instagram.com/lynck_studio/" target="_blank" rel="noopener noreferrer" class="group" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 hover:text-white transition-all duration-300 group-hover:scale-110">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+    </a>
+  </div>
+  <div class="hidden sm:block h-6 w-px bg-white/20"></div>
+  <a href="index.html#heroSection" class="group" data-nav-home data-route="index" data-anchor="#heroSection">
+    <div class="flex items-center">
+      <img src="/logo-home.png" alt="LYNCK Studio" width="32" height="32" class="transition-all duration-300 group-hover:scale-105 cursor-pointer">
+    </div>
+  </a>
+  <div class="relative hidden sm:block">
+    <button id="allDropdownBtn" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md text-sm font-medium font-geist" aria-label="Services navigation menu" aria-expanded="false" aria-haspopup="true">
+      <span data-translate="All">All</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200" id="allDropdownIcon">
+        <polyline points="6,9 12,15 18,9"></polyline>
+      </svg>
+    </button>
+    <div id="allDropdownMenu" class="hidden absolute top-full left-0 mt-2 w-56 bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl ring-1 ring-white/10" style="z-index: 9999;">
+      <div class="px-2 py-2 space-y-1" data-nav-dropdown>
+        <a href="google-ads.html" data-route="google-ads" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Google Ads">Google Ads</a>
+        <a href="custom-website.html" data-route="custom-website" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Custom Website">Custom Website</a>
+        <a href="digital-products.html" data-route="digital-products" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Digital Products">Digital Products</a>
+        <a href="leads-supply.html" data-route="leads-supply" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Leads Supply">Leads Supply</a>
+        <a href="coming-soon.html" data-route="coming-soon" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Learning Platform">Learning Platform</a>
+        <a href="pricing.html" data-route="pricing" class="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Pricing">Pricing</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="hidden md:flex items-center gap-6" data-nav-links>
+  <a href="why-choose-us.html#about-lynck" class="shiny-cta-white" data-translate="About LYNCK" data-route="why-choose-us" data-anchor="#about-lynck"><span data-translate="About LYNCK">About LYNCK</span></a>
+  <a href="index.html#work" class="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 font-geist whitespace-nowrap" data-translate="Our Services" data-route="index" data-anchor="#work">Our Services</a>
+  <a href="index.html#testimonials" class="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 font-geist" data-translate="Testimonials" data-route="index" data-anchor="#testimonials">Testimonials</a>
+  <a href="coming-soon.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 font-geist" data-translate="Learning Platform" data-route="coming-soon">Learning Platform</a>
+  <a href="pricing.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 font-geist mr-4" data-translate="Pricing" data-route="pricing">Pricing</a>
+</nav>
+
+<div class="relative">
+  <button id="languageBtn" class="hidden md:flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-200 backdrop-blur-md" aria-label="Language selector" aria-expanded="false" aria-haspopup="true">
+    <span id="currentLang" class="text-sm font-medium">EN</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M6 9l6 6 6-6"></path></svg>
+  </button>
+  <div id="languageMenu" class="hidden absolute top-full right-0 mt-2 w-32 bg-black/90 border border-white/20 rounded-lg shadow-xl backdrop-blur-xl z-50">
+    <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2" data-lang="en">
+      <span class="text-base">🇺🇸</span> English
+    </button>
+    <button class="lang-option w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2 rounded-b-lg" data-lang="de">
+      <span class="text-base">🇩🇪</span> Deutsch
+    </button>
+  </div>
+</div>
+
+<button data-contact-btn class="hidden md:inline-flex items-center gap-2 shiny-cta font-geist ml-2">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+  <span data-translate="Let's connect" style="white-space: nowrap;">Let's connect</span>
+</button>
+
+<button id="menuBtn" class="md:hidden rounded-xl bg-white/15 border border-white/30 p-2.5 text-white hover:bg-white/20 backdrop-blur-md" aria-label="Open mobile menu" aria-expanded="false">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg>
+</button>
+</div>
+
+<div id="mobileNav" class="hidden md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/20 rounded-b-2xl shadow-lg ring-1 ring-white/10">
+<div class="px-6 py-6 space-y-3" data-nav-mobile>
+  <div class="space-y-2">
+    <a href="why-choose-us.html#about-lynck" data-route="why-choose-us" data-anchor="#about-lynck" class="block rounded-xl px-4 py-3 text-base font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="About LYNCK">About LYNCK</a>
+    <a href="index.html#work" data-route="index" data-anchor="#work" class="block rounded-xl px-4 py-3 text-base font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Our Services">Our Services</a>
+    <a href="index.html#testimonials" data-route="index" data-anchor="#testimonials" class="block rounded-xl px-4 py-3 text-base font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Testimonials">Testimonials</a>
+    <a href="pricing.html" data-route="pricing" class="block rounded-xl px-4 py-3 text-base font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Pricing">Pricing</a>
+  </div>
+
+  <div class="pt-3 border-t border-white/20">
+    <p class="px-4 py-2 text-xs uppercase tracking-wider text-gray-400 font-geist font-semibold" data-translate="All Services">All Services</p>
+    <div class="space-y-1">
+      <a href="google-ads.html" data-route="google-ads" class="block rounded-xl px-4 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Google Ads">Google Ads</a>
+      <a href="custom-website.html" data-route="custom-website" class="block rounded-xl px-4 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Custom Website">Custom Website</a>
+      <a href="digital-products.html" data-route="digital-products" class="block rounded-xl px-4 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Digital Products">Digital Products</a>
+      <a href="leads-supply.html" data-route="leads-supply" class="block rounded-xl px-4 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Leads Supply">Leads Supply</a>
+      <a href="coming-soon.html" data-route="coming-soon" class="block rounded-xl px-4 py-2 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition-colors font-geist" data-translate="Learning Platform">Learning Platform</a>
+    </div>
+  </div>
+
+  <div class="pt-3 border-t border-white/20">
+    <p class="px-4 py-2 text-xs uppercase tracking-wider text-gray-400 font-geist font-semibold" data-translate="Language">Language</p>
+    <div class="flex gap-2 px-4">
+      <button class="lang-option flex-1 px-4 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center justify-center gap-2 border border-white/10" data-lang="en">
+        <span class="text-base">🇺🇸</span> English
+      </button>
+      <button class="lang-option flex-1 px-4 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center justify-center gap-2 border border-white/10" data-lang="de">
+        <span class="text-base">🇩🇪</span> Deutsch
+      </button>
+    </div>
+  </div>
+
+  <div class="pt-3 border-t border-white/20">
+    <div class="flex items-center justify-center gap-6 px-4 py-2">
+      <a href="https://www.linkedin.com/in/lynck-studio-9476a6392/" target="_blank" rel="noopener noreferrer" class="group" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 hover:text-white transition-all duration-300 group-hover:scale-110">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/lynck_studio/" target="_blank" rel="noopener noreferrer" class="group" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 hover:text-white transition-all duration-300 group-hover:scale-110">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="pt-4">
+    <button data-contact-btn class="flex items-center justify-center gap-2 shiny-cta font-geist w-full">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      <span data-translate="Let's connect">Let's connect</span>
+    </button>
+  </div>
+      </div>
+    </div>
+  </div>
+</header>
+`;
+
+  function applyNavTranslations(navContainer, lang) {
+    const copy = NAV_COPY[lang];
+    if (!copy || !navContainer) {
+      return;
+    }
+
+    const nodes = navContainer.querySelectorAll('[data-translate]');
+    nodes.forEach(node => {
+      const key = node.getAttribute('data-translate');
+      if (key && copy[key]) {
+        node.textContent = copy[key];
+      }
+    });
+  }
+
   function normalizeLang(lang) {
     if (typeof lang !== 'string') return 'en';
     const normalized = lang.toLowerCase();
@@ -270,45 +462,27 @@
   async function loadNavigation() {
     try {
       const currentPath = window.location.pathname;
-      const pathInfo = getPathInfo(currentPath);
-      const isInLocalizedFolder = pathInfo.locale && pathInfo.locale !== 'en';
-      const navPath = isInLocalizedFolder ? '../components/navigation.html' : 'components/navigation.html';
-
-      // Always prioritize path language over stored language
-      // This ensures the page you're on determines the language, not localStorage
       const pathLang = detectLanguageFromPath();
       const storedLangRaw = getStoredLanguage();
       const storedLang = storedLangRaw ? normalizeLang(storedLangRaw) : null;
 
-      // If stored language differs from path, update storage to match path
-      // This prevents the conflict where localStorage says 'de' but we're on English page
       if (storedLang && storedLang !== pathLang) {
         setStoredLanguage(pathLang);
       }
 
-      const response = await fetch(navPath);
-      if (!response.ok) {
-        throw new Error(`Failed to load navigation: ${response.status}`);
-      }
-
-      const navHTML = await response.text();
       let navContainer = document.getElementById('navigation-placeholder');
-
       if (!navContainer) {
         navContainer = document.createElement('div');
         navContainer.id = 'navigation-placeholder';
         document.body.insertBefore(navContainer, document.body.firstChild);
       }
 
-      navContainer.innerHTML = navHTML;
+      navContainer.innerHTML = NAVIGATION_TEMPLATE;
 
-      // Always use path language as the active language
-      // The URL determines the language, not localStorage
       const activeLang = pathLang;
+      applyNavTranslations(navContainer, activeLang);
       setStoredLanguage(activeLang);
 
-      // Update translations.js currentLanguage before translating
-      // This ensures translatePage() uses the correct language
       if (typeof window.updateCurrentLanguage === 'function') {
         window.updateCurrentLanguage(activeLang);
       }
@@ -318,7 +492,6 @@
       highlightSelectedLanguage(activeLang);
       initializeNavigationFunctionality(navContainer, activeLang);
 
-      // Translate navigation after it's been loaded and language is set
       if (typeof translatePage === 'function') {
         translatePage();
       }

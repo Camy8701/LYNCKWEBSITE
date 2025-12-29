@@ -62,16 +62,24 @@ python3 -m http.server 8080
 
 ### 3. Updating Shared Components
 
-**Navigation** (`components/navigation.html`):
-- Changes automatically apply to all pages
-- Both EN and DE load same component
-- Translations handled by `data-translate`
+**Navigation** (`js/navigation-loader.js` → `NAVIGATION_TEMPLATE`):
+- Update the HTML template string once and every page receives the change
+- Keep `data-route`, `data-anchor`, and `data-translate` attributes in sync with `ROUTE_MAP`
 
-**Contact Modal** (`components/contact-modal.html`):
-- Same principle as navigation
-- Update once, applies everywhere
+**Contact Modal** (`js/contact-modal-loader.js` → `CONTACT_MODAL_TEMPLATE`):
+- Edit the inline template inside the loader to update markup or copy
+- Validation/state logic lives in the same file so changes stay co-located
 
-### 4. Fixing Translation Issues
+> `/de` pages now ship localized HTML directly and no longer load `js/translations.js`. Continue keeping `data-translate` attributes for reference, but edit the visible German copy manually in each `de/*.html` file.
+
+### 4. WebGL Background Opt-In
+
+- `js/webgl-background.js` only runs when a page explicitly opts in.
+- Add `data-webgl="true"` to `<body>` (or `<html>`) on pages that need the animated starfield/oval.
+- Omit the attribute or set `data-webgl="false"` on lightweight pages (e.g., thank-you) to skip GPU work entirely.
+- The script still respects `prefers-reduced-motion`.
+
+### 5. Fixing Translation Issues
 
 **Scenario: German page shows English text**
 
@@ -95,7 +103,7 @@ node scripts/find-untranslated-text.js de/problem-page.html
    }
    ```
 
-### 5. Cleaning Up Unused Translations
+### 6. Cleaning Up Unused Translations
 
 **Find unused keys:**
 ```bash
@@ -112,13 +120,10 @@ Look for "Unused English Translations" section. These can be safely removed from
 lynckwebsite/
 ├── *.html                 # English pages
 ├── de/*.html              # German pages (mirror structure)
-├── components/            # Shared components
-│   ├── navigation.html
-│   └── contact-modal.html
 ├── js/
 │   ├── translations.js    # Translation key-value pairs
-│   ├── navigation-loader.js
-│   └── contact-modal-loader.js
+│   ├── navigation-loader.js  # Navigation template + logic
+│   └── contact-modal-loader.js # Contact modal template + logic
 ├── css/
 │   ├── main.css          # Main styles
 │   └── tailwind.min.css  # Tailwind (built locally)
@@ -202,11 +207,11 @@ Types:
    ```html
    <!-- EN: -->
    src="js/navigation-loader.js"
-   <!-- DE: -->
-   src="../js/navigation-loader.js"
-   ```
-2. Component file exists in `components/`
-3. Browser Network tab for 404 errors
+ <!-- DE: -->
+  src="../js/navigation-loader.js"
+  ```
+2. Loader scripts still contain their template strings (`NAVIGATION_TEMPLATE`, `CONTACT_MODAL_TEMPLATE`)
+3. Browser Network tab for 404 or JS errors
 
 ---
 

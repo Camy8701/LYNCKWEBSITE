@@ -22,10 +22,10 @@ Instead of a full static site generator (Eleventy was removed as incomplete), we
 ### Current Setup
 
 ✅ **Shared Components** (Already Implemented):
-- `components/navigation.html` - Site navigation
-- `components/contact-modal.html` - Contact form modal
+- `js/navigation-loader.js` (`NAVIGATION_TEMPLATE`) - Site navigation injected onto every page
+- `js/contact-modal-loader.js` (`CONTACT_MODAL_TEMPLATE`) - Contact form modal shared site-wide
 
-Both EN and DE pages load these components via `js/navigation-loader.js` and `js/contact-modal-loader.js`.
+Both EN and DE pages include these loaders, so updating the inline templates updates every page without duplicate markup or runtime fetches.
 
 ### When Updating Page Designs
 
@@ -72,6 +72,8 @@ Before committing changes:
 1. HTML elements have `data-translate="Key"` attributes
 2. `js/translations.js` contains key-value pairs for EN and DE
 3. JavaScript swaps text when language changes
+
+⚠️ `/de` pages now include their German copy directly and no longer load `js/translations.js`. Keep the `data-translate` attributes in those files for reference with the EN keys, but always update the visible German text manually.
 
 ### Adding New Content
 
@@ -219,13 +221,10 @@ lynckwebsite/
 ├── de/
 │   ├── index.html         # German homepage (same structure as EN)
 │   └── google-ads.html    # German service page (same structure as EN)
-├── components/
-│   ├── navigation.html    # Shared nav (loaded dynamically)
-│   └── contact-modal.html # Shared modal (loaded dynamically)
 ├── js/
 │   ├── translations.js    # EN/DE translation key-value pairs
-│   ├── navigation-loader.js
-│   └── contact-modal-loader.js
+│   ├── navigation-loader.js  # Inline nav template + routing logic
+│   └── contact-modal-loader.js # Inline modal template + form logic
 └── scripts/
     ├── audit-translations-simple.js
     └── find-untranslated-text.js

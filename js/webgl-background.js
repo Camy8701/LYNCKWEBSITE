@@ -4,8 +4,44 @@
 (function() {
   'use strict';
 
+  function parseOptIn(node) {
+    if (!node) return null;
+    const attr = node.getAttribute('data-webgl') || node.getAttribute('data-enable-webgl');
+    if (attr !== null) {
+      const normalized = attr.trim().toLowerCase();
+      if (normalized === '' || normalized === 'true' || normalized === '1' || normalized === 'yes' || normalized === 'enabled') {
+        return true;
+      }
+      if (normalized === 'false' || normalized === '0' || normalized === 'no' || normalized === 'disabled') {
+        return false;
+      }
+      return true;
+    }
+    if (node.classList && node.classList.contains('webgl-enabled')) {
+      return true;
+    }
+    return null;
+  }
+
+  function shouldEnableWebgl() {
+    const fromBody = parseOptIn(document.body);
+    if (fromBody !== null) {
+      return fromBody;
+    }
+    const fromRoot = parseOptIn(document.documentElement);
+    if (fromRoot !== null) {
+      return fromRoot;
+    }
+    return false;
+  }
+
   // Wait for page to load before initializing WebGL canvases
   window.addEventListener('load', function() {
+    if (!shouldEnableWebgl()) {
+      console.info('WebGL background disabled: page has not opted in.');
+      return;
+    }
+
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (motionQuery.matches) {
       console.info('Reduced motion preference detected; skipping WebGL background.');

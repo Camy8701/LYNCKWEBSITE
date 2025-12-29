@@ -45,7 +45,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
 <!-- Preload Critical Resources -->
-<link rel="preload" href="../js/translations.js" as="script">
 <!-- Optimized Fonts - Reduced to 6 weights from 15 -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
@@ -77,13 +76,11 @@
     }
   }
 </style>
-<!-- Load translations first, before navigation-loader tries to call translatePage() -->
-<script src="../js/translations.js" defer></script>
 <script src="../js/navigation-loader.js" defer></script>
 <script src="../js/contact-modal-loader.js" defer></script>
 <script src="../js/webgl-background.js" defer></script>
 </head>
-  <body class="min-h-full bg-black text-white antialiased overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; cursor: auto;">
+  <body data-webgl="true" class="min-h-full bg-black text-white antialiased overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; cursor: auto;">
 <!-- Starfield Background Layer -->
     <canvas id="starfield-canvas" class="w-full h-full fixed top-0 left-0 z-n-20"></canvas>
 
@@ -115,7 +112,7 @@
           <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-slide-up delay-1400">
             <a href="/de/why-choose-us" class="inline-flex items-center gap-3 shiny-cta font-geist">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-              <span data-translate="About us">About us</span>
+              <span data-translate="About us">Über uns</span>
             </a>
           </div>
 
@@ -141,7 +138,7 @@
     <!-- Trusted by with animated ticker -->
     <section class="border-y opacity-0 animate-fade-in border-white/10 pt-3 pb-3 overflow-hidden delay-1800">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <p class="text-center text-3xl font-bold text-white mb-2 font-geist" data-translate="Trusted by">Vertraut von</p>
+        <p class="text-center text-3xl font-bold text-white mb-2 font-geist" data-translate="Trusted by">Vertrauen uns</p>
 
         <!-- Animated ticker -->
         <div class="relative overflow-hidden">
@@ -175,7 +172,7 @@
         <!-- Section Title -->
         <div class="text-center mb-16">
           <h2 class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-white opacity-0 animate-slide-up font-geist tracking-tight font-bold delay-1800" data-translate="OUR SERVICES" style="hyphens: none;">
-            OUR SERVICES
+            UNSERE LEISTUNGEN
           </h2>
         </div>
 
@@ -220,7 +217,7 @@
               <!-- Service Title -->
               <div class="mb-4">
                 <h3 class="text-xl lg:text-2xl text-white font-geist tracking-tight font-semibold" data-translate="2. Google Ads Specialists">
-                  2. Google Ads Specialists
+                  2. Google Ads Spezialisten
                 </h3>
               </div>
               <div class="relative h-48 lg:h-52 overflow-hidden rounded-xl ring-1 ring-white/10 mb-6">
@@ -233,24 +230,24 @@
                 </div>
               </div>
               <div>
-                <h3 class="text-xl font-geist font-semibold tracking-tight mb-3 text-white" data-translate="Digital Marketing">Digital Marketing</h3>
-                <p class="text-white/70 leading-relaxed mb-6 font-geist" data-translate="We focus on Google Ads with insider access to Google's latest features, beta programs, and insider knowledge. Managing campaigns for companies generating millions with 8-figure revenue experience.">We focus on Google Ads with insider access to Google's latest features, beta programs, and insider knowledge. Managing campaigns for companies generating millions with 8-figure revenue experience.</p>
+                <h3 class="text-xl font-geist font-semibold tracking-tight mb-3 text-white" data-translate="Digital Marketing">Digitales Marketing</h3>
+                <p class="text-white/70 leading-relaxed mb-6 font-geist" data-translate="We focus on Google Ads with insider access to Google's latest features, beta programs, and insider knowledge. Managing campaigns for companies generating millions with 8-figure revenue experience.">Wir konzentrieren uns auf Google Ads mit Insider-Zugang zu Googles neuesten Funktionen, Beta-Programmen und Insider-Wissen. Verwaltung von Kampagnen für Unternehmen, die Millionen generieren mit 8-stelliger Umsatzerfahrung.</p>
                 <ul class="space-y-2 text-sm text-white/60 mb-6">
                   <li class="flex items-center gap-2 font-geist">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
-                    <span data-translate="Google Ads Management">Google Ads Management</span>
+                    <span data-translate="Google Ads Management">Google Ads Verwaltung</span>
                   </li>
                   <li class="flex items-center gap-2 font-geist">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
-                    <span data-translate="Beta feature access">Beta feature access</span>
+                    <span data-translate="Beta feature access">Beta-Feature-Zugang</span>
                   </li>
                   <li class="flex items-center gap-2 font-geist">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
-                    <span data-translate="Million-dollar campaign experience">Million-dollar campaign experience</span>
+                    <span data-translate="Million-dollar campaign experience">Millionen-Dollar-Kampagnen-Erfahrung</span>
                   </li>
                   <li class="flex items-center gap-2 font-geist">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400"><path d="M20 6 9 17l-5-5"></path></svg>
-                    <span data-translate="Direct Google support line">Direct Google support line</span>
+                    <span data-translate="Direct Google support line">Direkte Google-Support-Linie</span>
                   </li>
                 </ul>
                 <button onclick="window.location.href='/de/google-ads'" class="inline-flex items-center gap-2 shiny-cta font-geist mt-auto">
@@ -266,7 +263,7 @@
               <!-- Service Title -->
               <div class="mb-4">
                 <h3 class="text-xl lg:text-2xl text-white font-geist tracking-tight font-semibold" data-translate="3. Learning Platform">
-                  3. Learning Platform
+                  3. Lernplattform
                 </h3>
               </div>
               <div class="relative h-48 lg:h-52 overflow-hidden rounded-xl ring-1 ring-white/10 mb-6">
@@ -725,7 +722,7 @@
     <!-- Section Header -->
     <div class="text-center mb-16 relative z-10">
       <h2 class="text-4xl lg:text-5xl text-white font-geist tracking-tight font-light mb-4" data-translate="What Our Clients Say">
-        Was unsere Kunden sagen
+        Was Unsere Kunden Sagen
       </h2>
       <p class="text-xl text-gray-300 font-geist max-w-2xl mx-auto" data-translate="Real results from real partnerships">
         Echte Ergebnisse aus echten Partnerschaften
@@ -1025,7 +1022,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
           <div class="opacity-0 animate-fade-in h-full" style="animation-delay: 5.8s">
             <div class="rounded-3xl bg-gradient-to-b from-white/10 to-white/5 border border-white/10 p-8 h-full">
-              <h3 class="text-2xl text-white mb-6 font-geist tracking-tight font-light" data-translate="Connect With Us">Verbinden Sie sich mit uns</h3>
+              <h3 class="text-2xl text-white mb-6 font-geist tracking-tight font-light" data-translate="Connect With Us">Verbinden Sie Sich Mit Uns</h3>
 
               <h2 class="text-4xl lg:text-5xl text-white mb-6 font-geist tracking-tight font-light" data-translate="Let's create something amazing together">
                 Lassen Sie uns gemeinsam etwas Erstaunliches schaffen
@@ -1378,8 +1375,6 @@
     </script>
 
     <!-- Contact modal loaded from external file (../js/contact-modal-loader.js) -->
-
-    <!-- Translation System now loaded from js/translations.js -->
 
     <!-- Schema.org Organization Markup -->
     <script type="application/ld+json">
