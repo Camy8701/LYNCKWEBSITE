@@ -19,9 +19,8 @@ const CONTACT_MODAL_TEMPLATE = /* html */ `
       </p>
     </div>
 
-    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
-      <!-- Web3Forms Access Key -->
-      <input type="hidden" name="access_key" value="6163bfe5-5cc2-4c37-b6c0-af5239e19415">
+    <form id="contactForm" class="space-y-6">
+      <!-- API key is now securely stored on the backend -->
       <input type="hidden" name="subject" value="New Contact Form Submission from LYNCK Website">
       <input type="hidden" id="redirectField" name="redirect" value="https://lynckstudio.com/thank-you.html">
 
@@ -455,19 +454,28 @@ const CONTACT_MODAL_TEMPLATE = /* html */ `
         submitBtn.innerHTML = `<span>${copy.sendingLabel}</span>`;
         submitBtn.disabled = true;
 
+        // Convert form data to JSON object
         const formData = new FormData(contactForm);
+        const formObject = {};
+        formData.forEach((value, key) => {
+          formObject[key] = value;
+        });
 
         try {
-          const response = await fetch(contactForm.action, {
+          // Call our secure backend endpoint instead of Web3Forms directly
+          const response = await fetch('/api/contact', {
             method: 'POST',
-            body: formData,
             headers: {
-              Accept: 'application/json'
-            }
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(formObject)
           });
 
-          if (!response.ok) {
-            throw new Error(`Form submission failed with status ${response.status}`);
+          const result = await response.json();
+
+          if (!response.ok || !result.success) {
+            throw new Error(result.message || `Form submission failed with status ${response.status}`);
           }
 
           const thankYouPath = getThankYouPath(window.location.pathname);

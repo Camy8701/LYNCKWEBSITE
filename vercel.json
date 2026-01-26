@@ -69,5 +69,11 @@
   "trailingSlash": false,
   "github": {
     "silent": true
+  },
+  "functions": {
+    "api/contact.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
   }
 }
